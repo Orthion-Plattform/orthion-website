@@ -1279,3 +1279,85 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
     <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer Daten. Wenden Sie sich dazu jederzeit an: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="52393d3c26333926123d20263a3b3d3c7c3326">[email&#160;protected]</a></p>
     <h2>Rechtsgrundlage</h2>
     <p>Die Verarbeitung Ihre
+r Daten erfolgt auf Basis von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).</p>
+    </div>
+  </div>
+</div>
+
+<!-- SUPABASE AUTH -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const { createClient } = supabase;
+const sb = createClient(
+  'https://xkbiqsbbuynessxadknm.supabase.co',
+  'DEIN_ANON_KEY_HIER'
+);
+
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.getElementById('page-' + id)?.classList.add('active');
+  const navEl = document.getElementById('nav-' + id);
+  if (navEl) navEl.classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+async function checkSession() {
+  const { data: { session } } = await sb.auth.getSession();
+  updateNav(session);
+}
+
+function updateNav(session) {
+  const btnLogin = document.querySelector('.btn-login');
+  if (session) {
+    btnLogin.textContent = 'Mein Bereich';
+    btnLogin.onclick = () => showPage('dashboard');
+    const email = session.user.email;
+    const initials = email.substring(0, 2).toUpperCase();
+    document.querySelector('.user-avatar').textContent = initials;
+    document.querySelector('.user-name').textContent = email;
+    document.querySelector('.dash-welcome h2').textContent = 'Willkommen zurück!';
+  } else {
+    btnLogin.textContent = 'Anmelden';
+    btnLogin.onclick = () => showPage('login');
+  }
+}
+
+async function login() {
+  const email = document.getElementById('auth-email').value;
+  const password = document.getElementById('auth-password').value;
+  const msg = document.getElementById('auth-message');
+  const { data, error } = await sb.auth.signInWithPassword({ email, password });
+  if (error) {
+    msg.style.color = '#c0392b';
+    msg.textContent = 'Fehler: ' + error.message;
+  } else {
+    updateNav(data.session);
+    showPage('dashboard');
+  }
+}
+
+async function register() {
+  const email = document.getElementById('auth-email').value;
+  const password = document.getElementById('auth-password').value;
+  const msg = document.getElementById('auth-message');
+  const { error } = await sb.auth.signUp({ email, password });
+  if (error) {
+    msg.style.color = '#c0392b';
+    msg.textContent = 'Fehler: ' + error.message;
+  } else {
+    msg.style.color = '#4A9E78';
+    msg.textContent = '✅ Bestätigungs-E-Mail gesendet! Bitte E-Mail prüfen.';
+  }
+}
+
+async function logout() {
+  await sb.auth.signOut();
+  updateNav(null);
+  showPage('home');
+}
+
+checkSession();
+</script>
+</body>
+</html>
