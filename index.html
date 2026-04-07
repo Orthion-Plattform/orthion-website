@@ -1134,12 +1134,14 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
         <p>Bitte melden Sie sich mit Ihren persönlichen Zugangsdaten an.</p>
       </div>
       <div class="login-form">
-        <div class="form-group"><label>Benutzername oder E-Mail</label><input type="email" placeholder="ihre@email.at"></div>
-        <div class="form-group"><label>Passwort</label><input type="password" placeholder="••••••••"></div>
+        <div class="form-group"><label>E-Mail</label><input id="auth-email" type="email" placeholder="ihre@email.at"></div>
+        <div class="form-group"><label>Passwort</label><input id="auth-password" type="password" placeholder="••••••••"></div>
         <div class="login-remember"><input type="checkbox"> Angemeldet bleiben</div>
-        <button class="btn-login-full" onclick="showPage('dashboard')">Anmelden</button>
+        <button class="btn-login-full" onclick="login()">Anmelden</button>
+        <button class="btn-login-full" style="margin-top:0.5rem;background:var(--violet);" onclick="register()">Neu registrieren</button>
+        <p id="auth-message" style="margin-top:0.75rem;font-size:0.9rem;text-align:center;"></p>
       </div>
-      <div class="login-expire-note">🔒 Ihr Zugang ist zeitlich begrenzt und läuft nach dem vereinbarten Zeitraum automatisch ab. Für Verlängerungen wenden Sie sich bitte an <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cea5a1a0baafa5ba8ea1bcbaa6a7a1a0e0afba">[email&#160;protected]</a>.</div>
+      <div class="login-expire-note">🔒 Ihr Zugang ist zeitlich begrenzt und läuft nach dem vereinbarten Zeitraum automatisch ab. Für Verlängerungen wenden Sie sich bitte an <a href="mailto:office@orthion.at">office@orthion.at</a>.</div>
       <div class="login-footer"><a>Passwort vergessen?</a></div>
     </div>
   </div>
