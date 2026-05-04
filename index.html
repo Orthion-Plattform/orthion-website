@@ -801,6 +801,68 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
   </div>
 </div>
 
+<!-- PAGE: ADMIN -->
+<div class="page" id="page-admin">
+  <div class="dashboard">
+    <div class="sidebar">
+      <div class="sidebar-user">
+        <div class="user-avatar" style="background:var(--violet);">AD</div>
+        <div class="user-name">Admin-Bereich</div>
+        <div class="user-access">Orthion Verwaltung</div>
+      </div>
+      <div class="sidebar-section-label">Verwaltung</div>
+      <ul class="sidebar-nav">
+        <li><a class="active" onclick="adminShowTab('users')"><span class="nav-icon">👥</span>Alle Nutzer</a></li>
+        <li><a onclick="adminShowTab('stats')"><span class="nav-icon">📊</span>Statistiken</a></li>
+      </ul>
+      <div class="sidebar-section-label">Navigation</div>
+      <ul class="sidebar-nav">
+        <li><a onclick="showPage('dashboard')"><span class="nav-icon">🏠</span>Mein Bereich</a></li>
+        <li><a onclick="logout()"><span class="nav-icon">🚪</span>Abmelden</a></li>
+      </ul>
+    </div>
+    <div class="dash-main">
+      <!-- TAB: USERS -->
+      <div id="admin-tab-users">
+        <div class="dash-welcome">
+          <h2>Nutzerverwaltung</h2>
+          <p>Alle registrierten Nutzer im Überblick.</p>
+        </div>
+        <div style="background:white;border:1px solid var(--light-border);border-radius:16px;overflow:hidden;">
+          <div style="padding:1rem 1.5rem;border-bottom:1px solid var(--light-border);display:flex;align-items:center;justify-content:space-between;">
+            <span style="font-weight:700;color:var(--navy);">Registrierte Nutzer</span>
+            <button onclick="loadAdminUsers()" style="background:var(--navy);color:white;border:none;padding:0.4rem 1rem;border-radius:50px;font-size:0.874rem;font-weight:600;cursor:pointer;font-family:'Nunito',sans-serif;">↻ Aktualisieren</button>
+          </div>
+          <div id="admin-users-list" style="padding:1rem;">
+            <p style="color:var(--muted);text-align:center;padding:2rem;">Lädt...</p>
+          </div>
+        </div>
+      </div>
+      <!-- TAB: STATS -->
+      <div id="admin-tab-stats" style="display:none;">
+        <div class="dash-welcome">
+          <h2>Statistiken</h2>
+          <p>Überblick über die Plattform.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+          <div style="background:white;border:1px solid var(--light-border);border-radius:16px;padding:1.5rem;text-align:center;">
+            <div style="font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--navy);font-weight:700;" id="stat-total-users">–</div>
+            <div style="font-size:0.918rem;color:var(--muted);margin-top:0.25rem;">Registrierte Nutzer</div>
+          </div>
+          <div style="background:white;border:1px solid var(--light-border);border-radius:16px;padding:1.5rem;text-align:center;">
+            <div style="font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--violet);font-weight:700;" id="stat-admin-users">–</div>
+            <div style="font-size:0.918rem;color:var(--muted);margin-top:0.25rem;">Admins</div>
+          </div>
+          <div style="background:white;border:1px solid var(--light-border);border-radius:16px;padding:1.5rem;text-align:center;">
+            <div style="font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--success);font-weight:700;" id="stat-normal-users">–</div>
+            <div style="font-size:0.918rem;color:var(--muted);margin-top:0.25rem;">Normale Nutzer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- PAGE: IMPRESSUM -->
 <div class="page" id="page-impressum">
   <div class="back-bar"><button class="back-btn" onclick="showPage('home')">← Zurück zur Startseite</button></div>
@@ -857,6 +919,9 @@ function showPage(id) {
 
 function updateNav(session) {
   const btnLogin = document.getElementById('btn-login-nav');
+  // Remove old admin button if exists
+  const oldAdminBtn = document.getElementById('btn-admin-nav');
+  if (oldAdminBtn) oldAdminBtn.remove();
   if (session) {
     btnLogin.textContent = 'Mein Bereich';
     btnLogin.onclick = () => showPage('dashboard');
@@ -865,6 +930,17 @@ function updateNav(session) {
     document.getElementById('dash-avatar').textContent = initials;
     document.getElementById('dash-username').textContent = email;
     document.getElementById('dash-welcome-text').textContent = 'Willkommen zurück!';
+    // Check if admin and show admin button
+    sb.from('profiles').select('role').eq('id', session.user.id).single().then(({ data }) => {
+      if (data?.role === 'admin') {
+        const adminBtn = document.createElement('button');
+        adminBtn.id = 'btn-admin-nav';
+        adminBtn.textContent = '⚙️ Admin';
+        adminBtn.style.cssText = 'background:var(--violet);color:white;border:none;padding:0.5rem 1.1rem;border-radius:50px;font-size:0.874rem;font-weight:700;cursor:pointer;font-family:\'Nunito\',sans-serif;';
+        adminBtn.onclick = () => { showPage('admin'); loadAdminUsers(); };
+        btnLogin.parentNode.insertBefore(adminBtn, btnLogin);
+      }
+    });
   } else {
     btnLogin.textContent = 'Anmelden';
     btnLogin.onclick = () => showPage('login');
@@ -928,6 +1004,63 @@ async function logout() {
   await sb.auth.signOut();
   updateNav(null);
   showPage('home');
+}
+
+async function checkIfAdmin(userId) {
+  const { data } = await sb.from('profiles').select('role').eq('id', userId).single();
+  return data?.role === 'admin';
+}
+
+function adminShowTab(tab) {
+  document.getElementById('admin-tab-users').style.display = tab === 'users' ? 'block' : 'none';
+  document.getElementById('admin-tab-stats').style.display = tab === 'stats' ? 'block' : 'none';
+  if (tab === 'stats') loadAdminStats();
+}
+
+async function loadAdminUsers() {
+  const list = document.getElementById('admin-users-list');
+  list.innerHTML = '<p style="color:var(--muted);text-align:center;padding:2rem;">Lädt...</p>';
+  const { data, error } = await sb.from('profiles').select('*').order('email');
+  if (error || !data || data.length === 0) {
+    list.innerHTML = '<p style="color:var(--muted);text-align:center;padding:2rem;">Keine Nutzer gefunden.</p>';
+    return;
+  }
+  list.innerHTML = data.map(u => `
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:0.85rem 0.5rem;border-bottom:1px solid var(--light-border);">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:38px;height:38px;border-radius:50%;background:${u.role==='admin'?'var(--violet)':'var(--navy)'};color:white;display:flex;align-items:center;justify-content:center;font-size:0.874rem;font-weight:700;">
+          ${u.email.substring(0,2).toUpperCase()}
+        </div>
+        <div>
+          <div style="font-size:0.952rem;font-weight:600;color:var(--navy);">${u.email}</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:0.75rem;">
+        <span style="font-size:0.784rem;font-weight:700;padding:0.25rem 0.75rem;border-radius:50px;background:${u.role==='admin'?'var(--violet-light)':'var(--blue-pale)'};color:${u.role==='admin'?'var(--violet)':'var(--navy-mid)'};">
+          ${u.role === 'admin' ? '👑 Admin' : '👤 Nutzer'}
+        </span>
+        <button onclick="toggleRole('${u.id}','${u.role}')" style="background:transparent;border:1.5px solid var(--light-border);color:var(--muted);padding:0.25rem 0.75rem;border-radius:50px;font-size:0.784rem;cursor:pointer;font-family:'Nunito',sans-serif;">
+          ${u.role === 'admin' ? '→ Nutzer machen' : '→ Admin machen'}
+        </button>
+      </div>
+    </div>
+  `).join('');
+}
+
+async function toggleRole(userId, currentRole) {
+  const newRole = currentRole === 'admin' ? 'user' : 'admin';
+  const { error } = await sb.from('profiles').update({ role: newRole }).eq('id', userId);
+  if (!error) loadAdminUsers();
+}
+
+async function loadAdminStats() {
+  const { data } = await sb.from('profiles').select('role');
+  if (!data) return;
+  const total = data.length;
+  const admins = data.filter(u => u.role === 'admin').length;
+  document.getElementById('stat-total-users').textContent = total;
+  document.getElementById('stat-admin-users').textContent = admins;
+  document.getElementById('stat-normal-users').textContent = total - admins;
 }
 
 async function forgotPassword() {
