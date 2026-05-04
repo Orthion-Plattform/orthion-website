@@ -863,6 +863,21 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
   </div>
 </div>
 
+<!-- PAGE: PENDING -->
+<div class="page" id="page-pending">
+  <div class="member-gate">
+    <div class="login-card" style="text-align:center;">
+      <div style="font-size:3rem;margin-bottom:1rem;">⏳</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:1.792rem;color:var(--navy);margin-bottom:0.75rem;">Zugang wird bearbeitet</h2>
+      <p style="font-size:1.008rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem;">Vielen Dank für Ihre Registrierung! Ihr Zugang wird gerade von uns bearbeitet. Sie erhalten eine E-Mail sobald er freigeschaltet wurde.</p>
+      <div style="background:var(--blue-pale);border-radius:12px;padding:1rem;font-size:0.918rem;color:var(--navy-mid);margin-bottom:1.5rem;">
+        📧 Bei Fragen: <a href="mailto:office@orthion.at" style="color:var(--violet);">office@orthion.at</a>
+      </div>
+      <button class="btn-login-full" onclick="logout()" style="background:var(--muted);">Abmelden</button>
+    </div>
+  </div>
+</div>
+
 <!-- PAGE: IMPRESSUM -->
 <div class="page" id="page-impressum">
   <div class="back-bar"><button class="back-btn" onclick="showPage('home')">← Zurück zur Startseite</button></div>
@@ -969,7 +984,13 @@ async function login() {
     msg.textContent = 'Fehler: ' + error.message;
   } else {
     updateNav(data.session);
-    showPage('dashboard');
+    // Check role before showing dashboard
+    const { data: profile } = await sb.from('profiles').select('role').eq('id', data.session.user.id).single();
+    if (profile?.role === 'pending') {
+      showPage('pending');
+    } else {
+      showPage('dashboard');
+    }
     msg.textContent = '';
   }
 }
@@ -1036,11 +1057,11 @@ async function loadAdminUsers() {
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:0.75rem;">
-        <span style="font-size:0.784rem;font-weight:700;padding:0.25rem 0.75rem;border-radius:50px;background:${u.role==='admin'?'var(--violet-light)':'var(--blue-pale)'};color:${u.role==='admin'?'var(--violet)':'var(--navy-mid)'};">
-          ${u.role === 'admin' ? '👑 Admin' : '👤 Nutzer'}
+        <span style="font-size:0.784rem;font-weight:700;padding:0.25rem 0.75rem;border-radius:50px;background:${u.role==='admin'?'var(--violet-light)':u.role==='pending'?'#FFF3CD':'var(--blue-pale)'};color:${u.role==='admin'?'var(--violet)':u.role==='pending'?'#856404':'var(--navy-mid)'};">
+          ${u.role === 'admin' ? '👑 Admin' : u.role === 'pending' ? '⏳ Ausstehend' : '👤 Nutzer'}
         </span>
         <button onclick="toggleRole('${u.id}','${u.role}')" style="background:transparent;border:1.5px solid var(--light-border);color:var(--muted);padding:0.25rem 0.75rem;border-radius:50px;font-size:0.784rem;cursor:pointer;font-family:'Nunito',sans-serif;">
-          ${u.role === 'admin' ? '→ Nutzer machen' : '→ Admin machen'}
+          ${u.role === 'pending' ? '✅ Freischalten' : u.role === 'admin' ? '→ Nutzer machen' : '→ Admin machen'}
         </button>
       </div>
     </div>
@@ -1048,7 +1069,10 @@ async function loadAdminUsers() {
 }
 
 async function toggleRole(userId, currentRole) {
-  const newRole = currentRole === 'admin' ? 'user' : 'admin';
+  let newRole;
+  if (currentRole === 'pending') newRole = 'user';
+  else if (currentRole === 'user') newRole = 'admin';
+  else newRole = 'user';
   const { error } = await sb.from('profiles').update({ role: newRole }).eq('id', userId);
   if (!error) loadAdminUsers();
 }
