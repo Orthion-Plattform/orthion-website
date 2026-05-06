@@ -318,7 +318,6 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .back-bar{padding:1rem 3rem;border-bottom:1px solid var(--light-border);display:flex;align-items:center;gap:8px;}
 .back-btn{background:none;border:none;font-size:0.952rem;color:var(--blue-soft);cursor:pointer;font-family:'Nunito',sans-serif;display:flex;align-items:center;gap:6px;}
 .back-btn:hover{color:var(--navy);}
-/* Auth message styles */
 #auth-message{margin-top:0.75rem;font-size:0.9rem;text-align:center;min-height:1.2em;}
 </style>
 </head>
@@ -822,7 +821,6 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
       </ul>
     </div>
     <div class="dash-main">
-      <!-- TAB: USERS -->
       <div id="admin-tab-users">
         <div class="dash-welcome">
           <h2>Nutzerverwaltung</h2>
@@ -838,7 +836,6 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
           </div>
         </div>
       </div>
-      <!-- TAB: STATS -->
       <div id="admin-tab-stats" style="display:none;">
         <div class="dash-welcome">
           <h2>Statistiken</h2>
@@ -914,9 +911,11 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
   </div>
 </div>
 
-<!-- SUPABASE AUTH — KORRIGIERT -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
+emailjs.init('7OcjgwiU5_Q12RfjD');
+
 const { createClient } = supabase;
 const sb = createClient(
   'https://xkbiqsbbuynessxadknm.supabase.co',
@@ -934,7 +933,6 @@ function showPage(id) {
 
 function updateNav(session) {
   const btnLogin = document.getElementById('btn-login-nav');
-  // Remove old admin button if exists
   const oldAdminBtn = document.getElementById('btn-admin-nav');
   if (oldAdminBtn) oldAdminBtn.remove();
   if (session) {
@@ -945,7 +943,6 @@ function updateNav(session) {
     document.getElementById('dash-avatar').textContent = initials;
     document.getElementById('dash-username').textContent = email;
     document.getElementById('dash-welcome-text').textContent = 'Willkommen zurück!';
-    // Check if admin and show admin button
     sb.from('profiles').select('role').eq('id', session.user.id).single().then(({ data }) => {
       if (data?.role === 'admin') {
         const adminBtn = document.createElement('button');
@@ -984,7 +981,6 @@ async function login() {
     msg.textContent = 'Fehler: ' + error.message;
   } else {
     updateNav(data.session);
-    // Check role before showing dashboard
     const { data: profile } = await sb.from('profiles').select('role').eq('id', data.session.user.id).single();
     if (profile?.role === 'pending') {
       showPage('pending');
@@ -1074,7 +1070,18 @@ async function toggleRole(userId, currentRole) {
   else if (currentRole === 'user') newRole = 'admin';
   else newRole = 'user';
   const { error } = await sb.from('profiles').update({ role: newRole }).eq('id', userId);
-  if (!error) loadAdminUsers();
+  if (!error) {
+    if (currentRole === 'pending') {
+      const { data: profile } = await sb.from('profiles').select('email, full_name').eq('id', userId).single();
+      if (profile) {
+        await emailjs.send('service_j2gaw0v', 'template_e0uy7gc', {
+          to_name: profile.full_name || profile.email,
+          email: profile.email,
+        });
+      }
+    }
+    loadAdminUsers();
+  }
 }
 
 async function loadAdminStats() {
