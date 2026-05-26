@@ -319,6 +319,43 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .back-btn{background:none;border:none;font-size:0.952rem;color:var(--blue-soft);cursor:pointer;font-family:'Nunito',sans-serif;display:flex;align-items:center;gap:6px;}
 .back-btn:hover{color:var(--navy);}
 #auth-message{margin-top:0.75rem;font-size:0.9rem;text-align:center;min-height:1.2em;}
+
+/* ===== KURSVERWALTUNG STYLES ===== */
+.kurs-card{background:white;border:1px solid var(--light-border);border-radius:16px;margin-bottom:1rem;overflow:hidden;}
+.kurs-card-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;cursor:pointer;transition:background 0.15s;}
+.kurs-card-header:hover{background:var(--blue-lighter);}
+.kurs-title-row{display:flex;align-items:center;gap:12px;flex:1;}
+.kurs-expand-icon{font-size:0.8rem;color:var(--muted);transition:transform 0.2s;margin-right:0.5rem;}
+.kurs-card.expanded .kurs-expand-icon{transform:rotate(90deg);}
+.kurs-name{font-size:1rem;font-weight:700;color:var(--navy);}
+.kurs-actions{display:flex;align-items:center;gap:0.75rem;}
+.status-badge{font-size:0.762rem;font-weight:700;padding:0.25rem 0.75rem;border-radius:50px;white-space:nowrap;}
+.status-published{background:#D1FAE5;color:#065F46;}
+.status-coming_soon{background:#FEF3C7;color:#92400E;}
+.status-draft{background:#F3F4F6;color:#6B7280;}
+.status-select{font-size:0.84rem;padding:0.3rem 0.6rem;border:1.5px solid var(--light-border);border-radius:8px;font-family:'Nunito',sans-serif;color:var(--navy);cursor:pointer;background:white;outline:none;}
+.status-select:focus{border-color:var(--violet);}
+.kurs-body{display:none;padding:0 1.25rem 1.25rem;border-top:1px solid var(--light-border);background:var(--offwhite);}
+.kurs-card.expanded .kurs-body{display:block;}
+.modul-row{display:flex;align-items:center;justify-content:space-between;padding:0.65rem 0.75rem;background:white;border:1px solid var(--light-border);border-radius:10px;margin-top:0.5rem;cursor:pointer;transition:border-color 0.15s;}
+.modul-row:hover{border-color:var(--blue-soft);}
+.modul-title-row{display:flex;align-items:center;gap:10px;flex:1;}
+.modul-expand-icon{font-size:0.75rem;color:var(--muted);transition:transform 0.2s;}
+.modul-row.expanded .modul-expand-icon{transform:rotate(90deg);}
+.modul-name{font-size:0.918rem;font-weight:600;color:var(--navy);}
+.modul-actions{display:flex;align-items:center;gap:0.6rem;}
+.toggle-btn{position:relative;width:44px;height:24px;border-radius:50px;border:none;cursor:pointer;transition:background 0.2s;flex-shrink:0;}
+.toggle-btn.on{background:var(--success);}
+.toggle-btn.off{background:#D1D5DB;}
+.toggle-btn::after{content:'';position:absolute;width:18px;height:18px;border-radius:50%;background:white;top:3px;transition:left 0.2s;}
+.toggle-btn.on::after{left:23px;}
+.toggle-btn.off::after{left:3px;}
+.toggle-label{font-size:0.784rem;color:var(--muted);white-space:nowrap;}
+.lektionen-body{display:none;padding:0.5rem 0 0 1.5rem;}
+.modul-row.expanded + .lektionen-body{display:block;}
+.lektion-row{display:flex;align-items:center;justify-content:space-between;padding:0.5rem 0.75rem;background:var(--blue-lighter);border-radius:8px;margin-top:0.35rem;}
+.lektion-name{font-size:0.874rem;color:var(--navy);}
+.save-indicator{font-size:0.784rem;color:var(--success);font-weight:600;display:none;margin-left:0.5rem;}
 </style>
 </head>
 <body>
@@ -811,8 +848,9 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
       </div>
       <div class="sidebar-section-label">Verwaltung</div>
       <ul class="sidebar-nav">
-        <li><a class="active" onclick="adminShowTab('users')"><span class="nav-icon">👥</span>Alle Nutzer</a></li>
-        <li><a onclick="adminShowTab('stats')"><span class="nav-icon">📊</span>Statistiken</a></li>
+        <li><a id="admin-nav-users" onclick="adminShowTab('users')"><span class="nav-icon">👥</span>Alle Nutzer</a></li>
+        <li><a id="admin-nav-courses" onclick="adminShowTab('courses')"><span class="nav-icon">📚</span>Kursverwaltung</a></li>
+        <li><a id="admin-nav-stats" onclick="adminShowTab('stats')"><span class="nav-icon">📊</span>Statistiken</a></li>
       </ul>
       <div class="sidebar-section-label">Navigation</div>
       <ul class="sidebar-nav">
@@ -821,6 +859,8 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
       </ul>
     </div>
     <div class="dash-main">
+
+      <!-- TAB: NUTZER -->
       <div id="admin-tab-users">
         <div class="dash-welcome">
           <h2>Nutzerverwaltung</h2>
@@ -836,6 +876,22 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
           </div>
         </div>
       </div>
+
+      <!-- TAB: KURSVERWALTUNG -->
+      <div id="admin-tab-courses" style="display:none;">
+        <div class="dash-welcome">
+          <h2>Kursverwaltung</h2>
+          <p>Kurse, Module und Lektionen freischalten oder verstecken.</p>
+        </div>
+        <div style="background:var(--blue-lighter);border-radius:12px;padding:0.85rem 1.1rem;margin-bottom:1.5rem;font-size:0.918rem;color:var(--navy-mid);">
+          💡 <strong>Tipp:</strong> Klicke auf einen Kurs um seine Module zu sehen. Klicke auf ein Modul um die Lektionen zu sehen.
+        </div>
+        <div id="admin-courses-list">
+          <p style="color:var(--muted);text-align:center;padding:2rem;">Lädt...</p>
+        </div>
+      </div>
+
+      <!-- TAB: STATISTIKEN -->
       <div id="admin-tab-stats" style="display:none;">
         <div class="dash-welcome">
           <h2>Statistiken</h2>
@@ -856,6 +912,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>
@@ -949,7 +1006,7 @@ function updateNav(session) {
         adminBtn.id = 'btn-admin-nav';
         adminBtn.textContent = '⚙️ Admin';
         adminBtn.style.cssText = 'background:var(--violet);color:white;border:none;padding:0.5rem 1.1rem;border-radius:50px;font-size:0.874rem;font-weight:700;cursor:pointer;font-family:\'Nunito\',sans-serif;';
-        adminBtn.onclick = () => { showPage('admin'); loadAdminUsers(); };
+        adminBtn.onclick = () => { showPage('admin'); adminShowTab('users'); loadAdminUsers(); };
         btnLogin.parentNode.insertBefore(adminBtn, btnLogin);
       }
     });
@@ -968,25 +1025,15 @@ async function login() {
   const email = document.getElementById('auth-email').value.trim();
   const password = document.getElementById('auth-password').value;
   const msg = document.getElementById('auth-message');
-  if (!email || !password) {
-    msg.style.color = '#c0392b';
-    msg.textContent = 'Bitte E-Mail und Passwort eingeben.';
-    return;
-  }
-  msg.style.color = 'var(--muted)';
-  msg.textContent = 'Anmeldung läuft …';
+  if (!email || !password) { msg.style.color='#c0392b'; msg.textContent='Bitte E-Mail und Passwort eingeben.'; return; }
+  msg.style.color='var(--muted)'; msg.textContent='Anmeldung läuft …';
   const { data, error } = await sb.auth.signInWithPassword({ email, password });
-  if (error) {
-    msg.style.color = '#c0392b';
-    msg.textContent = 'Fehler: ' + error.message;
-  } else {
+  if (error) { msg.style.color='#c0392b'; msg.textContent='Fehler: '+error.message; }
+  else {
     updateNav(data.session);
     const { data: profile } = await sb.from('profiles').select('role').eq('id', data.session.user.id).single();
-    if (profile?.role === 'pending') {
-      showPage('pending');
-    } else {
-      showPage('dashboard');
-    }
+    if (profile?.role === 'pending') showPage('pending');
+    else showPage('dashboard');
     msg.textContent = '';
   }
 }
@@ -995,26 +1042,12 @@ async function register() {
   const email = document.getElementById('auth-email').value.trim();
   const password = document.getElementById('auth-password').value;
   const msg = document.getElementById('auth-message');
-  if (!email || !password) {
-    msg.style.color = '#c0392b';
-    msg.textContent = 'Bitte E-Mail und Passwort eingeben.';
-    return;
-  }
-  if (password.length < 6) {
-    msg.style.color = '#c0392b';
-    msg.textContent = 'Passwort muss mindestens 6 Zeichen haben.';
-    return;
-  }
-  msg.style.color = 'var(--muted)';
-  msg.textContent = 'Registrierung läuft …';
+  if (!email || !password) { msg.style.color='#c0392b'; msg.textContent='Bitte E-Mail und Passwort eingeben.'; return; }
+  if (password.length < 6) { msg.style.color='#c0392b'; msg.textContent='Passwort muss mindestens 6 Zeichen haben.'; return; }
+  msg.style.color='var(--muted)'; msg.textContent='Registrierung läuft …';
   const { error } = await sb.auth.signUp({ email, password });
-  if (error) {
-    msg.style.color = '#c0392b';
-    msg.textContent = 'Fehler: ' + error.message;
-  } else {
-    msg.style.color = '#4A9E78';
-    msg.textContent = '✅ Bestätigungs-E-Mail gesendet! Bitte E-Mail prüfen.';
-  }
+  if (error) { msg.style.color='#c0392b'; msg.textContent='Fehler: '+error.message; }
+  else { msg.style.color='#4A9E78'; msg.textContent='✅ Bestätigungs-E-Mail gesendet! Bitte E-Mail prüfen.'; }
 }
 
 async function logout() {
@@ -1023,41 +1056,34 @@ async function logout() {
   showPage('home');
 }
 
-async function checkIfAdmin(userId) {
-  const { data } = await sb.from('profiles').select('role').eq('id', userId).single();
-  return data?.role === 'admin';
-}
-
 function adminShowTab(tab) {
-  document.getElementById('admin-tab-users').style.display = tab === 'users' ? 'block' : 'none';
-  document.getElementById('admin-tab-stats').style.display = tab === 'stats' ? 'block' : 'none';
+  ['users','courses','stats'].forEach(t => {
+    document.getElementById('admin-tab-'+t).style.display = t===tab ? 'block' : 'none';
+    const navEl = document.getElementById('admin-nav-'+t);
+    if(navEl) navEl.classList.toggle('active', t===tab);
+  });
   if (tab === 'stats') loadAdminStats();
+  if (tab === 'courses') loadAdminCourses();
 }
 
+/* ===== NUTZERVERWALTUNG ===== */
 async function loadAdminUsers() {
   const list = document.getElementById('admin-users-list');
   list.innerHTML = '<p style="color:var(--muted);text-align:center;padding:2rem;">Lädt...</p>';
   const { data, error } = await sb.from('profiles').select('*').order('email');
-  if (error || !data || data.length === 0) {
-    list.innerHTML = '<p style="color:var(--muted);text-align:center;padding:2rem;">Keine Nutzer gefunden.</p>';
-    return;
-  }
+  if (error || !data || data.length === 0) { list.innerHTML='<p style="color:var(--muted);text-align:center;padding:2rem;">Keine Nutzer gefunden.</p>'; return; }
   list.innerHTML = data.map(u => `
     <div style="display:flex;align-items:center;justify-content:space-between;padding:0.85rem 0.5rem;border-bottom:1px solid var(--light-border);">
       <div style="display:flex;align-items:center;gap:12px;">
-        <div style="width:38px;height:38px;border-radius:50%;background:${u.role==='admin'?'var(--violet)':'var(--navy)'};color:white;display:flex;align-items:center;justify-content:center;font-size:0.874rem;font-weight:700;">
-          ${u.email.substring(0,2).toUpperCase()}
-        </div>
-        <div>
-          <div style="font-size:0.952rem;font-weight:600;color:var(--navy);">${u.email}</div>
-        </div>
+        <div style="width:38px;height:38px;border-radius:50%;background:${u.role==='admin'?'var(--violet)':'var(--navy)'};color:white;display:flex;align-items:center;justify-content:center;font-size:0.874rem;font-weight:700;">${u.email.substring(0,2).toUpperCase()}</div>
+        <div><div style="font-size:0.952rem;font-weight:600;color:var(--navy);">${u.email}</div></div>
       </div>
       <div style="display:flex;align-items:center;gap:0.75rem;">
         <span style="font-size:0.784rem;font-weight:700;padding:0.25rem 0.75rem;border-radius:50px;background:${u.role==='admin'?'var(--violet-light)':u.role==='pending'?'#FFF3CD':'var(--blue-pale)'};color:${u.role==='admin'?'var(--violet)':u.role==='pending'?'#856404':'var(--navy-mid)'};">
-          ${u.role === 'admin' ? '👑 Admin' : u.role === 'pending' ? '⏳ Ausstehend' : '👤 Nutzer'}
+          ${u.role==='admin'?'👑 Admin':u.role==='pending'?'⏳ Ausstehend':'👤 Nutzer'}
         </span>
         <button onclick="toggleRole('${u.id}','${u.role}')" style="background:transparent;border:1.5px solid var(--light-border);color:var(--muted);padding:0.25rem 0.75rem;border-radius:50px;font-size:0.784rem;cursor:pointer;font-family:'Nunito',sans-serif;">
-          ${u.role === 'pending' ? '✅ Freischalten' : u.role === 'admin' ? '→ Nutzer machen' : '→ Admin machen'}
+          ${u.role==='pending'?'✅ Freischalten':u.role==='admin'?'→ Nutzer machen':'→ Admin machen'}
         </button>
       </div>
     </div>
@@ -1065,20 +1091,12 @@ async function loadAdminUsers() {
 }
 
 async function toggleRole(userId, currentRole) {
-  let newRole;
-  if (currentRole === 'pending') newRole = 'user';
-  else if (currentRole === 'user') newRole = 'admin';
-  else newRole = 'user';
+  let newRole = currentRole==='pending'?'user':currentRole==='user'?'admin':'user';
   const { error } = await sb.from('profiles').update({ role: newRole }).eq('id', userId);
   if (!error) {
     if (currentRole === 'pending') {
       const { data: profile } = await sb.from('profiles').select('email, full_name').eq('id', userId).single();
-      if (profile) {
-        await emailjs.send('service_j2gaw0v', 'template_e0uy7gc', {
-          to_name: profile.full_name || profile.email,
-          email: profile.email,
-        });
-      }
+      if (profile) await emailjs.send('service_j2gaw0v','template_e0uy7gc',{ to_name: profile.full_name||profile.email, email: profile.email });
     }
     loadAdminUsers();
   }
@@ -1088,30 +1106,168 @@ async function loadAdminStats() {
   const { data } = await sb.from('profiles').select('role');
   if (!data) return;
   const total = data.length;
-  const admins = data.filter(u => u.role === 'admin').length;
+  const admins = data.filter(u=>u.role==='admin').length;
   document.getElementById('stat-total-users').textContent = total;
   document.getElementById('stat-admin-users').textContent = admins;
   document.getElementById('stat-normal-users').textContent = total - admins;
 }
 
+/* ===== KURSVERWALTUNG ===== */
+async function loadAdminCourses() {
+  const container = document.getElementById('admin-courses-list');
+  container.innerHTML = '<p style="color:var(--muted);text-align:center;padding:2rem;">Lädt...</p>';
+  const { data: courses, error } = await sb.from('courses').select('*').order('title');
+  if (error || !courses || courses.length === 0) {
+    container.innerHTML = '<p style="color:var(--muted);text-align:center;padding:2rem;">Keine Kurse gefunden.</p>';
+    return;
+  }
+  container.innerHTML = courses.map(c => buildCourseCard(c)).join('');
+}
+
+function statusLabel(status) {
+  if (status === 'published') return '<span class="status-badge status-published">🟢 Sichtbar</span>';
+  if (status === 'coming_soon') return '<span class="status-badge status-coming_soon">🟡 Demnächst</span>';
+  return '<span class="status-badge status-draft">⚫ Versteckt</span>';
+}
+
+function buildCourseCard(course) {
+  return `
+    <div class="kurs-card" id="kurs-${course.id}">
+      <div class="kurs-card-header" onclick="toggleCourseExpand('${course.id}')">
+        <div class="kurs-title-row">
+          <span class="kurs-expand-icon">▶</span>
+          <span class="kurs-name">${course.title}</span>
+        </div>
+        <div class="kurs-actions" onclick="event.stopPropagation()">
+          ${statusLabel(course.status)}
+          <select class="status-select" onchange="updateCourseStatus('${course.id}', this.value)">
+            <option value="published" ${course.status==='published'?'selected':''}>🟢 Sichtbar</option>
+            <option value="coming_soon" ${course.status==='coming_soon'?'selected':''}>🟡 Demnächst</option>
+            <option value="draft" ${course.status==='draft'?'selected':''}>⚫ Versteckt</option>
+          </select>
+        </div>
+      </div>
+      <div class="kurs-body" id="kurs-body-${course.id}">
+        <div id="module-list-${course.id}" style="margin-top:0.5rem;">
+          <p style="color:var(--muted);font-size:0.874rem;padding:0.5rem 0;">Lädt Module...</p>
+        </div>
+      </div>
+    </div>`;
+}
+
+async function toggleCourseExpand(courseId) {
+  const card = document.getElementById('kurs-' + courseId);
+  const isExpanded = card.classList.contains('expanded');
+  card.classList.toggle('expanded', !isExpanded);
+  if (!isExpanded) {
+    await loadModules(courseId);
+  }
+}
+
+async function loadModules(courseId) {
+  const container = document.getElementById('module-list-' + courseId);
+  container.innerHTML = '<p style="color:var(--muted);font-size:0.874rem;padding:0.5rem 0;">Lädt...</p>';
+  const { data: modules, error } = await sb.from('modules').select('*').eq('course_id', courseId).order('position');
+  if (error || !modules || modules.length === 0) {
+    container.innerHTML = '<p style="color:var(--muted);font-size:0.874rem;padding:0.5rem 0;">Keine Module gefunden.</p>';
+    return;
+  }
+  container.innerHTML = modules.map(m => `
+    <div>
+      <div class="modul-row" id="modul-${m.id}" onclick="toggleModulExpand('${m.id}', '${courseId}')">
+        <div class="modul-title-row">
+          <span class="modul-expand-icon">▶</span>
+          <span class="modul-name">${m.title}</span>
+        </div>
+        <div class="modul-actions" onclick="event.stopPropagation()">
+          <span class="toggle-label">${m.is_published ? 'Sichtbar' : 'Versteckt'}</span>
+          <button class="toggle-btn ${m.is_published ? 'on' : 'off'}" id="modul-toggle-${m.id}"
+            onclick="toggleModulPublished('${m.id}', ${m.is_published})"></button>
+        </div>
+      </div>
+      <div class="lektionen-body" id="lektionen-${m.id}"></div>
+    </div>
+  `).join('');
+}
+
+async function toggleModulExpand(modulId, courseId) {
+  const row = document.getElementById('modul-' + modulId);
+  const body = document.getElementById('lektionen-' + modulId);
+  const isExpanded = row.classList.contains('expanded');
+  row.classList.toggle('expanded', !isExpanded);
+  if (!isExpanded) {
+    await loadLektionen(modulId);
+    body.style.display = 'block';
+  } else {
+    body.style.display = 'none';
+  }
+}
+
+async function loadLektionen(modulId) {
+  const container = document.getElementById('lektionen-' + modulId);
+  container.innerHTML = '<p style="color:var(--muted);font-size:0.784rem;padding:0.35rem 0;">Lädt...</p>';
+  const { data: lektionen, error } = await sb.from('lessons').select('*').eq('module_id', modulId).order('position');
+  if (error || !lektionen || lektionen.length === 0) {
+    container.innerHTML = '<p style="color:var(--muted);font-size:0.784rem;padding:0.35rem 0;">Keine Lektionen gefunden.</p>';
+    return;
+  }
+  container.innerHTML = lektionen.map(l => `
+    <div class="lektion-row">
+      <span class="lektion-name">${l.title}</span>
+      <div style="display:flex;align-items:center;gap:0.5rem;">
+        <span style="font-size:0.762rem;color:var(--muted);">${l.is_published ? 'Sichtbar' : 'Versteckt'}</span>
+        <button class="toggle-btn ${l.is_published ? 'on' : 'off'}" id="lektion-toggle-${l.id}"
+          onclick="toggleLektionPublished('${l.id}', ${l.is_published})"></button>
+        <span class="save-indicator" id="saved-${l.id}">✓ Gespeichert</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+async function updateCourseStatus(courseId, newStatus) {
+  const { error } = await sb.from('courses').update({ status: newStatus }).eq('id', courseId);
+  if (!error) {
+    const card = document.getElementById('kurs-' + courseId);
+    const badgeEl = card.querySelector('.status-badge');
+    if (badgeEl) badgeEl.outerHTML = statusLabel(newStatus);
+  }
+}
+
+async function toggleModulPublished(modulId, currentVal) {
+  const newVal = !currentVal;
+  const { error } = await sb.from('modules').update({ is_published: newVal }).eq('id', modulId);
+  if (!error) {
+    const btn = document.getElementById('modul-toggle-' + modulId);
+    btn.classList.toggle('on', newVal);
+    btn.classList.toggle('off', !newVal);
+    btn.setAttribute('onclick', `toggleModulPublished('${modulId}', ${newVal})`);
+    const label = btn.previousElementSibling;
+    if (label) label.textContent = newVal ? 'Sichtbar' : 'Versteckt';
+  }
+}
+
+async function toggleLektionPublished(lektionId, currentVal) {
+  const newVal = !currentVal;
+  const { error } = await sb.from('lessons').update({ is_published: newVal }).eq('id', lektionId);
+  if (!error) {
+    const btn = document.getElementById('lektion-toggle-' + lektionId);
+    btn.classList.toggle('on', newVal);
+    btn.classList.toggle('off', !newVal);
+    btn.setAttribute('onclick', `toggleLektionPublished('${lektionId}', ${newVal})`);
+    const label = btn.previousElementSibling;
+    if (label) label.textContent = newVal ? 'Sichtbar' : 'Versteckt';
+    const saved = document.getElementById('saved-' + lektionId);
+    if (saved) { saved.style.display='inline'; setTimeout(()=>saved.style.display='none', 2000); }
+  }
+}
+
 async function forgotPassword() {
   const email = document.getElementById('auth-email').value.trim();
   const msg = document.getElementById('auth-message');
-  if (!email) {
-    msg.style.color = '#c0392b';
-    msg.textContent = 'Bitte zuerst E-Mail-Adresse eingeben.';
-    return;
-  }
-  const { error } = await sb.auth.resetPasswordForEmail(email, {
-    redirectTo: 'https://orthion.netlify.app'
-  });
-  if (error) {
-    msg.style.color = '#c0392b';
-    msg.textContent = 'Fehler: ' + error.message;
-  } else {
-    msg.style.color = '#4A9E78';
-    msg.textContent = '✅ Passwort-Reset-E-Mail wurde gesendet!';
-  }
+  if (!email) { msg.style.color='#c0392b'; msg.textContent='Bitte zuerst E-Mail-Adresse eingeben.'; return; }
+  const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo: 'https://orthion.netlify.app' });
+  if (error) { msg.style.color='#c0392b'; msg.textContent='Fehler: '+error.message; }
+  else { msg.style.color='#4A9E78'; msg.textContent='✅ Passwort-Reset-E-Mail wurde gesendet!'; }
 }
 
 checkSession();
