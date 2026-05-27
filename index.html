@@ -45,7 +45,12 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 3rem
 .btn-primary:hover{background:var(--navy-mid);}
 .btn-secondary{background:transparent;color:var(--violet);border:2px solid var(--violet);padding:0.9rem 2.2rem;border-radius:50px;font-size:1.064rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:all 0.2s;}
 .btn-secondary:hover{background:var(--violet-pale);}
-.hero-trust{display:flex;align-items:center;gap:2rem;}
+.hero-trust{display:flex;align-items:center;gap:2rem;margin-bottom:2.5rem;}
+.hero-stats{display:flex;align-items:center;gap:0;background:white;border:1px solid var(--light-border);border-radius:16px;padding:1.25rem 1.75rem;margin-top:0;box-shadow:0 4px 20px rgba(43,58,103,0.07);}
+.hero-stat{text-align:center;flex:1;}
+.hero-stat-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--navy);line-height:1;}
+.hero-stat-lbl{font-size:0.8rem;color:var(--muted);margin-top:0.2rem;}
+.hero-stat-divider{width:1px;height:36px;background:var(--light-border);flex-shrink:0;}
 .trust-item{display:flex;align-items:center;gap:6px;font-size:0.896rem;color:var(--muted);}
 .trust-dot{width:6px;height:6px;border-radius:50%;background:var(--success);}
 .hero-visual{position:relative;display:flex;align-items:center;justify-content:center;}
@@ -84,7 +89,7 @@ section{padding:5rem 3rem;}
 .section-inner{max-width:1200px;margin:0 auto;}
 .section-eyebrow{font-size:0.874rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--violet);margin-bottom:0.6rem;}
 .section-title{font-family:'Playfair Display',serif;font-size:2.464rem;color:var(--navy);line-height:1.25;margin-bottom:0.9rem;}
-.section-sub{color:var(--muted);font-size:1.12rem;line-height:1.75;max-width:580px;}
+.section-sub{color:var(--muted);font-size:1.12rem;line-height:1.75;max-width:100%;}
 .section-header{margin-bottom:3rem;}
 .section-header.centered{text-align:center;}
 .section-header.centered .section-sub{margin:0 auto;}
@@ -324,7 +329,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .legal-page h2{font-size:1.232rem;font-weight:700;color:var(--navy);margin:2rem 0 0.75rem;}
 .legal-page p{font-size:1.008rem;color:var(--muted);line-height:1.8;margin-bottom:0.75rem;}
 /* ===== VIDEO PLATZHALTER ===== */
-.video-placeholder{background:linear-gradient(145deg,var(--navy-deep),var(--navy-mid));border-radius:20px;aspect-ratio:16/9;width:100%;max-width:580px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;box-shadow:0 20px 60px rgba(43,58,103,0.2);}
+.video-placeholder{background:linear-gradient(145deg,var(--navy-deep),var(--navy-mid));border-radius:20px;aspect-ratio:16/9;width:100%;max-width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;box-shadow:0 20px 60px rgba(43,58,103,0.2);}
 .video-play-btn{width:84px;height:84px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin-bottom:1.25rem;padding-left:4px;}
 .video-hint{font-size:1.1rem;font-weight:600;color:rgba(255,255,255,0.85);}
 .video-sub{font-size:0.8rem;color:rgba(255,255,255,0.45);margin-top:0.3rem;text-align:center;padding:0 2rem;}
@@ -381,7 +386,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 <div class="page active" id="page-home">
   <div class="hero">
     <div class="hero-content">
-      <div class="hero-eyebrow"><span></span>Online-Lernplattform für Deutsch</div>
+      <div class="hero-eyebrow"><span></span>Online-Lernplattform für Muttersprachler</div>
       <h1>Deine Muttersprache.<br><em>Neu entdeckt.</em></h1>
       <p class="hero-sub">Deutsch ist eine der stärksten Ressourcen, die du hast – beruflich wie persönlich. <span class="brand">Orthion</span> hilft dir, sie wirklich zu beherrschen. In deinem Tempo. Ohne Scham. Ohne Druck.</p>
       <div class="hero-btns">
@@ -392,6 +397,15 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
         <div class="trust-item"><span class="trust-dot"></span>Von einer Lehrerin entwickelt</div>
         <div class="trust-item"><span class="trust-dot"></span>Für Jung &amp; Alt</div>
         <div class="trust-item"><span class="trust-dot"></span>100% online</div>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num">3</div><div class="hero-stat-lbl">Kurse</div></div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat"><div class="hero-stat-num">100%</div><div class="hero-stat-lbl">Flexibel</div></div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat"><div class="hero-stat-num">0</div><div class="hero-stat-lbl">Scham nötig</div></div>
+        <div class="hero-stat-divider"></div>
+        <div class="hero-stat"><div class="hero-stat-num">1</div><div class="hero-stat-lbl">Expertin</div></div>
       </div>
     </div>
     <div class="hero-visual">
@@ -415,7 +429,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
           <!-- BILD-PLATZHALTER: Junger Mensch, ca. 20–30, lernt am Laptop -->
           <!-- Empfehlung: unsplash.com → Suche "young adult laptop studying smiling" -->
           <div class="zg-img-wrap">
-            <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=500&q=80" alt="Junge Person lernt" class="zg-img" onerror="this.style.display='none'">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&q=80" alt="Junge Person lernt" class="zg-img" onerror="this.style.display='none'">
           </div>
           <div class="zg-content">
             <div class="zg-icon">🎓</div>
@@ -427,7 +441,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
           <!-- BILD-PLATZHALTER: Ältere Person, 50+, lächelnd am Schreibtisch -->
           <!-- Empfehlung: unsplash.com → Suche "senior woman confident desk smiling" -->
           <div class="zg-img-wrap">
-            <img src="https://images.unsplash.com/photo-1573497019236-17f8177b81e8?w=500&q=80" alt="Erfahrene Person lernt" class="zg-img" onerror="this.style.display='none'">
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=500&q=80" alt="Erfahrene Person lernt" class="zg-img" onerror="this.style.display='none'">
           </div>
           <div class="zg-content">
             <div class="zg-icon">💼</div>
@@ -446,7 +460,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
         <!-- BILD-PLATZHALTER: Person schreibt selbstbewusst am Schreibtisch -->
         <!-- Empfehlung: unsplash.com → Suche "adult writing desk confident" -->
         <img
-          src="https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=640&q=80"
+          src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=640&q=80"
           alt="Person lernt mit Orthion"
           class="section-img"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
@@ -827,7 +841,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
     <h2>Angaben gemäß § 5 ECG</h2>
     <p><strong>Unternehmensname:</strong> Orthion<br><strong>Inhaberin:</strong> [Ihr Name]<br><strong>Adresse:</strong> [Ihre Adresse], Österreich<br><strong>E-Mail:</strong> office@orthion.at</p>
     <h2>Unternehmensgegenstand</h2>
-    <p>Online-Lernplattform für Deutsch – Rechtschreibung, Grammatik und Textproduktion.</p>
+    <p>Online-Lernplattform für Muttersprachler – Rechtschreibung, Grammatik und Textproduktion.</p>
     <h2>Haftungsausschluss</h2>
     <p>Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.</p>
     <h2>Urheberrecht</h2>
