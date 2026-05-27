@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Orthion – Deutsch verstehen. Deutsch beherrschen.</title>
+<title>Orthion – Starke Sprache, starker Eindruck.</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -323,6 +323,33 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .legal-page h1{font-family:'Playfair Display',serif;font-size:2.464rem;color:var(--navy);margin-bottom:2rem;}
 .legal-page h2{font-size:1.232rem;font-weight:700;color:var(--navy);margin:2rem 0 0.75rem;}
 .legal-page p{font-size:1.008rem;color:var(--muted);line-height:1.8;margin-bottom:0.75rem;}
+/* ===== VIDEO PLATZHALTER ===== */
+.video-placeholder{background:linear-gradient(145deg,var(--navy-deep),var(--navy-mid));border-radius:20px;aspect-ratio:16/9;width:100%;max-width:520px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;box-shadow:0 20px 60px rgba(43,58,103,0.2);}
+.video-play-btn{width:70px;height:70px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1rem;padding-left:4px;}
+.video-hint{font-size:1rem;font-weight:600;color:rgba(255,255,255,0.85);}
+.video-sub{font-size:0.8rem;color:rgba(255,255,255,0.45);margin-top:0.3rem;text-align:center;padding:0 2rem;}
+
+/* ===== ZWEI-SPALTEN SEKTIONEN ===== */
+.two-col-section{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.was-ist-section{padding:5rem 3rem;background:var(--white);}
+.was-ist-text h2{margin-bottom:1.25rem;}
+.was-ist-text p{font-size:1.008rem;color:var(--muted);line-height:1.8;margin-bottom:1rem;}
+.section-img{width:100%;border-radius:20px;object-fit:cover;max-height:480px;box-shadow:0 16px 48px rgba(43,58,103,0.1);}
+.img-fallback{background:var(--blue-lighter);border-radius:20px;aspect-ratio:4/5;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--muted);font-size:3rem;text-align:center;gap:0.5rem;}
+.img-fallback small{font-size:0.84rem;line-height:1.5;}
+.orthion-pills{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.5rem;}
+.o-pill{background:var(--blue-lighter);color:var(--navy-mid);font-size:0.874rem;font-weight:600;padding:0.3rem 0.9rem;border-radius:50px;}
+
+/* ===== ZIELGRUPPE ===== */
+.zielgruppe-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1rem;}
+.zg-card{background:white;border:1px solid var(--light-border);border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(43,58,103,0.06);}
+.zg-img-wrap{height:220px;overflow:hidden;background:var(--blue-lighter);}
+.zg-img{width:100%;height:100%;object-fit:cover;}
+.zg-content{padding:1.75rem;}
+.zg-icon{font-size:2rem;margin-bottom:0.75rem;}
+.zg-content h3{font-family:'Playfair Display',serif;font-size:1.232rem;color:var(--navy);margin-bottom:0.6rem;}
+.zg-content p{font-size:0.952rem;color:var(--muted);line-height:1.7;}
+
 .back-bar{padding:1rem 3rem;border-bottom:1px solid var(--light-border);display:flex;align-items:center;gap:8px;}
 .back-btn{background:none;border:none;font-size:0.952rem;color:var(--blue-soft);cursor:pointer;font-family:'Nunito',sans-serif;display:flex;align-items:center;gap:6px;}
 .back-btn:hover{color:var(--navy);}
@@ -335,13 +362,12 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
     <div class="logo-mark"><div class="c1"></div><div class="c2"></div></div>
     <div class="nav-brand">
       <span class="nav-brand-name">ORTHION</span>
-      <span class="nav-brand-tagline">Deutsch verstehen. Deutsch beherrschen.</span>
+      <span class="nav-brand-tagline">Starke Sprache, starker Eindruck.</span>
     </div>
   </a>
   <ul class="nav-links">
     <li><a onclick="showPage('home')" id="nav-home" class="active">Startseite</a></li>
     <li><a onclick="showPage('kurse')" id="nav-kurse">Kurse</a></li>
-    <li><a onclick="showPage('services')" id="nav-services">Dienstleistungen</a></li>
     <li><a onclick="showPage('about')" id="nav-about">Über uns</a></li>
     <li><a onclick="showPage('contact')" id="nav-contact">Kontakt</a></li>
   </ul>
@@ -356,143 +382,117 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
   <div class="hero">
     <div class="hero-content">
       <div class="hero-eyebrow"><span></span>Online-Lernplattform für Deutsch</div>
-      <h1><span class="brand" style="color:var(--navy);font-style:normal;">Orthion</span><em> – starke Sprache, starker Eindruck.</em></h1>
-      <p class="hero-sub"><span class="brand">Orthion</span> bietet strukturierte Online-Kurse für alle, die ihre Deutschkenntnisse gezielt verbessern wollen – beruflich oder persönlich, in eigenem Tempo.</p>
-      <p class="hero-slogan">„Starke Sprache, starker Eindruck."</p>
+      <h1>Deine Muttersprache.<br><em>Neu entdeckt.</em></h1>
+      <p class="hero-sub">Deutsch ist eine der stärksten Ressourcen, die du hast – beruflich wie persönlich. <span class="brand">Orthion</span> hilft dir, sie wirklich zu beherrschen. In deinem Tempo. Ohne Scham. Ohne Druck.</p>
       <div class="hero-btns">
         <button class="btn-primary" onclick="showPage('kurse')">Kurse entdecken</button>
         <button class="btn-secondary" onclick="showPage('about')">Über Orthion</button>
       </div>
       <div class="hero-trust">
         <div class="trust-item"><span class="trust-dot"></span>Von einer Lehrerin entwickelt</div>
-        <div class="trust-item"><span class="trust-dot"></span>Modularer Aufbau</div>
-        <div class="trust-item"><span class="trust-dot"></span>Mit Abschlusstest</div>
+        <div class="trust-item"><span class="trust-dot"></span>Für Jung &amp; Alt</div>
+        <div class="trust-item"><span class="trust-dot"></span>100% online</div>
       </div>
     </div>
     <div class="hero-visual">
-      <div class="hero-dashboard">
-        <div class="dash-header">
-          <span class="dash-title">Mein Lernfortschritt</span>
-          <span class="dash-badge">Aktiv</span>
-        </div>
-        <div class="progress-ring-wrap">
-          <div class="ring">
-            <svg width="64" height="64" viewBox="0 0 64 64">
-              <circle class="ring-bg" cx="32" cy="32" r="28"/>
-              <circle class="ring-fill" cx="32" cy="32" r="28"/>
-            </svg>
-            <div class="ring-text">70%</div>
-          </div>
-          <div>
-            <div class="progress-course">Rechtschreibung &amp; Grammatik</div>
-            <div class="progress-sub">Modul 1 von 5 abgeschlossen</div>
-            <div class="progress-modules">▸ Aktuell: Die Welt der Rechtschreibung</div>
-          </div>
-        </div>
-        <div class="module-list">
-          <div class="module-item">
-            <div class="module-status done">✓</div>
-            <div class="module-text"><div class="module-name">Die Welt der deutschen Sprache</div><div class="module-type">📄 Lektion</div></div>
-          </div>
-          <div class="module-item">
-            <div class="module-status active">▶</div>
-            <div class="module-text"><div class="module-name">Die Welt der Rechtschreibung</div><div class="module-type">📝 In Bearbeitung</div></div>
-          </div>
-          <div class="module-item">
-            <div class="module-status locked">🔒</div>
-            <div class="module-text"><div class="module-name">Die Welt der Grammatik</div><div class="module-type">Bald verfügbar</div></div>
-          </div>
-        </div>
-        <div class="dash-media">
-          <div class="media-pill"><span>📄</span><strong>Lektionen</strong></div>
-          <div class="media-pill violet"><span>✅</span><strong>Übungen</strong></div>
-          <div class="media-pill"><span>📝</span><strong>Tests</strong></div>
-          <div class="media-pill violet"><span>🎓</span><strong>Abschluss</strong></div>
-        </div>
+      <div class="video-placeholder">
+        <div class="video-play-btn">▶</div>
+        <p class="video-hint">Ihr Werbevideo kommt hier hin</p>
+        <p class="video-sub">Sobald Ihr Video fertig ist, ersetzen wir diesen Platzhalter</p>
       </div>
     </div>
   </div>
 
-  <div class="stats-bar">
-    <div class="stat-item"><div class="stat-num">3</div><div class="stat-lbl">Kurs-Kategorien</div></div>
-    <div class="stat-item"><div class="stat-num">18+</div><div class="stat-lbl">Lernmodule</div></div>
-    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-lbl">Online &amp; flexibel</div></div>
-    <div class="stat-item"><div class="stat-num">1</div><div class="stat-lbl">Expertin für Deutsch</div></div>
-  </div>
-
-  <section class="courses-section">
-    <div class="section-inner">
-      <div class="section-header">
-        <div class="section-eyebrow">Unsere Kursangebote</div>
-        <h2 class="section-title">Für jede Lebenssituation der passende Kurs</h2>
-        <p class="section-sub">Ob Matura-Vorbereitung, berufliche Weiterbildung oder persönliche Verbesserung – <span class="brand">Orthion</span> begleitet Sie Schritt für Schritt.</p>
-      </div>
-      <div class="courses-grid">
-        <div class="course-card" onclick="showPage('kurse')">
-          <div class="course-header"><div class="course-icon" style="background:#F0ECF8;">📚</div><div class="course-tag tag-matura">Matura-Vorbereitung</div><div class="course-name">Deutsch für die Matura</div><div class="course-desc">Gezieltes Training für Textsorten, Grammatik und schriftliche Kompetenz – ideal für Lehre mit Matura und Externistenmatura.</div></div>
-          <div class="course-topics"><span class="topic-chip">Textsorten</span><span class="topic-chip">Erörterung</span><span class="topic-chip">Leseverstehen</span><span class="topic-chip">Zusammenfassung</span></div>
-          <div class="course-meta"><div class="course-modules-info"><strong>7 Module</strong> · Abschlusstest inklusive</div><button class="course-arrow-btn">→</button></div>
-        </div>
-        <div class="course-card" onclick="showPage('kurse')">
-          <div class="course-header"><div class="course-icon" style="background:#EBF0F8;">💼</div><div class="course-tag tag-berufsbegleitend">Beruflich &amp; Begleitend</div><div class="course-name">Deutsch im Beruf</div><div class="course-desc">Für Berufstätige, die E-Mails, Berichte und formelle Texte sicher und professionell verfassen möchten – zeitlich flexibel.</div></div>
-          <div class="course-topics"><span class="topic-chip">E-Mails</span><span class="topic-chip">Berichte</span><span class="topic-chip">Rechtschreibung</span><span class="topic-chip">Zeichensetzung</span></div>
-          <div class="course-meta"><div class="course-modules-info"><strong>6 Module</strong> · Selbsttests je Modul</div><button class="course-arrow-btn">→</button></div>
-        </div>
-        <div class="course-card" onclick="showPage('kurse')">
-          <div class="course-header"><div class="course-icon" style="background:#E8F5EE;">✏️</div><div class="course-tag tag-erwachsene">Für Erwachsene</div><div class="course-name">Rechtschreibung &amp; Grammatik</div><div class="course-desc">Für alle, die Lücken in der Rechtschreibung und Grammatik schließen möchten – klar erklärt, ohne Schuldruck, in eigenem Tempo.</div></div>
-          <div class="course-topics"><span class="topic-chip">Groß/Kleinschreibung</span><span class="topic-chip">Kommaregeln</span><span class="topic-chip">Grammatik</span><span class="topic-chip">Wortarten</span></div>
-          <div class="course-meta"><div class="course-modules-info"><strong>5 Module</strong> · Lernvideos inklusive</div><button class="course-arrow-btn">→</button></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
+  <!-- ZIELGRUPPE -->
+  <section style="background:var(--offwhite);">
     <div class="section-inner">
       <div class="section-header centered">
-        <div class="section-eyebrow">So funktioniert Orthion</div>
-        <h2 class="section-title">In vier Schritten zum Ziel</h2>
+        <div class="section-eyebrow">Für wen ist Orthion?</div>
+        <h2 class="section-title">Für alle, die Deutsch als Muttersprache haben –<br>egal in welchem Alter.</h2>
       </div>
-      <div class="steps-row">
-        <div class="step done"><div class="step-num">1</div><div class="step-title">Kurs wählen</div><div class="step-text">Wählen Sie den Kurs, der zu Ihrer Lebenssituation und Ihren Zielen passt.</div></div>
-        <div class="step done"><div class="step-num">2</div><div class="step-title">Buchen &amp; Zugang erhalten</div><div class="step-text">Nach der Buchung erhalten Sie Ihre persönlichen Zugangsdaten direkt per E-Mail.</div></div>
-        <div class="step"><div class="step-num">3</div><div class="step-title">Modul für Modul lernen</div><div class="step-text">Lektionen und Übungen in Ihrem Tempo – wann und wo Sie wollen.</div></div>
-        <div class="step"><div class="step-num">4</div><div class="step-title">Testen &amp; abschließen</div><div class="step-text">Modul-Selbsttests und ein großer Abschlusstest bestätigen Ihren Lernfortschritt.</div></div>
+      <div class="zielgruppe-grid">
+        <div class="zg-card">
+          <!-- BILD-PLATZHALTER: Junger Mensch, ca. 20–30, lernt am Laptop -->
+          <!-- Empfehlung: unsplash.com → Suche "young adult laptop studying smiling" -->
+          <div class="zg-img-wrap">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&q=80" alt="Junge Person lernt" class="zg-img" onerror="this.style.display='none'">
+          </div>
+          <div class="zg-content">
+            <div class="zg-icon">🎓</div>
+            <h3>Jung &amp; im Aufbau</h3>
+            <p>Du hast die Schule hinter dir und merkst: Da gibt es noch Lücken. Matura nachholen, Bewerbungen schreiben, im Beruf ankommen – mit sicherer Sprache gelingt alles besser.</p>
+          </div>
+        </div>
+        <div class="zg-card">
+          <!-- BILD-PLATZHALTER: Ältere Person, 50+, lächelnd am Schreibtisch -->
+          <!-- Empfehlung: unsplash.com → Suche "senior woman confident desk smiling" -->
+          <div class="zg-img-wrap">
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=500&q=80" alt="Erfahrene Person lernt" class="zg-img" onerror="this.style.display='none'">
+          </div>
+          <div class="zg-content">
+            <div class="zg-icon">💼</div>
+            <h3>Erfahren &amp; berufstätig</h3>
+            <p>Du trägst dieses Gefühl schon lange mit dir. Es ist nie zu spät. Mit <span class="brand">Orthion</span> holst du nach, was du brauchst – ganz für dich, ohne dass jemand davon wissen muss.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <div class="media-strip">
-    <div class="media-strip-inner">
-      <div><h3>Alle Inhaltsformate</h3><p>Lernen Sie so, wie es für Sie am besten passt.</p></div>
-      <div class="media-icons">
-        <div class="media-icon"><span>📄</span><strong>Lektionen</strong></div>
-        <div class="media-icon"><span>✅</span><strong>Übungen</strong></div>
-        <div class="media-icon"><span>📝</span><strong>Tests</strong></div>
-        <div class="media-icon"><span>🔗</span><strong>Weiterführende Links</strong></div>
-        <div class="media-icon"><span>🎓</span><strong>Abschlussprüfung</strong></div>
+  <!-- WAS IST ORTHION -->
+  <section class="was-ist-section">
+    <div class="section-inner two-col-section">
+      <div>
+        <!-- BILD-PLATZHALTER: Person schreibt selbstbewusst am Schreibtisch -->
+        <!-- Empfehlung: unsplash.com → Suche "adult writing desk confident" -->
+        <img
+          src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=640&q=80"
+          alt="Person lernt mit Orthion"
+          class="section-img"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+        >
+        <div class="img-fallback" style="display:none;">
+          <span>📝</span>
+          <small>Bild: Person beim Schreiben<br>Von unsplash.com einfügen</small>
+        </div>
+      </div>
+      <div class="was-ist-text">
+        <div class="section-eyebrow">Was ist Orthion?</div>
+        <h2 class="section-title">Aus <em>Ortho</em>graphie und <em>Online</em> entstand <span class="brand">Orthion</span>.</h2>
+        <p>Sprache ist eine der stärksten Ressourcen, die du hast. Sie formt, wie du denkst, wie du wirkst und wie andere dich wahrnehmen. Ob SMS, E-Mail, Bewerbung oder Gespräch mit dem Chef – ohne Sprache kommst du nicht weit.</p>
+        <p>Viele versuchen heute, sprachliche Lücken mit KI zu überbrücken. Doch wer das tut, gibt Macht aus der Hand. <strong>„Wer nichts weiß, muss alles glauben."</strong> Die eigene Sprachkompetenz an eine Maschine abzugeben bedeutet, abhängig zu werden – und den eigenen Ausdruck zu verlieren.</p>
+        <p>Dazu kommt: Schriftliche Kompetenz wirkt sich direkt auf die mündliche aus. Der Eindruck, den du hinterlässt – bei Kollegen, Freunden, im Vorstellungsgespräch – hat viel mit deiner eigenen Sprache zu tun. Wer sicher schreibt, spricht auch sicherer.</p>
+        <p>Viele Menschen, die mit Deutsch aufgewachsen sind, tragen Lücken mit sich – aus der Schule mitgenommen, lange verdrängt. <strong><span class="brand">Orthion</span> gibt dir diese Kompetenz zurück.</strong> Hier lernst du deine eigene Muttersprache – ohne Blicke, ohne Bewertung, ganz in deinem Tempo.</p>
+        <div class="orthion-pills">
+          <span class="o-pill">🎯 Strukturiert</span>
+          <span class="o-pill">⏱️ Flexibel</span>
+          <span class="o-pill">💙 Wertschätzend</span>
+          <span class="o-pill">🔒 Privat &amp; online</span>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
+  <!-- WARUM ORTHION -->
   <section class="features-section">
     <div class="section-inner">
       <div class="section-header">
         <div class="section-eyebrow">Warum Orthion?</div>
-        <h2 class="section-title">Didaktisch durchdacht.<br>Persönlich begleitet.</h2>
-        <p class="section-sub">Entwickelt von einer studierten Lehrerin – mit echtem Fachwissen und pädagogischem Know-how.</p>
+        <h2 class="section-title">Didaktisch durchdacht.<br>Ohne Druck.</h2>
+        <p class="section-sub">Entwickelt von einer studierten Lehrerin – mit echtem Fachwissen und einem tiefen Verständnis dafür, wie Erwachsene lernen.</p>
       </div>
       <div class="features-grid">
         <div class="feature-card"><div class="feat-icon violet">🎓</div><div class="feat-title">Von einer Expertin entwickelt</div><div class="feat-text">Alle Inhalte sind von einer studierten Lehrerin fachlich und didaktisch aufbereitet – echtes Wissen, keine KI-generierten Inhalte.</div></div>
-        <div class="feature-card"><div class="feat-icon blue">🔒</div><div class="feat-title">Geschützter Mitgliederbereich</div><div class="feat-text">Jede Kundin, jeder Kunde erhält individuelle Zugangsdaten mit definiertem Ablaufdatum – Ihre Inhalte bleiben exklusiv.</div></div>
-        <div class="feature-card"><div class="feat-icon violet">🧩</div><div class="feat-title">Modularer Kursaufbau</div><div class="feat-text">Lernen in klaren Schritten: Jedes Modul baut aufeinander auf, mit Test am Ende jedes Abschnitts.</div></div>
-        <div class="feature-card"><div class="feat-icon blue">⏱️</div><div class="feat-title">Flexibles Lerntempo</div><div class="feat-text">Kein Druck, kein fixer Stundenplan – lernen Sie wann und wo Sie wollen, solange Ihr Zugang aktiv ist.</div></div>
-        <div class="feature-card"><div class="feat-icon violet">📊</div><div class="feat-title">Selbsttests &amp; Abschlussprüfung</div><div class="feat-text">Nach jedem Modul ein Selbsttest, am Ende ein großer Abschlusstest – so sehen Sie genau, was Sie gelernt haben.</div></div>
-        <div class="feature-card"><div class="feat-icon blue">📄</div><div class="feat-title">Strukturierte Lerninhalte</div><div class="feat-text">Lektionen und Übungen ergänzen einander – Lernen über mehrere Schritte vertieft das Verstehen nachhaltig.</div></div>
+        <div class="feature-card"><div class="feat-icon blue">🔒</div><div class="feat-title">Geschützter Mitgliederbereich</div><div class="feat-text">Du erhältst individuelle Zugangsdaten – deine Inhalte sind exklusiv und nur für dich zugänglich.</div></div>
+        <div class="feature-card"><div class="feat-icon violet">🧩</div><div class="feat-title">Modularer Kursaufbau</div><div class="feat-text">Lernen in klaren Schritten: Jedes Modul baut aufeinander auf – übersichtlich, strukturiert, ohne zu überfordern.</div></div>
+        <div class="feature-card"><div class="feat-icon blue">⏱️</div><div class="feat-title">Flexibles Lerntempo</div><div class="feat-text">Kein Druck, kein fixer Stundenplan – lerne wann und wo du willst, solange dein Zugang aktiv ist.</div></div>
+        <div class="feature-card"><div class="feat-icon violet">📊</div><div class="feat-title">Selbsttests &amp; Abschlussprüfung</div><div class="feat-text">Nach jedem Modul ein Selbsttest, am Ende ein großer Abschlusstest – so siehst du genau, was du gelernt hast.</div></div>
+        <div class="feature-card"><div class="feat-icon blue">💙</div><div class="feat-title">Ohne Scham &amp; Bewertungsdruck</div><div class="feat-text">Kein Klassenzimmer, keine Blicke. Du lernst ganz für dich – in einer Atmosphäre des Vertrauens und der Wertschätzung.</div></div>
       </div>
     </div>
   </section>
 
+  <!-- KUNDENSTIMMEN -->
   <section>
     <div class="section-inner">
       <div class="section-header centered">
@@ -500,16 +500,29 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
         <h2 class="section-title">Was Lernende sagen</h2>
       </div>
       <div class="testi-grid">
-        <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">„Ich habe die Matura mit Auszeichnung bestanden – ohne <span class="brand">Orthion</span> hätte ich die Textsorten nie so gut gemeistert."</p><div class="testi-author"><div class="testi-avatar av-violet">MK</div><div><div class="testi-name">Maria K.</div><div class="testi-role">Lehre mit Matura, 22 Jahre</div></div></div></div>
-        <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">„Als Berufstätiger hatte ich keine Zeit für Präsenzkurse. <span class="brand">Orthion</span> hat mir geholfen, meine E-Mails fehlerfreier zu schreiben."</p><div class="testi-author"><div class="testi-avatar av-navy">TW</div><div><div class="testi-name">Thomas W.</div><div class="testi-role">Techniker, 35 Jahre</div></div></div></div>
-        <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">„Ich habe mich immer für meine Rechtschreibung geschämt. Jetzt schreibe ich mit viel mehr Sicherheit. Die Lektionen kann ich auch unterwegs lesen!"</p><div class="testi-author"><div class="testi-avatar av-blue">SR</div><div><div class="testi-name">Sandra R.</div><div class="testi-role">Verwaltungsangestellte, 41 Jahre</div></div></div></div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">„Ich bin 52 Jahre alt und habe mein ganzes Leben mit der Angst gelebt, dass jemand meine Rechtschreibung sieht. In der Schule war ich schlecht – das hat mich nie losgelassen. Mit <span class="brand">Orthion</span> habe ich Schritt für Schritt nachgeholt, was ich damals verpasst habe. Heute schreibe ich E-Mails ohne dieses Zittern."</p>
+          <div class="testi-author"><div class="testi-avatar av-navy">HM</div><div><div class="testi-name">Herbert M.</div><div class="testi-role">Handwerksmeister, 52 Jahre</div></div></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">„Ich habe jahrelang Berichte und E-Mails von Kollegen Korrekturlesen lassen – heimlich. Die Scham war riesig. <span class="brand">Orthion</span> hat mir geholfen, das endlich selbst in den Griff zu bekommen. Ganz ohne dass jemand davon weiß."</p>
+          <div class="testi-author"><div class="testi-avatar av-violet">SR</div><div><div class="testi-name">Sandra R.</div><div class="testi-role">Bürokauffrau, 41 Jahre</div></div></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">„Mit 67 dachte ich, das lerne ich nie mehr. Aber die Lektionen sind so klar erklärt – ich verstehe jetzt Dinge, die mir in der Schule nie jemand richtig beigebracht hat. Das Gefühl, endlich sicher zu schreiben, ist unbezahlbar."</p>
+          <div class="testi-author"><div class="testi-avatar av-blue">EK</div><div><div class="testi-name">Elisabeth K.</div><div class="testi-role">Pensionistin, 67 Jahre</div></div></div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- CTA -->
   <div class="cta-section">
-    <h2>Bereit, Ihr Deutsch auf das nächste Level zu bringen?</h2>
-    <p>Wählen Sie Ihren Kurs, lernen Sie in Ihrem Tempo – und zeigen Sie, was in Ihnen steckt.</p>
+    <h2>Bereit, dein Deutsch auf das nächste Level zu bringen?</h2>
+    <p>Wähle deinen Kurs, lerne in deinem Tempo – ganz für dich, ohne Druck.</p>
     <button class="btn-white" onclick="showPage('kurse')">Jetzt Kurs wählen</button>
     <button class="btn-white-outline" onclick="showPage('contact')">Frage stellen</button>
   </div>
@@ -518,16 +531,15 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
     <div class="footer-grid">
       <div class="footer-brand">
         <div style="color:white;font-family:'Playfair Display',serif;font-size:1.456rem;font-weight:700;">ORTHION</div>
-        <p>Deutsch verstehen. Deutsch beherrschen. Eine Online-Lernplattform für Menschen, die ihre Sprachkompetenz gezielt und nachhaltig stärken wollen.</p>
+        <p>Starke Sprache, starker Eindruck. Eine Online-Lernplattform für alle, die ihre Muttersprache gezielt stärken wollen – in eigenem Tempo, ohne Scham.</p>
       </div>
       <div class="footer-col"><h4>Kurse</h4><ul><li onclick="showPage('kurse')">Matura-Vorbereitung</li><li onclick="showPage('kurse')">Deutsch im Beruf</li><li onclick="showPage('kurse')">Rechtschreibung &amp; Grammatik</li></ul></div>
-      <div class="footer-col"><h4>Orthion</h4><ul><li onclick="showPage('about')">Über uns</li><li onclick="showPage('services')">Dienstleistungen</li><li onclick="showPage('contact')">Kontakt</li><li onclick="showPage('login')">Mitgliederbereich</li></ul></div>
+      <div class="footer-col"><h4>Orthion</h4><ul><li onclick="showPage('about')">Über uns</li><li onclick="showPage('contact')">Kontakt</li><li onclick="showPage('login')">Mitgliederbereich</li></ul></div>
       <div class="footer-col"><h4>Rechtliches</h4><ul><li onclick="showPage('impressum')">Impressum</li><li onclick="showPage('datenschutz')">Datenschutz</li><li>AGB</li></ul></div>
     </div>
     <div style="border-top:1px solid rgba(255,255,255,0.08);padding:1.75rem 0;max-width:1200px;margin:0 auto;">
       <p style="font-size:0.806rem;color:rgba(255,255,255,0.3);line-height:1.8;text-align:center;">
         <span style="color:rgba(255,255,255,0.45);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;font-size:0.762rem;display:block;margin-bottom:0.4rem;">Quellenangaben</span>
-        Die Inhalte zu Rechtschreibung und Grammatik auf dieser Plattform stützen sich auf folgende Quellen:
         Rat für Deutsche Rechtschreibung (amtliches Regelwerk) &nbsp;·&nbsp;
         Duden – Die deutsche Rechtschreibung &nbsp;·&nbsp;
         Duden – Das große Wörterbuch der deutschen Sprache &nbsp;·&nbsp;
@@ -576,7 +588,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
   </section>
   <div class="cta-section" style="padding:4rem 3rem;">
     <h2 style="font-size:2.24rem;">Haben Sie Fragen zum passenden Kurs?</h2>
-    <p>Ich berate Sie gerne persönlich – kostenlos und unverbindlich.</p>
+    <p>Ich berate dich gerne persönlich – kostenlos und unverbindlich.</p>
     <button class="btn-white" onclick="showPage('contact')">Jetzt Kontakt aufnehmen</button>
   </div>
 </div>
@@ -620,7 +632,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
     <p><span class="brand">Orthion</span> richtet sich an alle, deren Muttersprache Deutsch ist – und die ihre Sprachkompetenz gezielt, ohne Druck und in eigenem Tempo stärken möchten.</p>
   </div>
   <div class="about-content">
-    <div class="about-img-placeholder"><span>👩‍🏫</span>Ihr Foto kommt hier hin</div>
+    <div class="about-img-placeholder"><span>👩‍🏫</span>Dein Foto kommt hier hin</div>
     <div class="about-text">
       <h2>Was ist <span class="brand">Orthion</span>?</h2>
       <p><span class="brand">Orthion</span> ist eine innovative Plattform, die sich gezielt an Menschen richtet, deren Muttersprache Deutsch ist.</p>
@@ -650,10 +662,10 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 <!-- KONTAKT -->
 <div class="page" id="page-contact">
   <div class="back-bar"><button class="back-btn" onclick="showPage('home')">← Zurück zur Startseite</button></div>
-  <div class="contact-hero"><h1>Kontakt</h1><p>Fragen, Wünsche oder eine persönliche Kursberatung? Ich freue mich auf Ihre Nachricht.</p></div>
+  <div class="contact-hero"><h1>Kontakt</h1><p>Fragen, Wünsche oder eine persönliche Kursberatung? Ich freue mich auf deine Nachricht.</p></div>
   <div class="contact-body">
     <div class="contact-info">
-      <h3>So erreichen Sie <span class="brand">Orthion</span></h3>
+      <h3>So erreichst du <span class="brand">Orthion</span></h3>
       <p>Ich beantworte Anfragen persönlich und in der Regel innerhalb von 1–2 Werktagen.</p>
       <div class="contact-detail"><div class="c-icon">✉️</div><div class="c-info"><strong>E-Mail</strong><span>office@orthion.at</span></div></div>
       <div class="contact-detail"><div class="c-icon">📍</div><div class="c-info"><strong>Standort</strong><span>Österreich</span></div></div>
@@ -664,14 +676,14 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
       <div class="form-grid">
         <div class="form-group"><label>Vorname</label><input type="text" placeholder="Maria"></div>
         <div class="form-group"><label>Nachname</label><input type="text" placeholder="Mustermann"></div>
-        <div class="form-group full"><label>E-Mail-Adresse</label><input type="email" placeholder="ihre@email.at"></div>
+        <div class="form-group full"><label>E-Mail-Adresse</label><input type="email" placeholder="deine@email.at"></div>
         <div class="form-group full"><label>Ich interessiere mich für</label>
           <select><option>Matura-Vorbereitung</option><option>Deutsch im Beruf</option><option>Rechtschreibung &amp; Grammatik</option><option>Maßgeschneidertes Angebot</option><option>Allgemeine Frage</option></select>
         </div>
-        <div class="form-group full"><label>Nachricht</label><textarea placeholder="Schreiben Sie mir gerne Ihre Fragen, Wünsche oder Ihren Lernbedarf ..."></textarea></div>
+        <div class="form-group full"><label>Nachricht</label><textarea placeholder="Schreib mir gerne deine Fragen, Wünsche oder deinen Lernbedarf ..."></textarea></div>
       </div>
       <button class="btn-primary" style="width:100%;margin-top:0.5rem;" onclick="document.querySelector('.form-success').style.display='block'">Nachricht absenden</button>
-      <div class="form-success">✅ Vielen Dank! Ihre Nachricht wurde gesendet. Ich melde mich in Kürze bei Ihnen.</div>
+      <div class="form-success">✅ Vielen Dank! Deine Nachricht wurde gesendet. Ich melde mich in Kürze bei dir.</div>
     </div>
   </div>
 </div>
@@ -684,17 +696,17 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
       <div class="login-logo">
         <div class="logo-mark" style="display:block;margin:0 auto 0.75rem;"><div class="c1"></div><div class="c2"></div></div>
         <h2>Mitgliederbereich</h2>
-        <p>Bitte melden Sie sich mit Ihren persönlichen Zugangsdaten an.</p>
+        <p>Melde dich mit deinen persönlichen Zugangsdaten an.</p>
       </div>
       <div class="login-form">
-        <div class="form-group"><label>E-Mail</label><input id="auth-email" type="email" placeholder="ihre@email.at"></div>
+        <div class="form-group"><label>E-Mail</label><input id="auth-email" type="email" placeholder="deine@email.at"></div>
         <div class="form-group"><label>Passwort</label><input id="auth-password" type="password" placeholder="••••••••"></div>
         <div class="login-remember"><input type="checkbox"> Angemeldet bleiben</div>
         <button class="btn-login-full" onclick="login()">Anmelden</button>
         <button class="btn-login-full" style="margin-top:0.5rem;background:var(--violet);" onclick="register()">Neu registrieren</button>
         <p id="auth-message"></p>
       </div>
-      <div class="login-expire-note">🔒 Ihr Zugang ist zeitlich begrenzt und läuft nach dem vereinbarten Zeitraum automatisch ab. Für Verlängerungen wenden Sie sich bitte an <a href="mailto:office@orthion.at">office@orthion.at</a>.</div>
+      <div class="login-expire-note">🔒 Dein Zugang ist zeitlich begrenzt und läuft nach dem vereinbarten Zeitraum automatisch ab. Für Verlängerungen wende dich bitte an <a href="mailto:office@orthion.at">office@orthion.at</a>.</div>
       <div class="login-footer"><a onclick="forgotPassword()">Passwort vergessen?</a></div>
     </div>
   </div>
@@ -720,7 +732,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
     <div class="dash-main">
       <div class="dash-welcome">
         <h2 id="dash-welcome-text">Willkommen zurück!</h2>
-        <p>Hier sind Ihre freigeschalteten Kursinhalte.</p>
+        <p>Hier sind deine freigeschalteten Kursinhalte.</p>
       </div>
       <div id="dash-kurse-bereich">
         <div class="loading-dash">
@@ -798,7 +810,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
     <div class="login-card" style="text-align:center;">
       <div style="font-size:3rem;margin-bottom:1rem;">⏳</div>
       <h2 style="font-family:'Playfair Display',serif;font-size:1.792rem;color:var(--navy);margin-bottom:0.75rem;">Zugang wird bearbeitet</h2>
-      <p style="font-size:1.008rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem;">Vielen Dank für Ihre Registrierung! Ihr Zugang wird gerade von uns bearbeitet. Sie erhalten eine E-Mail sobald er freigeschaltet wurde.</p>
+      <p style="font-size:1.008rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem;">Vielen Dank für deine Registrierung! Dein Zugang wird gerade von uns bearbeitet. Du erhältst eine E-Mail sobald er freigeschaltet wurde.</p>
       <div style="background:var(--blue-pale);border-radius:12px;padding:1rem;font-size:0.918rem;color:var(--navy-mid);margin-bottom:1.5rem;">
         📧 Bei Fragen: <a href="mailto:office@orthion.at" style="color:var(--violet);">office@orthion.at</a>
       </div>
@@ -831,15 +843,15 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
     <h2>Verantwortliche Stelle</h2>
     <p>Orthion, [Ihr Name], [Adresse], office@orthion.at</p>
     <h2>Erhebung und Verarbeitung personenbezogener Daten</h2>
-    <p>Wir erheben und verarbeiten personenbezogene Daten ausschließlich zur Bereitstellung unserer Online-Kurse und zur Kommunikation mit Ihnen. Ihre Daten werden nicht an Dritte weitergegeben.</p>
+    <p>Wir erheben und verarbeiten personenbezogene Daten ausschließlich zur Bereitstellung unserer Online-Kurse und zur Kommunikation mit dir. Deine Daten werden nicht an Dritte weitergegeben.</p>
     <h2>Mitgliederbereich &amp; Zugangsdaten</h2>
     <p>Im Rahmen der Kursbuchung werden Zugangsdaten erstellt und gespeichert. Der Zugang ist zeitlich begrenzt und läuft nach dem vereinbarten Zeitraum automatisch ab.</p>
     <h2>Cookies</h2>
     <p>Diese Website verwendet ausschließlich technisch notwendige Cookies, die für den Betrieb der Plattform erforderlich sind.</p>
-    <h2>Ihre Rechte</h2>
-    <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer Daten. Wenden Sie sich dazu jederzeit an: office@orthion.at</p>
+    <h2>Deine Rechte</h2>
+    <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung deiner Daten. Wende dich dazu jederzeit an: office@orthion.at</p>
     <h2>Rechtsgrundlage</h2>
-    <p>Die Verarbeitung Ihrer Daten erfolgt auf Basis von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).</p>
+    <p>Die Verarbeitung deiner Daten erfolgt auf Basis von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).</p>
   </div>
 </div>
 
