@@ -33,19 +33,19 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 3rem
 .btn-login:hover{background:var(--navy);color:white;}
 .btn-nav-cta{background:var(--violet);color:white;border:none;padding:0.5rem 1.4rem;border-radius:50px;font-size:0.952rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:all 0.2s;}
 .btn-nav-cta:hover{background:var(--violet-soft);}
-.hero{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 72px);align-items:center;gap:4rem;padding:4rem 3rem;background:linear-gradient(145deg,var(--blue-lighter) 0%,var(--white) 55%,var(--violet-pale) 100%);}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--violet-light);color:var(--violet);font-size:0.874rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.4rem 1rem;border-radius:50px;margin-bottom:1.5rem;}
-.hero-eyebrow span{width:6px;height:6px;border-radius:50%;background:var(--violet);}
-.hero h1{font-family:'Playfair Display',serif;font-size:3.808rem;line-height:1.15;color:var(--navy);margin-bottom:1.25rem;}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;align-items:center;gap:4rem;padding:5rem 3rem;background:linear-gradient(145deg,var(--blue-lighter) 0%,var(--white) 55%,var(--violet-pale) 100%);}
+.hero h1{font-family:'Playfair Display',serif;font-size:4.8rem;line-height:1.12;color:var(--navy);margin-bottom:1.5rem;}
 .hero h1 em{font-style:italic;color:var(--violet);}
-.hero-sub{font-size:1.176rem;color:var(--muted);line-height:1.75;margin-bottom:0.75rem;max-width:500px;}
+.hero-sub{font-size:1.25rem;color:var(--muted);line-height:1.8;margin-bottom:2.25rem;max-width:500px;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--violet-light);color:var(--violet);font-size:0.874rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.4rem 1rem;border-radius:50px;margin-bottom:1.75rem;}
+.hero-eyebrow span{width:6px;height:6px;border-radius:50%;background:var(--violet);}
 .hero-slogan{font-size:1.008rem;color:var(--blue-soft);font-weight:600;font-style:italic;margin-bottom:2rem;}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem;}
 .btn-primary{background:var(--navy);color:white;border:none;padding:0.9rem 2.2rem;border-radius:50px;font-size:1.064rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:all 0.2s;}
 .btn-primary:hover{background:var(--navy-mid);}
 .btn-secondary{background:transparent;color:var(--violet);border:2px solid var(--violet);padding:0.9rem 2.2rem;border-radius:50px;font-size:1.064rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:all 0.2s;}
 .btn-secondary:hover{background:var(--violet-pale);}
-.hero-trust{display:flex;align-items:center;gap:1.5rem;}
+.hero-trust{display:flex;align-items:center;gap:2rem;}
 .trust-item{display:flex;align-items:center;gap:6px;font-size:0.896rem;color:var(--muted);}
 .trust-dot{width:6px;height:6px;border-radius:50%;background:var(--success);}
 .hero-visual{position:relative;display:flex;align-items:center;justify-content:center;}
@@ -324,9 +324,9 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .legal-page h2{font-size:1.232rem;font-weight:700;color:var(--navy);margin:2rem 0 0.75rem;}
 .legal-page p{font-size:1.008rem;color:var(--muted);line-height:1.8;margin-bottom:0.75rem;}
 /* ===== VIDEO PLATZHALTER ===== */
-.video-placeholder{background:linear-gradient(145deg,var(--navy-deep),var(--navy-mid));border-radius:20px;aspect-ratio:16/9;width:100%;max-width:520px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;box-shadow:0 20px 60px rgba(43,58,103,0.2);}
-.video-play-btn{width:70px;height:70px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1rem;padding-left:4px;}
-.video-hint{font-size:1rem;font-weight:600;color:rgba(255,255,255,0.85);}
+.video-placeholder{background:linear-gradient(145deg,var(--navy-deep),var(--navy-mid));border-radius:20px;aspect-ratio:16/9;width:100%;max-width:580px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;box-shadow:0 20px 60px rgba(43,58,103,0.2);}
+.video-play-btn{width:84px;height:84px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin-bottom:1.25rem;padding-left:4px;}
+.video-hint{font-size:1.1rem;font-weight:600;color:rgba(255,255,255,0.85);}
 .video-sub{font-size:0.8rem;color:rgba(255,255,255,0.45);margin-top:0.3rem;text-align:center;padding:0 2rem;}
 
 /* ===== ZWEI-SPALTEN SEKTIONEN ===== */
@@ -415,7 +415,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
           <!-- BILD-PLATZHALTER: Junger Mensch, ca. 20–30, lernt am Laptop -->
           <!-- Empfehlung: unsplash.com → Suche "young adult laptop studying smiling" -->
           <div class="zg-img-wrap">
-            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&q=80" alt="Junge Person lernt" class="zg-img" onerror="this.style.display='none'">
+            <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=500&q=80" alt="Junge Person lernt" class="zg-img" onerror="this.style.display='none'">
           </div>
           <div class="zg-content">
             <div class="zg-icon">🎓</div>
@@ -427,7 +427,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
           <!-- BILD-PLATZHALTER: Ältere Person, 50+, lächelnd am Schreibtisch -->
           <!-- Empfehlung: unsplash.com → Suche "senior woman confident desk smiling" -->
           <div class="zg-img-wrap">
-            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=500&q=80" alt="Erfahrene Person lernt" class="zg-img" onerror="this.style.display='none'">
+            <img src="https://images.unsplash.com/photo-1573497019236-17f8177b81e8?w=500&q=80" alt="Erfahrene Person lernt" class="zg-img" onerror="this.style.display='none'">
           </div>
           <div class="zg-content">
             <div class="zg-icon">💼</div>
@@ -446,7 +446,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
         <!-- BILD-PLATZHALTER: Person schreibt selbstbewusst am Schreibtisch -->
         <!-- Empfehlung: unsplash.com → Suche "adult writing desk confident" -->
         <img
-          src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=640&q=80"
+          src="https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=640&q=80"
           alt="Person lernt mit Orthion"
           class="section-img"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
