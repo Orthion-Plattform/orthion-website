@@ -33,27 +33,32 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 3rem
 .btn-login:hover{background:var(--navy);color:white;}
 .btn-nav-cta{background:var(--violet);color:white;border:none;padding:0.5rem 1.4rem;border-radius:50px;font-size:0.952rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:all 0.2s;}
 .btn-nav-cta:hover{background:var(--violet-soft);}
-.hero{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;align-items:center;gap:4rem;padding:5rem 3rem;background:linear-gradient(145deg,var(--blue-lighter) 0%,var(--white) 55%,var(--violet-pale) 100%);}
-.hero h1{font-family:'Playfair Display',serif;font-size:4.8rem;line-height:1.12;color:var(--navy);margin-bottom:1.5rem;}
+.hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:4rem 6rem 3rem;background:linear-gradient(145deg,var(--blue-lighter) 0%,var(--white) 55%,var(--violet-pale) 100%);min-height:calc(100vh - 72px);justify-content:center;}
+.hero h1{font-family:'Playfair Display',serif;font-size:3.4rem;line-height:1.1;color:var(--navy);margin-bottom:0.9rem;}
 .hero h1 em{font-style:italic;color:var(--violet);}
-.hero-sub{font-size:1.25rem;color:var(--muted);line-height:1.8;margin-bottom:2.25rem;max-width:500px;}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--violet-light);color:var(--violet);font-size:0.874rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.4rem 1rem;border-radius:50px;margin-bottom:1.75rem;}
+.hero-content{max-width:1100px;width:100%;display:flex;flex-direction:column;align-items:center;position:relative;}
+.hero-video-wrap{width:100%;max-width:1100px;display:flex;flex-direction:column;gap:1rem;margin-top:1.75rem;}
+.hero-question{font-family:'Playfair Display',serif;font-size:2.2rem;font-style:italic;color:var(--navy);margin-bottom:0.4rem;line-height:1.25;}
+.hero-answer{font-size:1.1rem;color:var(--violet);margin-bottom:1.75rem;font-weight:600;}
+.hero-sub{font-size:1.05rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem;max-width:860px;text-align:center;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--violet-light);color:var(--violet);font-size:0.85rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.45rem 1.1rem;border-radius:50px;margin-bottom:1.25rem;}
 .hero-eyebrow span{width:6px;height:6px;border-radius:50%;background:var(--violet);}
 .hero-slogan{font-size:1.008rem;color:var(--blue-soft);font-weight:600;font-style:italic;margin-bottom:2rem;}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem;justify-content:center;}
 .btn-primary{background:var(--navy);color:white;border:none;padding:0.9rem 2.2rem;border-radius:50px;font-size:1.064rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:all 0.2s;}
 .btn-primary:hover{background:var(--navy-mid);}
 .btn-secondary{background:transparent;color:var(--violet);border:2px solid var(--violet);padding:0.9rem 2.2rem;border-radius:50px;font-size:1.064rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:all 0.2s;}
 .btn-secondary:hover{background:var(--violet-pale);}
-.hero-trust{display:flex;align-items:center;gap:2rem;margin-bottom:2.5rem;}
-.hero-stats{display:flex;align-items:center;gap:0;background:white;border:1px solid var(--light-border);border-radius:16px;padding:1.25rem 1.75rem;margin-top:0;box-shadow:0 4px 20px rgba(43,58,103,0.07);}
-.hero-stat{text-align:center;flex:1;}
-.hero-stat-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--navy);line-height:1;}
-.hero-stat-lbl{font-size:0.8rem;color:var(--muted);margin-top:0.2rem;}
-.hero-stat-divider{width:1px;height:36px;background:var(--light-border);flex-shrink:0;}
+.hero-trust{display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;}
+.test-sticker-home{position:absolute;right:0;bottom:-1rem;animation:sticker-float 3.5s ease-in-out infinite;}
+.test-sticker-home:hover{animation:none;transform:rotate(12deg) scale(1.1);}
 .trust-item{display:flex;align-items:center;gap:6px;font-size:0.896rem;color:var(--muted);}
 .trust-dot{width:6px;height:6px;border-radius:50%;background:var(--success);}
-.hero-visual{position:relative;display:flex;align-items:center;justify-content:center;}
+.hero-slogan-box{display:none;}
+.hero-slogan-quote{display:none;}
+.hero-slogan-text{display:none;}
+.hero-slogan-highlight{display:none;}
+.hero-visual{position:relative;display:flex;flex-direction:column;gap:1.25rem;justify-content:center;}
 .hero-dashboard{background:white;border-radius:24px;border:1px solid var(--light-border);padding:1.5rem;width:100%;max-width:420px;box-shadow:0 20px 60px rgba(43,58,103,0.1);}
 .dash-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;}
 .dash-title{font-size:0.952rem;font-weight:700;color:var(--navy);}
@@ -329,10 +334,11 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .legal-page h2{font-size:1.232rem;font-weight:700;color:var(--navy);margin:2rem 0 0.75rem;}
 .legal-page p{font-size:1.008rem;color:var(--muted);line-height:1.8;margin-bottom:0.75rem;}
 /* ===== VIDEO PLATZHALTER ===== */
-.video-placeholder{background:linear-gradient(145deg,var(--navy-deep),var(--navy-mid));border-radius:20px;aspect-ratio:16/9;width:100%;max-width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;box-shadow:0 20px 60px rgba(43,58,103,0.2);}
-.video-play-btn{width:84px;height:84px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin-bottom:1.25rem;padding-left:4px;}
-.video-hint{font-size:1.1rem;font-weight:600;color:rgba(255,255,255,0.85);}
-.video-sub{font-size:0.8rem;color:rgba(255,255,255,0.45);margin-top:0.3rem;text-align:center;padding:0 2rem;}
+.video-placeholder{background:linear-gradient(145deg,var(--navy-deep),var(--navy-mid));border-radius:24px;width:100%;min-height:400px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;box-shadow:0 20px 60px rgba(43,58,103,0.22);}
+.video-play-btn{width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,0.18);border:2.5px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;font-size:2.4rem;margin-bottom:1.5rem;padding-left:6px;transition:background 0.2s;cursor:pointer;}
+.video-play-btn:hover{background:rgba(255,255,255,0.28);}
+.video-hint{font-size:1.3rem;font-weight:700;color:rgba(255,255,255,0.9);}
+.video-sub{font-size:0.9rem;color:rgba(255,255,255,0.45);margin-top:0.4rem;text-align:center;padding:0 2rem;}
 
 /* ===== ZWEI-SPALTEN SEKTIONEN ===== */
 .two-col-section{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
@@ -358,6 +364,157 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .back-bar{padding:1rem 3rem;border-bottom:1px solid var(--light-border);display:flex;align-items:center;gap:8px;}
 .back-btn{background:none;border:none;font-size:0.952rem;color:var(--blue-soft);cursor:pointer;font-family:'Nunito',sans-serif;display:flex;align-items:center;gap:6px;}
 .back-btn:hover{color:var(--navy);}
+
+/* ===== MINI DASHBOARD ===== */
+.mini-dash{background:white;border-radius:20px;border:1px solid var(--light-border);padding:1.25rem 1.5rem;margin-top:1rem;box-shadow:0 8px 32px rgba(43,58,103,0.08);}
+.mini-dash-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;}
+.mini-dash-title{display:flex;align-items:center;gap:7px;font-size:0.9rem;font-weight:700;color:var(--navy);}
+.mini-dash-dot{width:8px;height:8px;border-radius:50%;background:var(--success);}
+.mini-dash-badge{font-size:0.75rem;font-weight:700;background:var(--violet-light);color:var(--violet);padding:0.2rem 0.65rem;border-radius:50px;}
+.mini-dash-course{display:flex;align-items:center;gap:1rem;background:var(--blue-lighter);border-radius:14px;padding:0.85rem 1rem;margin-bottom:0.85rem;}
+.mini-dash-ring{position:relative;width:48px;height:48px;flex-shrink:0;}
+.mini-dash-pct{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700;color:var(--navy);}
+.mini-dash-course-name{font-size:0.88rem;font-weight:700;color:var(--navy);}
+.mini-dash-course-sub{font-size:0.78rem;color:var(--muted);margin-top:0.15rem;}
+.mini-dash-modules{display:flex;flex-direction:column;gap:0.45rem;}
+.mini-dash-module{display:flex;align-items:center;gap:0.75rem;padding:0.55rem 0.75rem;border-radius:10px;border:1px solid var(--light-border);background:var(--offwhite);}
+.mini-dash-module.done{background:#EEF8F3;border-color:#C3E6D4;}
+.mini-dash-module.active{background:var(--violet-pale);border-color:var(--violet-light);}
+.mdm-icon{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;flex-shrink:0;}
+.mini-dash-module.done .mdm-icon{background:var(--success);color:white;}
+.mini-dash-module.active .mdm-icon{background:var(--violet);color:white;}
+.mini-dash-module.locked .mdm-icon{background:#E2E8F0;color:var(--muted);font-size:0.65rem;}
+.mdm-name{font-size:0.84rem;font-weight:600;color:var(--text);}
+.mini-dash-module.locked .mdm-name{color:var(--muted);}
+
+/* ===== EINSTUFUNGSTEST ===== */
+.test-hero{text-align:center;padding:3rem 2rem 2rem;background:linear-gradient(145deg,var(--blue-lighter),var(--violet-pale));}
+.test-hero h1{font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--navy);margin-bottom:0.75rem;}
+.test-hero p{color:var(--muted);font-size:1.05rem;max-width:560px;margin:0 auto 1.5rem;}
+.test-levels{display:flex;justify-content:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:2rem;}
+.test-level-chip{background:white;color:var(--navy-mid);font-size:0.84rem;font-weight:600;padding:0.3rem 0.9rem;border-radius:50px;border:1px solid var(--light-border);}
+.test-start-btn{background:var(--violet);color:white;border:none;padding:1rem 2.5rem;border-radius:50px;font-size:1.1rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:all 0.2s;}
+.test-start-btn:hover{background:var(--violet-soft);}
+.test-body{max-width:720px;margin:0 auto;padding:2.5rem 2rem;}
+.test-progress-bar-wrap{background:var(--light-border);border-radius:50px;height:8px;margin-bottom:0.4rem;}
+.test-progress-bar{background:linear-gradient(90deg,var(--violet),var(--blue-soft));height:8px;border-radius:50px;transition:width 0.4s;}
+.test-progress-label{font-size:0.84rem;color:var(--muted);text-align:right;margin-bottom:1.75rem;}
+.test-card{background:white;border:1px solid var(--light-border);border-radius:20px;padding:2rem;box-shadow:0 4px 24px rgba(43,58,103,0.07);margin-bottom:1.5rem;}
+.test-type-badge{display:inline-block;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.2rem 0.7rem;border-radius:50px;margin-bottom:1rem;}
+.badge-mc{background:var(--violet-light);color:var(--violet);}
+.badge-luecke{background:var(--blue-pale);color:var(--navy-mid);}
+.badge-fehler{background:#FFF3E0;color:#E65100;}
+.badge-version{background:#E8F5EE;color:#2E7D52;}
+.badge-korrektur{background:#FCE4EC;color:#C2185B;}
+.badge-komma{background:#EDE7F6;color:#512DA8;}
+.badge-gross{background:#E0F2F1;color:#00695C;}
+.test-question{font-size:1.08rem;font-weight:600;color:var(--navy);margin-bottom:1.25rem;line-height:1.5;}
+.test-mc-options{display:flex;flex-direction:column;gap:0.6rem;}
+.test-mc-btn{background:var(--offwhite);border:1.5px solid var(--light-border);border-radius:12px;padding:0.75rem 1.1rem;font-size:1rem;font-family:'Nunito',sans-serif;color:var(--text);cursor:pointer;text-align:left;transition:all 0.2s;}
+.test-mc-btn:hover{border-color:var(--violet);background:var(--violet-pale);}
+.test-mc-btn.selected{border-color:var(--violet);background:var(--violet-pale);font-weight:600;}
+.test-mc-btn.correct{border-color:var(--success);background:#E8F5EE;color:#2E7D52;font-weight:700;}
+.test-mc-btn.wrong{border-color:#E53935;background:#FFEBEE;color:#C62828;}
+.test-input{width:100%;padding:0.75rem 1rem;border:1.5px solid var(--light-border);border-radius:10px;font-size:1rem;font-family:'Nunito',sans-serif;color:var(--text);outline:none;background:var(--offwhite);}
+.test-input:focus{border-color:var(--violet);}
+.test-fehler-text{font-size:1.05rem;line-height:2.2;color:var(--text);cursor:pointer;user-select:none;}
+.test-fehler-word{padding:2px 5px;border-radius:4px;transition:background 0.15s;display:inline-block;}
+.test-fehler-word:hover{background:var(--violet-pale);}
+.test-fehler-word.marked{background:#FFF3E0;border-bottom:2px solid #E65100;color:#E65100;font-weight:600;}
+.test-fehler-word.correct-mark{background:#E8F5EE;border-bottom:2px solid var(--success);}
+.test-fehler-word.wrong-mark{background:#FFEBEE;border-bottom:2px solid #E53935;}
+.test-komma-slot{display:inline-block;min-width:14px;height:20px;border-bottom:2px dashed #ccc;cursor:pointer;margin:0 1px;vertical-align:middle;text-align:center;font-weight:700;font-size:1.1rem;color:var(--violet);transition:all 0.2s;}
+.test-komma-slot:hover{border-bottom-color:var(--violet);background:var(--violet-pale);border-radius:3px;}
+.test-komma-slot.has-komma{border-bottom:2px solid var(--violet);}
+.test-komma-slot.correct-komma{color:var(--success);border-bottom-color:var(--success);}
+.test-komma-slot.wrong-komma{color:#E53935;border-bottom-color:#E53935;}
+.test-version-options{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.test-version-btn{background:var(--offwhite);border:1.5px solid var(--light-border);border-radius:12px;padding:1rem;font-size:0.98rem;font-family:'Nunito',sans-serif;color:var(--text);cursor:pointer;text-align:left;line-height:1.6;transition:all 0.2s;}
+.test-version-btn:hover{border-color:var(--violet);background:var(--violet-pale);}
+.test-version-btn.correct{border-color:var(--success);background:#E8F5EE;}
+.test-version-btn.wrong{border-color:#E53935;background:#FFEBEE;}
+.test-submit-btn{background:var(--navy);color:white;border:none;padding:0.75rem 2rem;border-radius:50px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:1.25rem;transition:all 0.2s;}
+.test-submit-btn:hover{background:var(--navy-mid);}
+.test-feedback{margin-top:1rem;padding:0.85rem 1.1rem;border-radius:10px;font-size:0.95rem;font-weight:600;display:none;line-height:1.5;}
+.test-feedback.correct{background:#E8F5EE;color:#2E7D52;border:1px solid #C3E6D4;}
+.test-feedback.wrong{background:#FFEBEE;color:#C62828;border:1px solid #FFCDD2;}
+.test-next-btn{background:var(--violet);color:white;border:none;padding:0.75rem 2rem;border-radius:50px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:0.75rem;display:none;transition:all 0.2s;}
+.test-next-btn:hover{background:var(--violet-soft);}
+.test-result{text-align:center;padding:2rem 1rem;}
+.test-result-icon{font-size:4rem;margin-bottom:1rem;}
+.test-result h2{font-family:'Playfair Display',serif;font-size:2rem;color:var(--navy);margin-bottom:0.5rem;}
+.test-result-level{display:inline-block;background:var(--violet-light);color:var(--violet);font-size:1.1rem;font-weight:700;padding:0.5rem 1.5rem;border-radius:50px;margin:1rem 0;}
+.test-result p{color:var(--muted);font-size:1rem;line-height:1.75;max-width:480px;margin:0 auto 1rem;}
+.test-result-bars{display:flex;flex-direction:column;gap:0.6rem;margin:1.5rem auto;max-width:420px;text-align:left;}
+.test-result-bar-row{display:flex;align-items:center;gap:1rem;}
+.test-result-bar-label{font-size:0.84rem;color:var(--muted);width:140px;flex-shrink:0;}
+.test-result-bar-outer{flex:1;background:var(--light-border);border-radius:50px;height:10px;}
+.test-result-bar-inner{background:var(--violet);height:10px;border-radius:50px;transition:width 0.6s;}
+.test-cta-btn{background:var(--navy);color:white;border:none;padding:0.9rem 2.2rem;border-radius:50px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;margin:0.4rem;transition:all 0.2s;}
+.test-cta-btn:hover{background:var(--navy-mid);}
+.test-retry-btn{background:transparent;color:var(--violet);border:2px solid var(--violet);padding:0.9rem 2.2rem;border-radius:50px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;margin:0.4rem;transition:all 0.2s;}
+.test-retry-btn:hover{background:var(--violet-pale);}
+.test-score-big{font-family:'Playfair Display',serif;font-size:3.5rem;color:var(--navy);font-weight:700;margin:0.5rem 0;}
+
+/* ===== ADMIN TEST-VERWALTUNG ===== */
+.aufgabe-card{background:white;border:1px solid var(--light-border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:0.75rem;}
+.aufgabe-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.4rem;}
+.aufgabe-type-tag{font-size:0.75rem;font-weight:700;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:50px;}
+.aufgabe-actions{display:flex;gap:0.5rem;}
+.aufgabe-edit-btn{background:var(--blue-pale);color:var(--navy);border:none;padding:0.3rem 0.75rem;border-radius:50px;font-size:0.84rem;font-weight:600;cursor:pointer;font-family:'Nunito',sans-serif;}
+.aufgabe-delete-btn{background:#FFEBEE;color:#C62828;border:none;padding:0.3rem 0.75rem;border-radius:50px;font-size:0.84rem;font-weight:600;cursor:pointer;font-family:'Nunito',sans-serif;}
+.aufgabe-preview{font-size:0.93rem;color:var(--muted);line-height:1.5;}
+.aufgabe-form{background:var(--blue-lighter);border-radius:14px;padding:1.5rem;margin-bottom:1.5rem;border:1px solid var(--light-border);}
+.aufgabe-form h4{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:1rem;}
+.aufgabe-form select,.aufgabe-form input,.aufgabe-form textarea{width:100%;padding:0.65rem 0.9rem;border:1.5px solid var(--light-border);border-radius:8px;font-size:0.95rem;font-family:'Nunito',sans-serif;color:var(--text);background:white;margin-bottom:0.75rem;outline:none;}
+.aufgabe-form select:focus,.aufgabe-form input:focus,.aufgabe-form textarea:focus{border-color:var(--violet);}
+.aufgabe-form textarea{min-height:80px;resize:vertical;}
+.aufgabe-form label{display:block;font-size:0.84rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.3rem;}
+.aufgabe-save-btn{background:var(--violet);color:white;border:none;padding:0.65rem 1.75rem;border-radius:50px;font-size:0.95rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;margin-right:0.5rem;}
+.aufgabe-cancel-btn{background:transparent;color:var(--muted);border:1.5px solid var(--light-border);padding:0.65rem 1.25rem;border-radius:50px;font-size:0.95rem;font-weight:600;cursor:pointer;font-family:'Nunito',sans-serif;}
+.btn-test-hero{position:relative;overflow:hidden;background:linear-gradient(90deg,var(--violet),var(--navy));color:white;border:none;padding:0.9rem 2.2rem;border-radius:50px;font-size:1.064rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:all 0.2s;animation:pulse-btn 3s ease-in-out infinite;}
+.btn-test-hero::after{content:'';position:absolute;top:0;left:-75%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.35),transparent);animation:shimmer 3s ease-in-out infinite;}
+.btn-test-hero:hover{opacity:0.9;transform:scale(1.03);}
+
+/* ===== TEST STICKER ===== */
+.hero-title-row{display:flex;align-items:flex-start;gap:1.5rem;justify-content:center;}
+.hero-title-row h1{flex:1;}
+.hero-btns-row{display:flex;align-items:center;gap:1.5rem;justify-content:center;margin-bottom:2rem;}
+.hero-btns-row .test-sticker{margin-left:3.5rem;}
+.test-sticker{width:180px;height:180px;cursor:pointer;transform:rotate(12deg);animation:sticker-float 3.5s ease-in-out infinite;z-index:10;flex-shrink:0;}
+.test-sticker:hover{animation:none;transform:rotate(12deg) scale(1.1);}
+.test-sticker-inner{width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#FFD93D,#FF6B6B);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1.25rem;box-shadow:3px 4px 0px rgba(0,0,0,0.15),0 8px 24px rgba(0,0,0,0.12);border:3px solid rgba(255,255,255,0.6);}
+.test-sticker-emoji{font-size:1.9rem;margin-bottom:0.15rem;animation:spin-slow 6s linear infinite;}
+.test-sticker-line1{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(0,0,0,0.5);margin-bottom:0.1rem;}
+.test-sticker-line2{font-size:0.95rem;font-weight:800;color:#1a1a2e;line-height:1.25;margin-bottom:0.3rem;}
+.test-sticker-cta{font-size:0.78rem;font-weight:700;color:white;background:rgba(0,0,0,0.2);padding:0.18rem 0.6rem;border-radius:50px;}
+.test-sticker-kurse{position:absolute;top:50%;right:3rem;transform:translateY(-50%) rotate(12deg);animation:sticker-float-kurse 3.5s ease-in-out infinite;width:180px;height:180px;}
+.test-sticker-kurse:hover{animation:none;transform:translateY(-50%) rotate(12deg) scale(1.1);}
+@keyframes sticker-float-kurse{0%,100%{transform:translateY(-50%) rotate(12deg);}50%{transform:translateY(calc(-50% - 6px)) rotate(14deg);}}
+.services-hero{position:relative;}
+@keyframes sticker-float{0%,100%{transform:rotate(12deg) translateY(0);}50%{transform:rotate(14deg) translateY(-6px);}}
+@keyframes spin-slow{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+
+.test-banner{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2rem;background:linear-gradient(90deg,var(--navy) 0%,var(--violet) 100%);color:white;padding:1.25rem 3rem;cursor:pointer;transition:opacity 0.2s;text-decoration:none;}
+.test-banner:hover{opacity:0.95;}
+.test-banner-left{display:flex;align-items:center;gap:1rem;}
+.test-banner-icon{font-size:1.6rem;animation:bounce 2.5s ease-in-out infinite;}
+.test-banner-texts{}
+.test-banner-label{font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:0.1rem;}
+.test-banner-text{font-size:1.05rem;font-weight:700;}
+.test-banner-right{}
+.test-banner-btn{position:relative;overflow:hidden;background:white;color:var(--navy);border:none;padding:0.75rem 1.75rem;border-radius:50px;font-size:0.98rem;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;white-space:nowrap;animation:pulse-btn 3s ease-in-out infinite;}
+.test-banner-btn::after{content:'';position:absolute;top:0;left:-75%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.6),transparent);animation:shimmer 3s ease-in-out infinite;}
+@keyframes pulse-btn{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,255,255,0.4);}50%{transform:scale(1.04);box-shadow:0 0 0 8px rgba(255,255,255,0);}}
+@keyframes shimmer{0%{left:-75%;}60%,100%{left:125%;}}
+@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-4px);}}
+
+/* ===== TEST INTRO BOX ===== */
+.test-intro-box{background:white;border:1px solid var(--light-border);border-radius:20px;padding:2rem 2.5rem;max-width:600px;margin:0 auto 2rem;text-align:left;box-shadow:0 4px 24px rgba(43,58,103,0.07);}
+.test-intro-box h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--navy);margin-bottom:0.75rem;}
+.test-intro-box p{color:var(--muted);font-size:1rem;line-height:1.75;}
+.test-intro-facts{display:flex;gap:1.25rem;flex-wrap:wrap;margin-top:1.25rem;}
+.test-intro-fact{display:flex;align-items:center;gap:0.4rem;font-size:0.9rem;font-weight:600;color:var(--navy);}
 </style>
 </head>
 <body>
@@ -387,28 +544,28 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
   <div class="hero">
     <div class="hero-content">
       <div class="hero-eyebrow"><span></span>Online-Lernplattform für Muttersprachler</div>
-      <h1>Deine Muttersprache.<br><em>Neu entdeckt.</em></h1>
-      <p class="hero-sub">Deutsch ist eine der stärksten Ressourcen, die du hast – beruflich wie persönlich. <span class="brand">Orthion</span> hilft dir, sie wirklich zu beherrschen. In deinem Tempo. Ohne Scham. Ohne Druck.</p>
+      <h1>Deine Muttersprache <em>neu entdecken.</em></h1>
+      <p class="hero-answer">Starke Sprache. Starker Eindruck.</p>
+      <p class="hero-sub">Zu viele Menschen schämen sich für ihre Rechtschreibung – weil fehlerhafte Rechtschreibung den Eindruck hinterlässt, man sei nicht kompetent. <span class="brand">Das ändern wir.</span></p>
       <div class="hero-btns">
         <button class="btn-primary" onclick="showPage('kurse')">Kurse entdecken</button>
         <button class="btn-secondary" onclick="showPage('about')">Über Orthion</button>
       </div>
+      <div class="test-sticker test-sticker-home" onclick="showPage('test')">
+        <div class="test-sticker-inner">
+          <div class="test-sticker-emoji">🎯</div>
+          <div class="test-sticker-line1">Gratis testen:</div>
+          <div class="test-sticker-line2">Wie gut ist<br>dein Deutsch?</div>
+          <div class="test-sticker-cta">Jetzt starten →</div>
+        </div>
+      </div>
       <div class="hero-trust">
         <div class="trust-item"><span class="trust-dot"></span>Von einer Lehrerin entwickelt</div>
-        <div class="trust-item"><span class="trust-dot"></span>Für Jung &amp; Alt</div>
+        <div class="trust-item"><span class="trust-dot"></span>Für Jung und Alt</div>
         <div class="trust-item"><span class="trust-dot"></span>100% online</div>
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat"><div class="hero-stat-num">3</div><div class="hero-stat-lbl">Kurse</div></div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat"><div class="hero-stat-num">100%</div><div class="hero-stat-lbl">Flexibel</div></div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat"><div class="hero-stat-num">0</div><div class="hero-stat-lbl">Scham nötig</div></div>
-        <div class="hero-stat-divider"></div>
-        <div class="hero-stat"><div class="hero-stat-num">1</div><div class="hero-stat-lbl">Expertin</div></div>
-      </div>
     </div>
-    <div class="hero-visual">
+    <div class="hero-video-wrap">
       <div class="video-placeholder">
         <div class="video-play-btn">▶</div>
         <p class="video-hint">Ihr Werbevideo kommt hier hin</p>
@@ -433,7 +590,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
           </div>
           <div class="zg-content">
             <div class="zg-icon">🎓</div>
-            <h3>Jung &amp; im Aufbau</h3>
+            <h3>Jung und im Aufbau</h3>
             <p>Du hast die Schule hinter dir und merkst: Da gibt es noch Lücken. Matura nachholen, Bewerbungen schreiben, im Beruf ankommen – mit sicherer Sprache gelingt alles besser.</p>
           </div>
         </div>
@@ -445,7 +602,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
           </div>
           <div class="zg-content">
             <div class="zg-icon">💼</div>
-            <h3>Erfahren &amp; berufstätig</h3>
+            <h3>Erfahren und berufstätig</h3>
             <p>Du trägst dieses Gefühl schon lange mit dir. Es ist nie zu spät. Mit <span class="brand">Orthion</span> holst du nach, was du brauchst – ganz für dich, ohne dass jemand davon wissen muss.</p>
           </div>
         </div>
@@ -481,7 +638,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
           <span class="o-pill">🎯 Strukturiert</span>
           <span class="o-pill">⏱️ Flexibel</span>
           <span class="o-pill">💙 Wertschätzend</span>
-          <span class="o-pill">🔒 Privat &amp; online</span>
+          <span class="o-pill">🔒 Privat und online</span>
         </div>
       </div>
     </div>
@@ -500,8 +657,8 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
         <div class="feature-card"><div class="feat-icon blue">🔒</div><div class="feat-title">Geschützter Mitgliederbereich</div><div class="feat-text">Du erhältst individuelle Zugangsdaten – deine Inhalte sind exklusiv und nur für dich zugänglich.</div></div>
         <div class="feature-card"><div class="feat-icon violet">🧩</div><div class="feat-title">Modularer Kursaufbau</div><div class="feat-text">Lernen in klaren Schritten: Jedes Modul baut aufeinander auf – übersichtlich, strukturiert, ohne zu überfordern.</div></div>
         <div class="feature-card"><div class="feat-icon blue">⏱️</div><div class="feat-title">Flexibles Lerntempo</div><div class="feat-text">Kein Druck, kein fixer Stundenplan – lerne wann und wo du willst, solange dein Zugang aktiv ist.</div></div>
-        <div class="feature-card"><div class="feat-icon violet">📊</div><div class="feat-title">Selbsttests &amp; Abschlussprüfung</div><div class="feat-text">Nach jedem Modul ein Selbsttest, am Ende ein großer Abschlusstest – so siehst du genau, was du gelernt hast.</div></div>
-        <div class="feature-card"><div class="feat-icon blue">💙</div><div class="feat-title">Ohne Scham &amp; Bewertungsdruck</div><div class="feat-text">Kein Klassenzimmer, keine Blicke. Du lernst ganz für dich – in einer Atmosphäre des Vertrauens und der Wertschätzung.</div></div>
+        <div class="feature-card"><div class="feat-icon violet">📊</div><div class="feat-title">Selbsttests und Abschlussprüfung</div><div class="feat-text">Nach jedem Modul ein Selbsttest, am Ende ein großer Abschlusstest – so siehst du genau, was du gelernt hast.</div></div>
+        <div class="feature-card"><div class="feat-icon blue">💙</div><div class="feat-title">Ohne Scham und Bewertungsdruck</div><div class="feat-text">Kein Klassenzimmer, keine Blicke. Du lernst ganz für dich – in einer Atmosphäre des Vertrauens und der Wertschätzung.</div></div>
       </div>
     </div>
   </section>
@@ -538,7 +695,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
     <h2>Bereit, dein Deutsch auf das nächste Level zu bringen?</h2>
     <p>Wähle deinen Kurs, lerne in deinem Tempo – ganz für dich, ohne Druck.</p>
     <button class="btn-white" onclick="showPage('kurse')">Jetzt Kurs wählen</button>
-    <button class="btn-white-outline" onclick="showPage('contact')">Frage stellen</button>
+    <button class="btn-white-outline" onclick="showPage('test')">🎯 Kostenloser Einstufungstest</button>
   </div>
 
   <footer>
@@ -547,7 +704,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
         <div style="color:white;font-family:'Playfair Display',serif;font-size:1.456rem;font-weight:700;">ORTHION</div>
         <p>Starke Sprache, starker Eindruck. Eine Online-Lernplattform für alle, die ihre Muttersprache gezielt stärken wollen – in eigenem Tempo, ohne Scham.</p>
       </div>
-      <div class="footer-col"><h4>Kurse</h4><ul><li onclick="showPage('kurse')">Matura-Vorbereitung</li><li onclick="showPage('kurse')">Deutsch im Beruf</li><li onclick="showPage('kurse')">Rechtschreibung &amp; Grammatik</li></ul></div>
+      <div class="footer-col"><h4>Kurse</h4><ul><li onclick="showPage('kurse')">Matura-Vorbereitung</li><li onclick="showPage('kurse')">Deutsch im Beruf</li><li onclick="showPage('kurse')">Rechtschreibung und Grammatik</li></ul></div>
       <div class="footer-col"><h4>Orthion</h4><ul><li onclick="showPage('about')">Über uns</li><li onclick="showPage('contact')">Kontakt</li><li onclick="showPage('login')">Mitgliederbereich</li></ul></div>
       <div class="footer-col"><h4>Rechtliches</h4><ul><li onclick="showPage('impressum')">Impressum</li><li onclick="showPage('datenschutz')">Datenschutz</li><li>AGB</li></ul></div>
     </div>
@@ -574,10 +731,18 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 <!-- KURSE -->
 <div class="page" id="page-kurse">
   <div class="back-bar"><button class="back-btn" onclick="showPage('home')">← Zurück zur Startseite</button></div>
-  <div class="services-hero">
+  <div class="services-hero" style="position:relative;">
     <p class="section-eyebrow" style="margin-bottom:0.6rem;">Kursangebot</p>
     <h1>Alle <span class="brand">Orthion</span>-Kurse im Überblick</h1>
     <p>Strukturiert. Modular. Von einer Expertin entwickelt.</p>
+    <div class="test-sticker test-sticker-kurse" onclick="showPage('test')">
+      <div class="test-sticker-inner">
+        <div class="test-sticker-emoji">🎯</div>
+        <div class="test-sticker-line1">Gratis testen:</div>
+        <div class="test-sticker-line2">Wie gut ist<br>dein Deutsch?</div>
+        <div class="test-sticker-cta">Jetzt starten →</div>
+      </div>
+    </div>
   </div>
   <section>
     <div class="section-inner">
@@ -588,12 +753,12 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
           <div class="course-meta"><div class="course-modules-info"><strong>Demnächst verfügbar</strong></div><button class="course-arrow-btn" onclick="showPage('login')">→</button></div>
         </div>
         <div class="course-card">
-          <div class="course-header"><div class="course-icon" style="background:#EBF0F8;">💼</div><div class="course-tag tag-berufsbegleitend">Beruflich &amp; Begleitend</div><div class="course-name">Deutsch im Beruf</div><div class="course-desc">Für Berufstätige, die sicherer schreiben, kommunizieren und im Alltag professionell auftreten möchten – flexibel und effizient.</div></div>
+          <div class="course-header"><div class="course-icon" style="background:#EBF0F8;">💼</div><div class="course-tag tag-berufsbegleitend">Beruflich und Begleitend</div><div class="course-name">Deutsch im Beruf</div><div class="course-desc">Für Berufstätige, die sicherer schreiben, kommunizieren und im Alltag professionell auftreten möchten – flexibel und effizient.</div></div>
           <div class="course-topics"><span class="topic-chip">E-Mails schreiben</span><span class="topic-chip">Berichte</span><span class="topic-chip">Protokolle</span><span class="topic-chip">Rechtschreibung</span></div>
           <div class="course-meta"><div class="course-modules-info"><strong>Demnächst verfügbar</strong></div><button class="course-arrow-btn" onclick="showPage('login')">→</button></div>
         </div>
         <div class="course-card">
-          <div class="course-header"><div class="course-icon" style="background:#E8F5EE;">✏️</div><div class="course-tag tag-erwachsene">Für Erwachsene</div><div class="course-name">Rechtschreibung &amp; Grammatik</div><div class="course-desc">Für alle, die Lücken schließen möchten – ohne Schuldruck, in ruhigem Tempo, verständlich erklärt.</div></div>
+          <div class="course-header"><div class="course-icon" style="background:#E8F5EE;">✏️</div><div class="course-tag tag-erwachsene">Für Erwachsene</div><div class="course-name">Rechtschreibung und Grammatik</div><div class="course-desc">Für alle, die Lücken schließen möchten – ohne Schuldruck, in ruhigem Tempo, verständlich erklärt.</div></div>
           <div class="course-topics"><span class="topic-chip">Groß/Kleinschreibung</span><span class="topic-chip">Kommaregeln</span><span class="topic-chip">Wortarten</span><span class="topic-chip">Satzbau</span></div>
           <div class="course-meta"><div class="course-modules-info"><strong>Jetzt verfügbar</strong> · Modul 1 freigeschaltet</div><button class="course-arrow-btn" onclick="showPage('login')">→</button></div>
         </div>
@@ -601,9 +766,43 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
     </div>
   </section>
   <div class="cta-section" style="padding:4rem 3rem;">
-    <h2 style="font-size:2.24rem;">Haben Sie Fragen zum passenden Kurs?</h2>
-    <p>Ich berate dich gerne persönlich – kostenlos und unverbindlich.</p>
-    <button class="btn-white" onclick="showPage('contact')">Jetzt Kontakt aufnehmen</button>
+    <h2 style="font-size:2.24rem;">Noch unsicher, welcher Kurs passt?</h2>
+    <p>Mach den kostenlosen Einstufungstest und finde es in 5 Minuten heraus.</p>
+    <button class="btn-white" onclick="showPage('test')">🎯 Jetzt kostenlos testen</button>
+    <button class="btn-white-outline" onclick="showPage('contact')">Kontakt aufnehmen</button>
+  </div>
+</div>
+
+<!-- EINSTUFUNGSTEST -->
+<div class="page" id="page-test">
+  <div class="back-bar"><button class="back-btn" onclick="showPage('kurse')">← Zurück zu den Kursen</button></div>
+  <div class="test-hero">
+    <div class="section-eyebrow">Kostenlos und unverbindlich</div>
+    <h1>Gratis: Wie gut ist dein Deutsch?</h1>
+    <div class="test-intro-box">
+      <h3>Weißt du, wo deine Lücken sind?</h3>
+      <p>Viele Menschen tragen Unsicherheiten mit sich – oft seit der Schulzeit. Unser kostenloser Einstufungstest zeigt dir in wenigen Minuten, auf welchem Niveau du stehst und welcher Kurs am besten zu dir passt.</p>
+      <div class="test-intro-facts">
+        <div class="test-intro-fact"><span>⏱️</span> Ca. 5 Minuten</div>
+        <div class="test-intro-fact"><span>🔒</span> Ohne Anmeldung</div>
+        <div class="test-intro-fact"><span>💙</span> Ohne Druck</div>
+        <div class="test-intro-fact"><span>🎯</span> Mit Kursempfehlung</div>
+      </div>
+    </div>
+    <div class="test-levels">
+      <span class="test-level-chip">📝 Multiple Choice</span>
+      <span class="test-level-chip">🔍 Fehler finden</span>
+      <span class="test-level-chip">✏️ Lückentext</span>
+      <span class="test-level-chip">⚖️ Richtige Version</span>
+      <span class="test-level-chip">📌 Komma setzen</span>
+      <span class="test-level-chip">🔠 Groß/Kleinschreibung</span>
+    </div>
+    <button class="test-start-btn" onclick="startTest()">Jetzt kostenlos starten →</button>
+  </div>
+  <div class="test-body" id="test-body" style="display:none;">
+    <div class="test-progress-bar-wrap"><div class="test-progress-bar" id="test-progress-bar" style="width:0%"></div></div>
+    <div class="test-progress-label" id="test-progress-label">Frage 1 von 10</div>
+    <div id="test-question-area"></div>
   </div>
 </div>
 
@@ -626,13 +825,13 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
       <div class="featured-badge">Beliebteste Wahl</div>
       <div class="pricing-name">Vollständig</div><div class="pricing-title">Kompletter Kurs</div>
       <div class="pricing-price"><sup>€</sup>149<sub>/Kurs</sub></div>
-      <ul class="pricing-features"><li>Alle Module des gewählten Kurses</li><li>Lektionen, Übungen &amp; Tests</li><li>Selbsttests je Modul</li><li>Großer Abschlusstest</li><li>Zugang für 6 Monate</li><li>Persönliche Zugangsdaten</li></ul>
+      <ul class="pricing-features"><li>Alle Module des gewählten Kurses</li><li>Lektionen, Übungen und Tests</li><li>Selbsttests je Modul</li><li>Großer Abschlusstest</li><li>Zugang für 6 Monate</li><li>Persönliche Zugangsdaten</li></ul>
       <button class="btn-pricing btn-pricing-fill" onclick="showPage('contact')">Jetzt buchen</button>
     </div>
     <div class="pricing-card">
       <div class="pricing-name">Individuell</div><div class="pricing-title">Maßgeschneidert</div>
       <div class="pricing-price" style="font-size:1.792rem;padding:1.2rem 0;">Auf Anfrage</div>
-      <ul class="pricing-features"><li>Individuelle Kursgestaltung</li><li>Für Firmen &amp; Gruppen</li><li>Eigener Zeitrahmen</li><li>Persönliche Beratung inklusive</li><li>Flexibler Zugangszeitraum</li></ul>
+      <ul class="pricing-features"><li>Individuelle Kursgestaltung</li><li>Für Firmen und Gruppen</li><li>Eigener Zeitrahmen</li><li>Persönliche Beratung inklusive</li><li>Flexibler Zugangszeitraum</li></ul>
       <button class="btn-pricing btn-pricing-outline" onclick="showPage('contact')">Kontakt aufnehmen</button>
     </div>
   </div>
@@ -692,7 +891,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
         <div class="form-group"><label>Nachname</label><input type="text" placeholder="Mustermann"></div>
         <div class="form-group full"><label>E-Mail-Adresse</label><input type="email" placeholder="deine@email.at"></div>
         <div class="form-group full"><label>Ich interessiere mich für</label>
-          <select><option>Matura-Vorbereitung</option><option>Deutsch im Beruf</option><option>Rechtschreibung &amp; Grammatik</option><option>Maßgeschneidertes Angebot</option><option>Allgemeine Frage</option></select>
+          <select><option>Matura-Vorbereitung</option><option>Deutsch im Beruf</option><option>Rechtschreibung und Grammatik</option><option>Maßgeschneidertes Angebot</option><option>Allgemeine Frage</option></select>
         </div>
         <div class="form-group full"><label>Nachricht</label><textarea placeholder="Schreib mir gerne deine Fragen, Wünsche oder deinen Lernbedarf ..."></textarea></div>
       </div>
@@ -771,6 +970,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
       <ul class="sidebar-nav">
         <li><a id="admin-nav-users" onclick="adminShowTab('users')"><span class="nav-icon">👥</span>Alle Nutzer</a></li>
         <li><a id="admin-nav-courses" onclick="adminShowTab('courses')"><span class="nav-icon">📚</span>Kursverwaltung</a></li>
+        <li><a id="admin-nav-test" onclick="adminShowTab('test')"><span class="nav-icon">🎯</span>Einstufungstest</a></li>
         <li><a id="admin-nav-stats" onclick="adminShowTab('stats')"><span class="nav-icon">📊</span>Statistiken</a></li>
       </ul>
       <div class="sidebar-section-label">Navigation</div>
@@ -796,6 +996,27 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
           💡 <strong>Tipp:</strong> Klicke auf einen Kurs um seine Module zu sehen. Klicke auf ein Modul um die Lektionen zu sehen.
         </div>
         <div id="admin-courses-list"><p style="color:var(--muted);text-align:center;padding:2rem;">Lädt...</p></div>
+      </div>
+      <div id="admin-tab-test" style="display:none;">
+        <div class="dash-welcome"><h2>Einstufungstest verwalten</h2><p>Aufgaben hinzufügen, bearbeiten und löschen.</p></div>
+        <div class="aufgabe-form" id="aufgabe-form">
+          <h4 id="aufgabe-form-title">➕ Neue Aufgabe hinzufügen</h4>
+          <label>Aufgabentyp</label>
+          <select id="aufgabe-typ" onchange="renderAufgabeFormFields()">
+            <option value="">– Typ wählen –</option>
+            <option value="mc">Multiple Choice</option>
+            <option value="luecke">Lückentext</option>
+            <option value="fehler">Fehler markieren</option>
+            <option value="version">Richtige Version wählen</option>
+            <option value="korrektur">Text korrigieren</option>
+            <option value="komma">Komma setzen</option>
+            <option value="gross">Groß/Kleinschreibung</option>
+          </select>
+          <div class="aufgabe-dynamic-fields" id="aufgabe-dynamic-fields"></div>
+          <button class="aufgabe-save-btn" onclick="saveAufgabe()">💾 Speichern</button>
+          <button class="aufgabe-cancel-btn" onclick="cancelAufgabeForm()">Abbrechen</button>
+        </div>
+        <div id="admin-aufgaben-list"><p style="color:var(--muted);text-align:center;padding:2rem;">Lädt Aufgaben...</p></div>
       </div>
       <div id="admin-tab-stats" style="display:none;">
         <div class="dash-welcome"><h2>Statistiken</h2><p>Überblick über die Plattform.</p></div>
@@ -858,7 +1079,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
     <p>Orthion, [Ihr Name], [Adresse], office@orthion.at</p>
     <h2>Erhebung und Verarbeitung personenbezogener Daten</h2>
     <p>Wir erheben und verarbeiten personenbezogene Daten ausschließlich zur Bereitstellung unserer Online-Kurse und zur Kommunikation mit dir. Deine Daten werden nicht an Dritte weitergegeben.</p>
-    <h2>Mitgliederbereich &amp; Zugangsdaten</h2>
+    <h2>Mitgliederbereich und Zugangsdaten</h2>
     <p>Im Rahmen der Kursbuchung werden Zugangsdaten erstellt und gespeichert. Der Zugang ist zeitlich begrenzt und läuft nach dem vereinbarten Zeitraum automatisch ab.</p>
     <h2>Cookies</h2>
     <p>Diese Website verwendet ausschließlich technisch notwendige Cookies, die für den Betrieb der Plattform erforderlich sind.</p>
@@ -1061,13 +1282,14 @@ function toggleModulDash(header) {
    ADMIN
    ==================================================== */
 function adminShowTab(tab) {
-  ['users','courses','stats'].forEach(t => {
+  ['users','courses','test','stats'].forEach(t => {
     document.getElementById('admin-tab-'+t).style.display = t===tab ? 'block' : 'none';
     const navEl = document.getElementById('admin-nav-'+t);
     if (navEl) navEl.classList.toggle('active', t===tab);
   });
   if (tab === 'stats') loadAdminStats();
   if (tab === 'courses') loadAdminCourses();
+  if (tab === 'test') loadAdminTest();
 }
 
 async function loadAdminUsers() {
@@ -1251,6 +1473,498 @@ async function toggleLektionPublished(lektionId, currentVal) {
     const saved = document.getElementById('saved-' + lektionId);
     if (saved) { saved.style.display='inline'; setTimeout(()=>saved.style.display='none', 2000); }
   }
+}
+
+// ===== EINSTUFUNGSTEST =====
+// Standardaufgaben (werden durch Admin-Aufgaben ergänzt/ersetzt)
+let testAufgaben = [
+  {
+    id:'demo1', typ:'mc',
+    frage:'Welche Schreibweise ist korrekt?',
+    optionen:['das selbe','dasselbe','Das Selbe','das Selbe'],
+    loesung:1,
+    erklaerung:'„dasselbe" wird zusammengeschrieben – es bezeichnet etwas bereits Erwähntes.'
+  },
+  {
+    id:'demo2', typ:'version',
+    frage:'Welche Version ist grammatikalisch korrekt?',
+    versionen:['Ich habe ihn gestern getroffen, als ich in der Stadt war.','Ich habe ihn gestern getroffen als ich in der Stadt war.'],
+    loesung:0,
+    erklaerung:'Vor „als" steht ein Komma, da es einen Nebensatz einleitet.'
+  },
+  {
+    id:'demo3', typ:'fehler',
+    frage:'Klicke auf alle Wörter, die einen Rechtschreibfehler enthalten.',
+    text:'Der Man ging langsam durch den Pahk und betrachtete die schöhnen Bluhmen.',
+    fehlerIndizes:[1,5,8,9],
+    erklaerung:'Fehler: „Man" → Mann, „Pahk" → Park, „schöhnen" → schönen, „Bluhmen" → Blumen'
+  },
+  {
+    id:'demo4', typ:'luecke',
+    frage:'Ergänze die Lücke mit dem richtigen Wort:',
+    text:'Er wollte wissen, ___ das Paket schon angekommen ist.',
+    optionen:['ob','das','dass','ober'],
+    loesung:0,
+    erklaerung:'„ob" leitet einen indirekten Fragesatz ein.'
+  },
+  {
+    id:'demo5', typ:'komma',
+    frage:'Klicke auf die Stellen, wo ein Komma gesetzt werden muss.',
+    teile:['Obwohl es regnete',' gingen sie spazieren',' weil sie frische Luft brauchten.'],
+    kommaPositionen:[0,1],
+    erklaerung:'Nach „regnete" und nach „spazieren" gehört je ein Komma (Nebensätze).'
+  },
+  {
+    id:'demo6', typ:'gross',
+    frage:'Welche Schreibweise ist korrekt?',
+    optionen:['das Schreiben fällt mir schwer','Das Schreiben fällt mir schwer','das schreiben Fällt mir schwer','Das schreiben fällt mir schwer'],
+    loesung:1,
+    erklaerung:'Am Satzanfang wird großgeschrieben. Substantivierte Verben wie „das Schreiben" werden ebenfalls großgeschrieben.'
+  },
+  {
+    id:'demo7', typ:'korrektur',
+    frage:'Korrigiere den folgenden Satz:',
+    text:'Ich habe gestern meine Freundin angerufen, weil ich ihr eine Wichtige nachricht übermitteln wolte.',
+    loesung:'Ich habe gestern meine Freundin angerufen, weil ich ihr eine wichtige Nachricht übermitteln wollte.',
+    erklaerung:'Fehler: „Wichtige" → wichtige (kein Eigenname), „nachricht" → Nachricht (Substantiv → Großschreibung), „wolte" → wollte.'
+  },
+  {
+    id:'demo8', typ:'mc',
+    frage:'Was ist die korrekte Getrennt-/Zusammenschreibung?',
+    optionen:['kennenlernen','kennen lernen','Kennen lernen','KennenLernen'],
+    loesung:0,
+    erklaerung:'„kennenlernen" wird zusammengeschrieben (neue Rechtschreibung).'
+  },
+  {
+    id:'demo9', typ:'version',
+    frage:'Welcher Satz ist korrekt?',
+    versionen:['Wegen dem Regen blieb er zuhause.','Wegen des Regens blieb er zuhause.'],
+    loesung:1,
+    erklaerung:'„wegen" verlangt den Genitiv: „wegen des Regens", nicht den Dativ.'
+  },
+  {
+    id:'demo10', typ:'luecke',
+    frage:'Ergänze mit „das" oder „dass":',
+    text:'Ich glaube, ___ er recht hat.',
+    optionen:['das','dass','daß','weil'],
+    loesung:1,
+    erklaerung:'„dass" ist eine Konjunktion (leitet einen Nebensatz ein). „das" ist ein Artikel oder Pronomen.'
+  }
+];
+
+let testReihenfolge = [];
+let testAktuell = 0;
+let testPunkte = 0;
+let testAntworten = [];
+let editAufgabeId = null;
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+async function startTest() {
+  // Lade Aufgaben aus Supabase wenn verfügbar
+  try {
+    const { data, error } = await sb.from('placement_questions').select('*');
+    if (!error && data && data.length > 0) {
+      testAufgaben = data.map(d => ({...d, ...d.data}));
+    }
+  } catch(e) {}
+
+  testReihenfolge = shuffle(testAufgaben);
+  testAktuell = 0;
+  testPunkte = 0;
+  testAntworten = [];
+  document.querySelector('.test-hero').style.display = 'none';
+  document.getElementById('test-body').style.display = 'block';
+  zeigeTestFrage();
+}
+
+function zeigeTestFrage() {
+  const total = testReihenfolge.length;
+  const pct = Math.round((testAktuell / total) * 100);
+  document.getElementById('test-progress-bar').style.width = pct + '%';
+  document.getElementById('test-progress-label').textContent = `Frage ${testAktuell + 1} von ${total}`;
+
+  const aufgabe = testReihenfolge[testAktuell];
+  const area = document.getElementById('test-question-area');
+
+  const typeLabels = {mc:'Multiple Choice',luecke:'Lückentext',fehler:'Fehler markieren',version:'Richtige Version',korrektur:'Korrektur',komma:'Komma setzen',gross:'Groß/Kleinschreibung'};
+  const typeBadge = `<span class="test-type-badge badge-${aufgabe.typ}">${typeLabels[aufgabe.typ]||aufgabe.typ}</span>`;
+
+  let inhalt = '';
+  if (aufgabe.typ === 'mc' || aufgabe.typ === 'gross') {
+    inhalt = `<div class="test-mc-options">${aufgabe.optionen.map((o,i)=>`<button class="test-mc-btn" onclick="waehleOption(this,${i})">${o}</button>`).join('')}</div>
+    <button class="test-submit-btn" onclick="pruefeAntwort()">Antwort prüfen</button>`;
+  } else if (aufgabe.typ === 'luecke') {
+    const teile = aufgabe.text.split('___');
+    inhalt = `<p class="test-question" style="margin-bottom:0.5rem;">${teile[0]}<strong style="color:var(--violet);">___</strong>${teile[1]||''}</p>
+    <div class="test-mc-options">${aufgabe.optionen.map((o,i)=>`<button class="test-mc-btn" onclick="waehleOption(this,${i})">${o}</button>`).join('')}</div>
+    <button class="test-submit-btn" onclick="pruefeAntwort()">Antwort prüfen</button>`;
+  } else if (aufgabe.typ === 'version') {
+    inhalt = `<div class="test-version-options">${aufgabe.versionen.map((v,i)=>`<button class="test-version-btn" onclick="waehleVersion(this,${i})"><strong>Version ${i+1}:</strong><br>${v}</button>`).join('')}</div>
+    <button class="test-submit-btn" onclick="pruefeAntwort()">Antwort prüfen</button>`;
+  } else if (aufgabe.typ === 'fehler') {
+    const woerter = aufgabe.text.split(' ');
+    inhalt = `<p style="font-size:0.9rem;color:var(--muted);margin-bottom:0.75rem;">Klicke auf alle fehlerhaften Wörter:</p>
+    <div class="test-fehler-text">${woerter.map((w,i)=>`<span class="test-fehler-word" onclick="toggleFehlerWort(this,${i})" data-idx="${i}">${w}</span> `).join('')}</div>
+    <button class="test-submit-btn" onclick="pruefeAntwort()">Antwort prüfen</button>`;
+  } else if (aufgabe.typ === 'komma') {
+    let html = '';
+    aufgabe.teile.forEach((teil, i) => {
+      html += `<span>${teil}</span>`;
+      if (i < aufgabe.teile.length - 1) html += `<span class="test-komma-slot" data-idx="${i}" onclick="toggleKomma(this)"> </span>`;
+    });
+    inhalt = `<p style="font-size:0.9rem;color:var(--muted);margin-bottom:0.75rem;">Klicke wo ein Komma hingehört:</p>
+    <div class="test-komma-text" style="font-size:1.05rem;line-height:2.5;">${html}</div>
+    <button class="test-submit-btn" onclick="pruefeAntwort()">Antwort prüfen</button>`;
+  } else if (aufgabe.typ === 'korrektur') {
+    inhalt = `<div style="background:var(--blue-lighter);border-radius:10px;padding:1rem;margin-bottom:1rem;font-size:1.05rem;color:var(--navy);line-height:1.7;">${aufgabe.text}</div>
+    <label style="font-size:0.84rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;">Deine korrigierte Version:</label>
+    <textarea class="test-input" id="korrektur-input" rows="3" placeholder="Schreibe den korrigierten Satz hier..."></textarea>
+    <button class="test-submit-btn" onclick="pruefeAntwort()">Antwort prüfen</button>`;
+  }
+
+  area.innerHTML = `
+    <div class="test-card">
+      ${typeBadge}
+      <p class="test-question">${aufgabe.frage}</p>
+      <div id="test-aufgabe-inhalt">${inhalt}</div>
+      <div class="test-feedback" id="test-feedback"></div>
+      <button class="test-next-btn" id="test-next-btn" onclick="naechsteFrage()">${testAktuell < testReihenfolge.length - 1 ? 'Nächste Frage →' : 'Ergebnis anzeigen →'}</button>
+    </div>`;
+}
+
+let gewaehlteOption = null;
+let gewaehlteVersion = null;
+
+function waehleOption(btn, idx) {
+  document.querySelectorAll('.test-mc-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  gewaehlteOption = idx;
+}
+
+function waehleVersion(btn, idx) {
+  document.querySelectorAll('.test-version-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  gewaehlteVersion = idx;
+}
+
+function toggleFehlerWort(el, idx) {
+  el.classList.toggle('marked');
+}
+
+function toggleKomma(el) {
+  el.classList.toggle('has-komma');
+  el.textContent = el.classList.contains('has-komma') ? ',' : ' ';
+}
+
+function pruefeAntwort() {
+  const aufgabe = testReihenfolge[testAktuell];
+  const feedback = document.getElementById('test-feedback');
+  const nextBtn = document.getElementById('test-next-btn');
+  let korrekt = false;
+
+  document.querySelector('.test-submit-btn').style.display = 'none';
+
+  if (aufgabe.typ === 'mc' || aufgabe.typ === 'gross') {
+    if (gewaehlteOption === null) { document.querySelector('.test-submit-btn').style.display='inline-block'; return; }
+    korrekt = gewaehlteOption === aufgabe.loesung;
+    document.querySelectorAll('.test-mc-btn').forEach((b,i) => {
+      if (i === aufgabe.loesung) b.classList.add('correct');
+      else if (i === gewaehlteOption && !korrekt) b.classList.add('wrong');
+      b.disabled = true;
+    });
+    gewaehlteOption = null;
+  } else if (aufgabe.typ === 'luecke') {
+    if (gewaehlteOption === null) { document.querySelector('.test-submit-btn').style.display='inline-block'; return; }
+    korrekt = gewaehlteOption === aufgabe.loesung;
+    document.querySelectorAll('.test-mc-btn').forEach((b,i) => {
+      if (i === aufgabe.loesung) b.classList.add('correct');
+      else if (i === gewaehlteOption && !korrekt) b.classList.add('wrong');
+      b.disabled = true;
+    });
+    gewaehlteOption = null;
+  } else if (aufgabe.typ === 'version') {
+    if (gewaehlteVersion === null) { document.querySelector('.test-submit-btn').style.display='inline-block'; return; }
+    korrekt = gewaehlteVersion === aufgabe.loesung;
+    document.querySelectorAll('.test-version-btn').forEach((b,i) => {
+      if (i === aufgabe.loesung) b.classList.add('correct');
+      else if (i === gewaehlteVersion && !korrekt) b.classList.add('wrong');
+      b.disabled = true;
+    });
+    gewaehlteVersion = null;
+  } else if (aufgabe.typ === 'fehler') {
+    const markiert = [...document.querySelectorAll('.test-fehler-word.marked')].map(el => parseInt(el.dataset.idx));
+    const richtig = aufgabe.fehlerIndizes || [];
+    korrekt = JSON.stringify([...markiert].sort()) === JSON.stringify([...richtig].sort());
+    document.querySelectorAll('.test-fehler-word').forEach(el => {
+      const idx = parseInt(el.dataset.idx);
+      el.classList.remove('marked');
+      if (richtig.includes(idx)) el.classList.add('correct-mark');
+      else if (markiert.includes(idx)) el.classList.add('wrong-mark');
+    });
+  } else if (aufgabe.typ === 'komma') {
+    const gesetzt = [...document.querySelectorAll('.test-komma-slot.has-komma')].map(el => parseInt(el.dataset.idx));
+    const richtig = aufgabe.kommaPositionen || [];
+    korrekt = JSON.stringify([...gesetzt].sort()) === JSON.stringify([...richtig].sort());
+    document.querySelectorAll('.test-komma-slot').forEach(el => {
+      const idx = parseInt(el.dataset.idx);
+      if (richtig.includes(idx)) { el.classList.add('correct-komma'); el.textContent = ','; }
+      else if (gesetzt.includes(idx)) { el.classList.add('wrong-komma'); }
+    });
+  } else if (aufgabe.typ === 'korrektur') {
+    const eingabe = document.getElementById('korrektur-input').value.trim().toLowerCase();
+    const loesung = aufgabe.loesung.trim().toLowerCase();
+    korrekt = eingabe === loesung;
+    document.getElementById('korrektur-input').disabled = true;
+    document.getElementById('korrektur-input').style.borderColor = korrekt ? 'var(--success)' : '#E53935';
+  }
+
+  if (korrekt) testPunkte++;
+  testAntworten.push({aufgabe, korrekt});
+
+  feedback.style.display = 'block';
+  feedback.className = `test-feedback ${korrekt ? 'correct' : 'wrong'}`;
+  feedback.innerHTML = (korrekt ? '✓ Richtig! ' : '✗ Leider falsch. ') + (aufgabe.erklaerung || '');
+  nextBtn.style.display = 'inline-block';
+}
+
+function naechsteFrage() {
+  testAktuell++;
+  if (testAktuell >= testReihenfolge.length) {
+    zeigeErgebnis();
+  } else {
+    zeigeTestFrage();
+  }
+}
+
+function zeigeErgebnis() {
+  const total = testReihenfolge.length;
+  const pct = Math.round((testPunkte / total) * 100);
+  document.getElementById('test-progress-bar').style.width = '100%';
+  document.getElementById('test-progress-label').textContent = 'Test abgeschlossen!';
+
+  let level, icon, beschreibung, empfehlung;
+  if (pct >= 85) {
+    level = 'Fortgeschritten'; icon = '🏆';
+    beschreibung = 'Beeindruckend! Du beherrschst die deutschen Rechtschreib- und Grammatikregeln sehr gut.';
+    empfehlung = 'Kurs: Deutsch im Beruf – für die Feinheiten im professionellen Alltag.';
+  } else if (pct >= 60) {
+    level = 'Mittelstufe'; icon = '📈';
+    beschreibung = 'Gute Basis! Du kennst viele Regeln, aber es gibt noch einige Lücken, die wir gemeinsam schließen können.';
+    empfehlung = 'Kurs: Rechtschreibung und Grammatik Komplett – ideal für dich!';
+  } else {
+    level = 'Einsteiger'; icon = '🌱';
+    beschreibung = 'Kein Grund zur Sorge – jeder fängt irgendwo an. Mit Orthion baust du Schritt für Schritt eine solide Grundlage auf.';
+    empfehlung = 'Kurs: Rechtschreibung und Grammatik – von Grund auf, ohne Druck.';
+  }
+
+  // Auswertung nach Typ
+  const typStats = {};
+  testAntworten.forEach(a => {
+    if (!typStats[a.aufgabe.typ]) typStats[a.aufgabe.typ] = {richtig:0,gesamt:0};
+    typStats[a.aufgabe.typ].gesamt++;
+    if (a.korrekt) typStats[a.aufgabe.typ].richtig++;
+  });
+  const typeLabels = {mc:'Multiple Choice',luecke:'Lückentext',fehler:'Fehler finden',version:'Richtige Version',korrektur:'Korrektur',komma:'Komma setzen',gross:'Groß/Kleinschreibung'};
+  const barsHtml = Object.entries(typStats).map(([typ, s]) => {
+    const p = Math.round((s.richtig/s.gesamt)*100);
+    return `<div class="test-result-bar-row">
+      <span class="test-result-bar-label">${typeLabels[typ]||typ}</span>
+      <div class="test-result-bar-outer"><div class="test-result-bar-inner" style="width:${p}%"></div></div>
+      <span style="font-size:0.84rem;color:var(--muted);width:36px;text-align:right;">${p}%</span>
+    </div>`;
+  }).join('');
+
+  document.getElementById('test-question-area').innerHTML = `
+    <div class="test-card test-result">
+      <div class="test-result-icon">${icon}</div>
+      <h2>Dein Ergebnis</h2>
+      <div class="test-score-big">${testPunkte} / ${total}</div>
+      <div class="test-result-level">Niveau: ${level}</div>
+      <p>${beschreibung}</p>
+      <p><strong>Empfehlung:</strong> ${empfehlung}</p>
+      <div class="test-result-bars">${barsHtml}</div>
+      <div style="margin-top:1.5rem;">
+        <button class="test-cta-btn" onclick="showPage('kurse')">Jetzt Kurs wählen</button>
+        <button class="test-retry-btn" onclick="wiederholenTest()">Test wiederholen</button>
+      </div>
+    </div>`;
+}
+
+function wiederholenTest() {
+  document.getElementById('test-question-area').innerHTML = '';
+  document.getElementById('test-body').style.display = 'none';
+  document.querySelector('.test-hero').style.display = 'block';
+}
+
+// ===== ADMIN: AUFGABENVERWALTUNG =====
+function renderAufgabeFormFields() {
+  const typ = document.getElementById('aufgabe-typ').value;
+  const container = document.getElementById('aufgabe-dynamic-fields');
+  if (!typ) { container.innerHTML = ''; return; }
+
+  let html = `<label>Aufgabenstellung / Frage</label><input type="text" id="af-frage" placeholder="z.B. Welche Schreibweise ist korrekt?">`;
+
+  if (typ === 'mc' || typ === 'gross') {
+    html += `<label>Optionen (eine pro Zeile)</label><textarea id="af-optionen" placeholder="Option A&#10;Option B&#10;Option C&#10;Option D"></textarea>
+    <label>Richtige Antwort (0 = erste Option)</label><input type="number" id="af-loesung" min="0" placeholder="z.B. 0">`;
+  } else if (typ === 'luecke') {
+    html += `<label>Satz mit ___ für die Lücke</label><input type="text" id="af-text" placeholder="Er wollte wissen, ___ es stimmt.">
+    <label>Optionen (eine pro Zeile)</label><textarea id="af-optionen" placeholder="ob&#10;das&#10;dass&#10;weil"></textarea>
+    <label>Richtige Antwort (0 = erste Option)</label><input type="number" id="af-loesung" min="0" placeholder="z.B. 0">`;
+  } else if (typ === 'version') {
+    html += `<label>Version 1</label><input type="text" id="af-version1" placeholder="Erste Version des Satzes">
+    <label>Version 2</label><input type="text" id="af-version2" placeholder="Zweite Version des Satzes">
+    <label>Richtige Version (0 oder 1)</label><input type="number" id="af-loesung" min="0" max="1" placeholder="0 oder 1">`;
+  } else if (typ === 'fehler') {
+    html += `<label>Satz mit eingebauten Fehlern</label><textarea id="af-text" placeholder="Der Man ging durch den Pahk."></textarea>
+    <label>Indizes der fehlerhaften Wörter (kommagetrennt, 0 = erstes Wort)</label><input type="text" id="af-fehler" placeholder="z.B. 1,4">`;
+  } else if (typ === 'komma') {
+    html += `<label>Satzteile (durch | getrennt, Komma kommt ZWISCHEN die Teile)</label><textarea id="af-teile" placeholder="Obwohl es regnete| gingen sie spazieren| weil sie Luft brauchten."></textarea>
+    <label>Positionen wo Komma hingehört (0 = nach Teil 1, kommagetrennt)</label><input type="text" id="af-komma" placeholder="z.B. 0,1">`;
+  } else if (typ === 'korrektur') {
+    html += `<label>Satz mit Fehlern</label><textarea id="af-text" placeholder="Der Satz mit fehler..."></textarea>
+    <label>Korrekte Lösung</label><textarea id="af-loesung-text" placeholder="Der korrekte Satz..."></textarea>`;
+  }
+
+  html += `<label>Erklärung (wird nach der Antwort angezeigt)</label><textarea id="af-erklaerung" placeholder="Erklärung zur richtigen Antwort..."></textarea>`;
+  container.innerHTML = html;
+}
+
+function saveAufgabe() {
+  const typ = document.getElementById('aufgabe-typ').value;
+  if (!typ) { alert('Bitte einen Aufgabentyp wählen.'); return; }
+  const frage = document.getElementById('af-frage')?.value.trim();
+  if (!frage) { alert('Bitte eine Aufgabenstellung eingeben.'); return; }
+  const erklaerung = document.getElementById('af-erklaerung')?.value.trim() || '';
+
+  let aufgabe = { typ, frage, erklaerung, id: editAufgabeId || 'a_' + Date.now() };
+
+  if (typ === 'mc' || typ === 'gross') {
+    aufgabe.optionen = document.getElementById('af-optionen').value.split('\n').map(s=>s.trim()).filter(Boolean);
+    aufgabe.loesung = parseInt(document.getElementById('af-loesung').value) || 0;
+  } else if (typ === 'luecke') {
+    aufgabe.text = document.getElementById('af-text').value.trim();
+    aufgabe.optionen = document.getElementById('af-optionen').value.split('\n').map(s=>s.trim()).filter(Boolean);
+    aufgabe.loesung = parseInt(document.getElementById('af-loesung').value) || 0;
+  } else if (typ === 'version') {
+    aufgabe.versionen = [document.getElementById('af-version1').value.trim(), document.getElementById('af-version2').value.trim()];
+    aufgabe.loesung = parseInt(document.getElementById('af-loesung').value) || 0;
+  } else if (typ === 'fehler') {
+    aufgabe.text = document.getElementById('af-text').value.trim();
+    aufgabe.fehlerIndizes = document.getElementById('af-fehler').value.split(',').map(s=>parseInt(s.trim())).filter(n=>!isNaN(n));
+  } else if (typ === 'komma') {
+    aufgabe.teile = document.getElementById('af-teile').value.split('|');
+    aufgabe.kommaPositionen = document.getElementById('af-komma').value.split(',').map(s=>parseInt(s.trim())).filter(n=>!isNaN(n));
+  } else if (typ === 'korrektur') {
+    aufgabe.text = document.getElementById('af-text').value.trim();
+    aufgabe.loesung = document.getElementById('af-loesung-text').value.trim();
+  }
+
+  if (editAufgabeId) {
+    const idx = testAufgaben.findIndex(a => a.id === editAufgabeId);
+    if (idx > -1) testAufgaben[idx] = aufgabe;
+  } else {
+    testAufgaben.push(aufgabe);
+  }
+
+  // Speichere in Supabase
+  sb.from('placement_questions').upsert({ id: aufgabe.id, data: aufgabe }).then(({error}) => {
+    if (error) console.warn('Supabase speichern fehlgeschlagen – lokal gespeichert.', error);
+  });
+
+  editAufgabeId = null;
+  cancelAufgabeForm();
+  renderAdminAufgaben();
+}
+
+function cancelAufgabeForm() {
+  document.getElementById('aufgabe-typ').value = '';
+  document.getElementById('aufgabe-dynamic-fields').innerHTML = '';
+  document.getElementById('aufgabe-form-title').textContent = '➕ Neue Aufgabe hinzufügen';
+  editAufgabeId = null;
+}
+
+function editAufgabe(id) {
+  const aufgabe = testAufgaben.find(a => a.id === id);
+  if (!aufgabe) return;
+  editAufgabeId = id;
+  document.getElementById('aufgabe-form-title').textContent = '✏️ Aufgabe bearbeiten';
+  document.getElementById('aufgabe-typ').value = aufgabe.typ;
+  renderAufgabeFormFields();
+  setTimeout(() => {
+    if (document.getElementById('af-frage')) document.getElementById('af-frage').value = aufgabe.frage || '';
+    if (document.getElementById('af-erklaerung')) document.getElementById('af-erklaerung').value = aufgabe.erklaerung || '';
+    if (aufgabe.typ === 'mc' || aufgabe.typ === 'gross') {
+      if (document.getElementById('af-optionen')) document.getElementById('af-optionen').value = (aufgabe.optionen||[]).join('\n');
+      if (document.getElementById('af-loesung')) document.getElementById('af-loesung').value = aufgabe.loesung ?? 0;
+    } else if (aufgabe.typ === 'luecke') {
+      if (document.getElementById('af-text')) document.getElementById('af-text').value = aufgabe.text || '';
+      if (document.getElementById('af-optionen')) document.getElementById('af-optionen').value = (aufgabe.optionen||[]).join('\n');
+      if (document.getElementById('af-loesung')) document.getElementById('af-loesung').value = aufgabe.loesung ?? 0;
+    } else if (aufgabe.typ === 'version') {
+      if (document.getElementById('af-version1')) document.getElementById('af-version1').value = aufgabe.versionen?.[0] || '';
+      if (document.getElementById('af-version2')) document.getElementById('af-version2').value = aufgabe.versionen?.[1] || '';
+      if (document.getElementById('af-loesung')) document.getElementById('af-loesung').value = aufgabe.loesung ?? 0;
+    } else if (aufgabe.typ === 'fehler') {
+      if (document.getElementById('af-text')) document.getElementById('af-text').value = aufgabe.text || '';
+      if (document.getElementById('af-fehler')) document.getElementById('af-fehler').value = (aufgabe.fehlerIndizes||[]).join(',');
+    } else if (aufgabe.typ === 'komma') {
+      if (document.getElementById('af-teile')) document.getElementById('af-teile').value = (aufgabe.teile||[]).join('|');
+      if (document.getElementById('af-komma')) document.getElementById('af-komma').value = (aufgabe.kommaPositionen||[]).join(',');
+    } else if (aufgabe.typ === 'korrektur') {
+      if (document.getElementById('af-text')) document.getElementById('af-text').value = aufgabe.text || '';
+      if (document.getElementById('af-loesung-text')) document.getElementById('af-loesung-text').value = aufgabe.loesung || '';
+    }
+  }, 50);
+  document.getElementById('aufgabe-form').scrollIntoView({behavior:'smooth'});
+}
+
+async function deleteAufgabe(id) {
+  if (!confirm('Aufgabe wirklich löschen?')) return;
+  testAufgaben = testAufgaben.filter(a => a.id !== id);
+  await sb.from('placement_questions').delete().eq('id', id);
+  renderAdminAufgaben();
+}
+
+function renderAdminAufgaben() {
+  const container = document.getElementById('admin-aufgaben-list');
+  if (!container) return;
+  const typeLabels = {mc:'Multiple Choice',luecke:'Lückentext',fehler:'Fehler markieren',version:'Richtige Version',korrektur:'Korrektur',komma:'Komma setzen',gross:'Groß/Kleinschreibung'};
+  const typeColors = {mc:'var(--violet-light);color:var(--violet)',luecke:'var(--blue-pale);color:var(--navy-mid)',fehler:'#FFF3E0;color:#E65100',version:'#E8F5EE;color:#2E7D52',korrektur:'#FCE4EC;color:#C2185B',komma:'#EDE7F6;color:#512DA8',gross:'#E0F2F1;color:#00695C'};
+  if (testAufgaben.length === 0) {
+    container.innerHTML = '<p style="color:var(--muted);text-align:center;padding:2rem;">Noch keine Aufgaben vorhanden.</p>';
+    return;
+  }
+  container.innerHTML = `<p style="font-size:0.9rem;color:var(--muted);margin-bottom:1rem;">${testAufgaben.length} Aufgabe(n) gespeichert – erscheinen im Test in zufälliger Reihenfolge.</p>` +
+    testAufgaben.map((a, i) => `
+    <div class="aufgabe-card">
+      <div class="aufgabe-card-header">
+        <span class="aufgabe-type-tag" style="background:${typeColors[a.typ]||'var(--blue-pale);color:var(--navy)'}">${typeLabels[a.typ]||a.typ}</span>
+        <div class="aufgabe-actions">
+          <button class="aufgabe-edit-btn" onclick="editAufgabe('${a.id}')">✏️ Bearbeiten</button>
+          <button class="aufgabe-delete-btn" onclick="deleteAufgabe('${a.id}')">🗑️ Löschen</button>
+        </div>
+      </div>
+      <div class="aufgabe-preview"><strong>${i+1}.</strong> ${a.frage||'–'}</div>
+    </div>`).join('');
+}
+
+async function loadAdminTest() {
+  try {
+    const { data, error } = await sb.from('placement_questions').select('*');
+    if (!error && data && data.length > 0) {
+      testAufgaben = data.map(d => ({...d.data, id: d.id}));
+    }
+  } catch(e) {}
+  renderAdminAufgaben();
 }
 
 checkSession();
