@@ -38,12 +38,10 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 3rem
 .hero h1 em{font-style:italic;color:var(--violet);}
 .hero-content{max-width:1100px;width:100%;display:flex;flex-direction:column;align-items:center;position:relative;}
 .hero-video-wrap{width:100%;max-width:1100px;display:flex;flex-direction:column;gap:1rem;margin-top:1.75rem;}
-.hero-question{font-family:'Playfair Display',serif;font-size:2.2rem;font-style:italic;color:var(--navy);margin-bottom:0.4rem;line-height:1.25;}
 .hero-answer{font-size:1.1rem;color:var(--violet);margin-bottom:1.75rem;font-weight:600;}
 .hero-sub{font-size:1.05rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem;max-width:860px;text-align:center;}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--violet-light);color:var(--violet);font-size:0.85rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.45rem 1.1rem;border-radius:50px;margin-bottom:1.25rem;}
 .hero-eyebrow span{width:6px;height:6px;border-radius:50%;background:var(--violet);}
-.hero-slogan{font-size:1.008rem;color:var(--blue-soft);font-weight:600;font-style:italic;margin-bottom:2rem;}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.25rem;justify-content:center;}
 .btn-primary{background:var(--navy);color:white;border:none;padding:0.9rem 2.2rem;border-radius:50px;font-size:1.064rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:all 0.2s;}
 .btn-primary:hover{background:var(--navy-mid);}
@@ -54,42 +52,11 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 3rem
 .test-sticker-home:hover{animation:none;transform:rotate(12deg) scale(1.1);}
 .trust-item{display:flex;align-items:center;gap:6px;font-size:0.896rem;color:var(--muted);}
 .trust-dot{width:6px;height:6px;border-radius:50%;background:var(--success);}
-.hero-slogan-box{display:none;}
-.hero-slogan-quote{display:none;}
-.hero-slogan-text{display:none;}
-.hero-slogan-highlight{display:none;}
-.hero-visual{position:relative;display:flex;flex-direction:column;gap:1.25rem;justify-content:center;}
-.hero-dashboard{background:white;border-radius:24px;border:1px solid var(--light-border);padding:1.5rem;width:100%;max-width:420px;box-shadow:0 20px 60px rgba(43,58,103,0.1);}
-.dash-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;}
-.dash-title{font-size:0.952rem;font-weight:700;color:var(--navy);}
-.dash-badge{background:var(--violet-light);color:var(--violet);font-size:0.784rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:50px;}
-.progress-ring-wrap{display:flex;align-items:center;gap:1rem;background:var(--blue-lighter);border-radius:14px;padding:1rem 1.25rem;margin-bottom:1rem;}
-.ring{position:relative;width:64px;height:64px;flex-shrink:0;}
-.ring svg{transform:rotate(-90deg);}
-.ring-bg{fill:none;stroke:#E2E8F0;stroke-width:6;}
-.ring-fill{fill:none;stroke:var(--violet);stroke-width:6;stroke-linecap:round;stroke-dasharray:175;stroke-dashoffset:52;}
-.ring-text{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:0.952rem;font-weight:700;color:var(--navy);}
-.progress-course{font-size:0.896rem;font-weight:700;color:var(--navy);margin-bottom:0.2rem;}
-.progress-sub{font-size:0.806rem;color:var(--muted);}
-.progress-modules{font-size:0.784rem;color:var(--violet);font-weight:600;margin-top:0.25rem;}
-.module-list{display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1rem;}
-.module-item{display:flex;align-items:center;gap:10px;padding:0.6rem 0.75rem;background:var(--offwhite);border-radius:10px;border:1px solid var(--light-border);}
-.module-status{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;}
-.module-status.done{background:var(--success);color:white;}
-.module-status.active{background:var(--violet);color:white;}
-.module-status.locked{background:#E2E8F0;color:var(--muted);}
-.module-text{flex:1;}
-.module-name{font-size:0.874rem;font-weight:600;color:var(--text);}
-.module-type{font-size:0.762rem;color:var(--muted);}
-.dash-media{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;}
-.media-pill{display:flex;align-items:center;gap:6px;background:var(--blue-pale);border-radius:8px;padding:0.4rem 0.7rem;}
-.media-pill.violet{background:var(--violet-light);}
-.media-pill span{font-size:0.806rem;color:var(--muted);}
-.media-pill strong{font-size:0.806rem;color:var(--navy);}
-.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);background:var(--navy);padding:2.5rem 3rem;gap:1px;}
-.stat-item{text-align:center;padding:1rem;}
-.stat-num{font-family:'Playfair Display',serif;font-size:2.464rem;color:white;font-weight:700;}
-.stat-lbl{font-size:0.918rem;color:rgba(255,255,255,0.6);margin-top:0.2rem;}
+.video-placeholder{background:linear-gradient(145deg,var(--navy-deep),var(--navy-mid));border-radius:24px;width:100%;min-height:400px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;box-shadow:0 20px 60px rgba(43,58,103,0.22);}
+.video-play-btn{width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,0.18);border:2.5px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;font-size:2.4rem;margin-bottom:1.5rem;padding-left:6px;transition:background 0.2s;cursor:pointer;}
+.video-play-btn:hover{background:rgba(255,255,255,0.28);}
+.video-hint{font-size:1.3rem;font-weight:700;color:rgba(255,255,255,0.9);}
+.video-sub{font-size:0.9rem;color:rgba(255,255,255,0.45);margin-top:0.4rem;text-align:center;padding:0 2rem;}
 section{padding:5rem 3rem;}
 .section-inner{max-width:1200px;margin:0 auto;}
 .section-eyebrow{font-size:0.874rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--violet);margin-bottom:0.6rem;}
@@ -98,7 +65,6 @@ section{padding:5rem 3rem;}
 .section-header{margin-bottom:3rem;}
 .section-header.centered{text-align:center;}
 .section-header.centered .section-sub{margin:0 auto;}
-.courses-section{background:var(--offwhite);}
 .courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
 .course-card{background:white;border-radius:20px;border:1px solid var(--light-border);overflow:hidden;cursor:pointer;transition:transform 0.25s,box-shadow 0.25s;}
 .course-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(43,58,103,0.12);}
@@ -117,13 +83,6 @@ section{padding:5rem 3rem;}
 .course-arrow-btn:hover{background:var(--violet);}
 .course-topics{padding:0 1.75rem 1.25rem;display:flex;flex-wrap:wrap;gap:0.4rem;}
 .topic-chip{font-size:0.784rem;background:var(--blue-lighter);color:var(--navy-mid);padding:0.2rem 0.6rem;border-radius:50px;font-weight:500;}
-.steps-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative;}
-.steps-row::before{content:'';position:absolute;top:36px;left:10%;right:10%;height:1px;background:var(--light-border);z-index:0;}
-.step{text-align:center;position:relative;z-index:1;}
-.step-num{width:54px;height:54px;border-radius:50%;background:var(--white);border:2px solid var(--violet);color:var(--violet);font-size:1.232rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;}
-.step.done .step-num{background:var(--violet);color:white;}
-.step-title{font-weight:700;font-size:1.064rem;color:var(--navy);margin-bottom:0.5rem;}
-.step-text{font-size:0.918rem;color:var(--muted);line-height:1.65;}
 .features-section{background:var(--navy-deep);}
 .features-section .section-eyebrow{color:var(--violet-soft);}
 .features-section .section-title{color:white;}
@@ -145,14 +104,6 @@ section{padding:5rem 3rem;}
 .av-navy{background:var(--navy);}.av-violet{background:var(--violet);}.av-blue{background:var(--blue-soft);}
 .testi-name{font-size:0.98rem;font-weight:700;color:var(--navy);}
 .testi-role{font-size:0.84rem;color:var(--muted);}
-.media-strip{background:var(--blue-lighter);padding:3.5rem 3rem;}
-.media-strip-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:center;}
-.media-strip h3{font-family:'Playfair Display',serif;font-size:1.568rem;color:var(--navy);}
-.media-strip p{font-size:0.952rem;color:var(--muted);margin-top:0.35rem;}
-.media-icons{display:flex;gap:1rem;flex-wrap:wrap;}
-.media-icon{display:flex;align-items:center;gap:8px;background:white;border:1px solid var(--light-border);border-radius:12px;padding:0.65rem 1.1rem;}
-.media-icon span{font-size:20px;}
-.media-icon strong{font-size:0.918rem;color:var(--navy);}
 .cta-section{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 50%,var(--violet) 100%);text-align:center;padding:6rem 3rem;}
 .cta-section h2{font-family:'Playfair Display',serif;font-size:3.136rem;color:white;max-width:620px;margin:0 auto 1rem;}
 .cta-section p{color:rgba(255,255,255,0.7);font-size:1.12rem;max-width:500px;margin:0 auto 2.5rem;}
@@ -196,7 +147,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .contact-info h3{font-family:'Playfair Display',serif;font-size:1.68rem;color:var(--navy);margin-bottom:0.75rem;}
 .contact-info>p{font-size:1.008rem;color:var(--muted);line-height:1.75;margin-bottom:2rem;}
 .contact-detail{display:flex;align-items:flex-start;gap:14px;margin-bottom:1.5rem;}
-.c-icon{width:40px;height:40px;border-radius:12px;background:var(--blue-pale);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;}
+.c-icon{width:40px;height:40px;border-radius:12px;background:var(--blue-pale);display:flex;align-items:center;justify-content:font-size:19px;flex-shrink:0;}
 .c-info strong{display:block;font-size:0.974rem;color:var(--navy);font-weight:700;}
 .c-info span{font-size:0.93rem;color:var(--muted);}
 .contact-form-card{background:white;border:1px solid var(--light-border);border-radius:20px;padding:2.5rem;}
@@ -246,8 +197,6 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .dash-welcome{margin-bottom:2rem;}
 .dash-welcome h2{font-family:'Playfair Display',serif;font-size:1.96rem;color:var(--navy);margin-bottom:0.25rem;}
 .dash-welcome p{font-size:1.008rem;color:var(--muted);}
-
-/* ===== DASHBOARD KURSE ===== */
 .kurs-uebersicht{margin-top:0.5rem;}
 .kurs-block{background:white;border:1px solid var(--light-border);border-radius:16px;margin-bottom:1.25rem;overflow:hidden;}
 .kurs-block-header{padding:1.25rem 1.5rem;border-bottom:1px solid var(--light-border);background:var(--blue-lighter);}
@@ -264,15 +213,12 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .modul-badge{font-size:0.762rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:50px;background:var(--blue-pale);color:var(--navy-mid);}
 .lektionen-liste{display:none;padding:0.5rem 1.5rem 1rem 3rem;background:var(--offwhite);}
 .lektion-zeile{display:flex;align-items:center;gap:10px;padding:0.6rem 0.75rem;background:white;border:1px solid var(--light-border);border-radius:10px;margin-bottom:0.4rem;}
-.lektion-zeile:last-child{margin-bottom:0;}
 .lektion-icon{font-size:18px;width:24px;text-align:center;}
 .lektion-name-dash{font-size:0.918rem;color:var(--navy);flex:1;}
 .lektion-neu{font-size:0.762rem;font-weight:700;background:var(--violet-light);color:var(--violet);padding:0.15rem 0.5rem;border-radius:50px;}
 .keine-kurse{text-align:center;padding:3rem 2rem;color:var(--muted);}
 .keine-kurse-icon{font-size:3rem;margin-bottom:0.75rem;}
 .loading-dash{text-align:center;padding:3rem;color:var(--muted);}
-
-/* ===== KURSVERWALTUNG ===== */
 .kurs-card{background:white;border:1px solid var(--light-border);border-radius:16px;margin-bottom:1rem;overflow:hidden;}
 .kurs-card-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;cursor:pointer;transition:background 0.15s;}
 .kurs-card-header:hover{background:var(--blue-lighter);}
@@ -286,7 +232,6 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .status-coming_soon{background:#FEF3C7;color:#92400E;}
 .status-draft{background:#F3F4F6;color:#6B7280;}
 .status-select{font-size:0.84rem;padding:0.3rem 0.6rem;border:1.5px solid var(--light-border);border-radius:8px;font-family:'Nunito',sans-serif;color:var(--navy);cursor:pointer;background:white;outline:none;}
-.status-select:focus{border-color:var(--violet);}
 .kurs-body{display:none;padding:0 1.25rem 1.25rem;border-top:1px solid var(--light-border);background:var(--offwhite);}
 .kurs-card.expanded .kurs-body{display:block;}
 .modul-row{display:flex;align-items:center;justify-content:space-between;padding:0.65rem 0.75rem;background:white;border:1px solid var(--light-border);border-radius:10px;margin-top:0.5rem;cursor:pointer;transition:border-color 0.15s;}
@@ -309,7 +254,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .lektion-name{font-size:0.874rem;color:var(--navy);}
 .save-indicator{font-size:0.784rem;color:var(--success);font-weight:600;display:none;margin-left:0.5rem;}
 #auth-message{margin-top:0.75rem;font-size:0.9rem;text-align:center;min-height:1.2em;}
-.services-hero{background:linear-gradient(145deg,var(--blue-lighter),var(--violet-pale));padding:5rem 3rem;text-align:center;}
+.services-hero{background:linear-gradient(145deg,var(--blue-lighter),var(--violet-pale));padding:5rem 3rem;text-align:center;position:relative;}
 .services-hero h1{font-family:'Playfair Display',serif;font-size:3.136rem;color:var(--navy);max-width:600px;margin:0 auto 0.75rem;}
 .services-hero p{color:var(--muted);max-width:500px;margin:0 auto;}
 .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;padding:4rem 3rem;max-width:1100px;margin:0 auto;}
@@ -333,14 +278,6 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .legal-page h1{font-family:'Playfair Display',serif;font-size:2.464rem;color:var(--navy);margin-bottom:2rem;}
 .legal-page h2{font-size:1.232rem;font-weight:700;color:var(--navy);margin:2rem 0 0.75rem;}
 .legal-page p{font-size:1.008rem;color:var(--muted);line-height:1.8;margin-bottom:0.75rem;}
-/* ===== VIDEO PLATZHALTER ===== */
-.video-placeholder{background:linear-gradient(145deg,var(--navy-deep),var(--navy-mid));border-radius:24px;width:100%;min-height:400px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;box-shadow:0 20px 60px rgba(43,58,103,0.22);}
-.video-play-btn{width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,0.18);border:2.5px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;font-size:2.4rem;margin-bottom:1.5rem;padding-left:6px;transition:background 0.2s;cursor:pointer;}
-.video-play-btn:hover{background:rgba(255,255,255,0.28);}
-.video-hint{font-size:1.3rem;font-weight:700;color:rgba(255,255,255,0.9);}
-.video-sub{font-size:0.9rem;color:rgba(255,255,255,0.45);margin-top:0.4rem;text-align:center;padding:0 2rem;}
-
-/* ===== ZWEI-SPALTEN SEKTIONEN ===== */
 .two-col-section{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
 .was-ist-section{padding:5rem 3rem;background:var(--white);}
 .was-ist-text h2{margin-bottom:1.25rem;}
@@ -350,8 +287,6 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .img-fallback small{font-size:0.84rem;line-height:1.5;}
 .orthion-pills{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.5rem;}
 .o-pill{background:var(--blue-lighter);color:var(--navy-mid);font-size:0.874rem;font-weight:600;padding:0.3rem 0.9rem;border-radius:50px;}
-
-/* ===== ZIELGRUPPE ===== */
 .zielgruppe-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1rem;}
 .zg-card{background:white;border:1px solid var(--light-border);border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(43,58,103,0.06);}
 .zg-img-wrap{height:220px;overflow:hidden;background:var(--blue-lighter);}
@@ -360,32 +295,9 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .zg-icon{font-size:2rem;margin-bottom:0.75rem;}
 .zg-content h3{font-family:'Playfair Display',serif;font-size:1.232rem;color:var(--navy);margin-bottom:0.6rem;}
 .zg-content p{font-size:0.952rem;color:var(--muted);line-height:1.7;}
-
 .back-bar{padding:1rem 3rem;border-bottom:1px solid var(--light-border);display:flex;align-items:center;gap:8px;}
 .back-btn{background:none;border:none;font-size:0.952rem;color:var(--blue-soft);cursor:pointer;font-family:'Nunito',sans-serif;display:flex;align-items:center;gap:6px;}
 .back-btn:hover{color:var(--navy);}
-
-/* ===== MINI DASHBOARD ===== */
-.mini-dash{background:white;border-radius:20px;border:1px solid var(--light-border);padding:1.25rem 1.5rem;margin-top:1rem;box-shadow:0 8px 32px rgba(43,58,103,0.08);}
-.mini-dash-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;}
-.mini-dash-title{display:flex;align-items:center;gap:7px;font-size:0.9rem;font-weight:700;color:var(--navy);}
-.mini-dash-dot{width:8px;height:8px;border-radius:50%;background:var(--success);}
-.mini-dash-badge{font-size:0.75rem;font-weight:700;background:var(--violet-light);color:var(--violet);padding:0.2rem 0.65rem;border-radius:50px;}
-.mini-dash-course{display:flex;align-items:center;gap:1rem;background:var(--blue-lighter);border-radius:14px;padding:0.85rem 1rem;margin-bottom:0.85rem;}
-.mini-dash-ring{position:relative;width:48px;height:48px;flex-shrink:0;}
-.mini-dash-pct{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700;color:var(--navy);}
-.mini-dash-course-name{font-size:0.88rem;font-weight:700;color:var(--navy);}
-.mini-dash-course-sub{font-size:0.78rem;color:var(--muted);margin-top:0.15rem;}
-.mini-dash-modules{display:flex;flex-direction:column;gap:0.45rem;}
-.mini-dash-module{display:flex;align-items:center;gap:0.75rem;padding:0.55rem 0.75rem;border-radius:10px;border:1px solid var(--light-border);background:var(--offwhite);}
-.mini-dash-module.done{background:#EEF8F3;border-color:#C3E6D4;}
-.mini-dash-module.active{background:var(--violet-pale);border-color:var(--violet-light);}
-.mdm-icon{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;flex-shrink:0;}
-.mini-dash-module.done .mdm-icon{background:var(--success);color:white;}
-.mini-dash-module.active .mdm-icon{background:var(--violet);color:white;}
-.mini-dash-module.locked .mdm-icon{background:#E2E8F0;color:var(--muted);font-size:0.65rem;}
-.mdm-name{font-size:0.84rem;font-weight:600;color:var(--text);}
-.mini-dash-module.locked .mdm-name{color:var(--muted);}
 
 /* ===== EINSTUFUNGSTEST ===== */
 .test-hero{text-align:center;padding:3rem 2rem 2rem;background:linear-gradient(145deg,var(--blue-lighter),var(--violet-pale));}
@@ -395,7 +307,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .test-level-chip{background:white;color:var(--navy-mid);font-size:0.84rem;font-weight:600;padding:0.3rem 0.9rem;border-radius:50px;border:1px solid var(--light-border);}
 .test-start-btn{background:var(--violet);color:white;border:none;padding:1rem 2.5rem;border-radius:50px;font-size:1.1rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:all 0.2s;}
 .test-start-btn:hover{background:var(--violet-soft);}
-.test-body{max-width:720px;margin:0 auto;padding:2.5rem 2rem;}
+.test-body{max-width:760px;margin:0 auto;padding:2.5rem 2rem;}
 .test-progress-bar-wrap{background:var(--light-border);border-radius:50px;height:8px;margin-bottom:0.4rem;}
 .test-progress-bar{background:linear-gradient(90deg,var(--violet),var(--blue-soft));height:8px;border-radius:50px;transition:width 0.4s;}
 .test-progress-label{font-size:0.84rem;color:var(--muted);text-align:right;margin-bottom:1.75rem;}
@@ -408,6 +320,9 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .badge-korrektur{background:#FCE4EC;color:#C2185B;}
 .badge-komma{background:#EDE7F6;color:#512DA8;}
 .badge-gross{background:#E0F2F1;color:#00695C;}
+.badge-diktat{background:#FFF8E1;color:#F57F17;}
+.badge-direkte-rede{background:#F3E5F5;color:#6A1B9A;}
+.badge-getrennt{background:#E8F5E9;color:#1B5E20;}
 .test-question{font-size:1.08rem;font-weight:600;color:var(--navy);margin-bottom:1.25rem;line-height:1.5;}
 .test-mc-options{display:flex;flex-direction:column;gap:0.6rem;}
 .test-mc-btn{background:var(--offwhite);border:1.5px solid var(--light-border);border-radius:12px;padding:0.75rem 1.1rem;font-size:1rem;font-family:'Nunito',sans-serif;color:var(--text);cursor:pointer;text-align:left;transition:all 0.2s;}
@@ -417,20 +332,24 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .test-mc-btn.wrong{border-color:#E53935;background:#FFEBEE;color:#C62828;}
 .test-input{width:100%;padding:0.75rem 1rem;border:1.5px solid var(--light-border);border-radius:10px;font-size:1rem;font-family:'Nunito',sans-serif;color:var(--text);outline:none;background:var(--offwhite);}
 .test-input:focus{border-color:var(--violet);}
-.test-fehler-text{font-size:1.05rem;line-height:2.2;color:var(--text);cursor:pointer;user-select:none;}
+.test-fehler-text{font-size:1.05rem;line-height:2.5;color:var(--text);cursor:pointer;user-select:none;}
 .test-fehler-word{padding:2px 5px;border-radius:4px;transition:background 0.15s;display:inline-block;}
 .test-fehler-word:hover{background:var(--violet-pale);}
 .test-fehler-word.marked{background:#FFF3E0;border-bottom:2px solid #E65100;color:#E65100;font-weight:600;}
 .test-fehler-word.correct-mark{background:#E8F5EE;border-bottom:2px solid var(--success);}
 .test-fehler-word.wrong-mark{background:#FFEBEE;border-bottom:2px solid #E53935;}
-.test-komma-slot{display:inline-block;min-width:14px;height:20px;border-bottom:2px dashed #ccc;cursor:pointer;margin:0 1px;vertical-align:middle;text-align:center;font-weight:700;font-size:1.1rem;color:var(--violet);transition:all 0.2s;}
-.test-komma-slot:hover{border-bottom-color:var(--violet);background:var(--violet-pale);border-radius:3px;}
-.test-komma-slot.has-komma{border-bottom:2px solid var(--violet);}
-.test-komma-slot.correct-komma{color:var(--success);border-bottom-color:var(--success);}
-.test-komma-slot.wrong-komma{color:#E53935;border-bottom-color:#E53935;}
+/* Komma-Slots: nach JEDEM Wort */
+.test-komma-word{display:inline;}
+.test-komma-slot{display:inline-block;min-width:18px;height:22px;border-bottom:2px dashed #ccc;cursor:pointer;margin:0 1px;vertical-align:middle;text-align:center;font-weight:700;font-size:1.1rem;color:var(--violet);transition:all 0.2s;border-radius:3px;}
+.test-komma-slot:hover{border-bottom-color:var(--violet);background:var(--violet-pale);}
+.test-komma-slot.has-komma{border-bottom:2px solid var(--violet);color:var(--violet);}
+.test-komma-slot.correct-komma{color:var(--success);border-bottom-color:var(--success);background:#E8F5EE;}
+.test-komma-slot.wrong-komma{color:#E53935;border-bottom-color:#E53935;background:#FFEBEE;}
+.test-komma-slot.missed-komma{color:var(--success);border-bottom-color:var(--success);background:#E8F5EE;}
 .test-version-options{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
 .test-version-btn{background:var(--offwhite);border:1.5px solid var(--light-border);border-radius:12px;padding:1rem;font-size:0.98rem;font-family:'Nunito',sans-serif;color:var(--text);cursor:pointer;text-align:left;line-height:1.6;transition:all 0.2s;}
 .test-version-btn:hover{border-color:var(--violet);background:var(--violet-pale);}
+.test-version-btn.selected{border-color:var(--violet);background:var(--violet-pale);}
 .test-version-btn.correct{border-color:var(--success);background:#E8F5EE;}
 .test-version-btn.wrong{border-color:#E53935;background:#FFEBEE;}
 .test-submit-btn{background:var(--navy);color:white;border:none;padding:0.75rem 2rem;border-radius:50px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:1.25rem;transition:all 0.2s;}
@@ -447,7 +366,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .test-result p{color:var(--muted);font-size:1rem;line-height:1.75;max-width:480px;margin:0 auto 1rem;}
 .test-result-bars{display:flex;flex-direction:column;gap:0.6rem;margin:1.5rem auto;max-width:420px;text-align:left;}
 .test-result-bar-row{display:flex;align-items:center;gap:1rem;}
-.test-result-bar-label{font-size:0.84rem;color:var(--muted);width:140px;flex-shrink:0;}
+.test-result-bar-label{font-size:0.84rem;color:var(--muted);width:160px;flex-shrink:0;}
 .test-result-bar-outer{flex:1;background:var(--light-border);border-radius:50px;height:10px;}
 .test-result-bar-inner{background:var(--violet);height:10px;border-radius:50px;transition:width 0.6s;}
 .test-cta-btn{background:var(--navy);color:white;border:none;padding:0.9rem 2.2rem;border-radius:50px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;margin:0.4rem;transition:all 0.2s;}
@@ -455,8 +374,22 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .test-retry-btn{background:transparent;color:var(--violet);border:2px solid var(--violet);padding:0.9rem 2.2rem;border-radius:50px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;margin:0.4rem;transition:all 0.2s;}
 .test-retry-btn:hover{background:var(--violet-pale);}
 .test-score-big{font-family:'Playfair Display',serif;font-size:3.5rem;color:var(--navy);font-weight:700;margin:0.5rem 0;}
-
-/* ===== ADMIN TEST-VERWALTUNG ===== */
+/* Teiltrenner */
+.test-part-divider{text-align:center;padding:2.5rem 1rem;background:linear-gradient(135deg,var(--navy),var(--violet));border-radius:20px;margin-bottom:1.5rem;color:white;}
+.test-part-divider h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:0.5rem;}
+.test-part-divider p{font-size:1rem;color:rgba(255,255,255,0.75);margin-bottom:1.25rem;}
+.test-part-divider-btn{background:white;color:var(--navy);border:none;padding:0.75rem 2rem;border-radius:50px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;}
+/* Audio-Button */
+.audio-play-btn{display:inline-flex;align-items:center;gap:0.5rem;background:var(--navy);color:white;border:none;padding:0.65rem 1.4rem;border-radius:50px;font-size:0.95rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;margin-bottom:1rem;transition:all 0.2s;}
+.audio-play-btn:hover{background:var(--navy-mid);}
+.audio-play-btn.playing{background:var(--violet);}
+/* Diktat-Eingabe */
+.diktat-solution-box{background:var(--blue-lighter);border-radius:10px;padding:1rem;margin-top:0.75rem;font-size:0.95rem;color:var(--navy);line-height:1.8;display:none;}
+/* dass/das Lücken */
+.dass-luecke{display:inline-block;min-width:55px;border:none;border-bottom:2px solid var(--violet);background:transparent;font-family:'Nunito',sans-serif;font-size:1rem;color:var(--navy);outline:none;padding:0 4px;text-align:center;vertical-align:middle;}
+.dass-luecke.correct{border-bottom-color:var(--success);color:var(--success);}
+.dass-luecke.wrong{border-bottom-color:#E53935;color:#E53935;}
+/* Admin Test */
 .aufgabe-card{background:white;border:1px solid var(--light-border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:0.75rem;}
 .aufgabe-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.4rem;}
 .aufgabe-type-tag{font-size:0.75rem;font-weight:700;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:50px;}
@@ -472,15 +405,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .aufgabe-form label{display:block;font-size:0.84rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.3rem;}
 .aufgabe-save-btn{background:var(--violet);color:white;border:none;padding:0.65rem 1.75rem;border-radius:50px;font-size:0.95rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;margin-right:0.5rem;}
 .aufgabe-cancel-btn{background:transparent;color:var(--muted);border:1.5px solid var(--light-border);padding:0.65rem 1.25rem;border-radius:50px;font-size:0.95rem;font-weight:600;cursor:pointer;font-family:'Nunito',sans-serif;}
-.btn-test-hero{position:relative;overflow:hidden;background:linear-gradient(90deg,var(--violet),var(--navy));color:white;border:none;padding:0.9rem 2.2rem;border-radius:50px;font-size:1.064rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;transition:all 0.2s;animation:pulse-btn 3s ease-in-out infinite;}
-.btn-test-hero::after{content:'';position:absolute;top:0;left:-75%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.35),transparent);animation:shimmer 3s ease-in-out infinite;}
-.btn-test-hero:hover{opacity:0.9;transform:scale(1.03);}
-
-/* ===== TEST STICKER ===== */
-.hero-title-row{display:flex;align-items:flex-start;gap:1.5rem;justify-content:center;}
-.hero-title-row h1{flex:1;}
-.hero-btns-row{display:flex;align-items:center;gap:1.5rem;justify-content:center;margin-bottom:2rem;}
-.hero-btns-row .test-sticker{margin-left:3.5rem;}
+/* Sticker */
 .test-sticker{width:180px;height:180px;cursor:pointer;transform:rotate(12deg);animation:sticker-float 3.5s ease-in-out infinite;z-index:10;flex-shrink:0;}
 .test-sticker:hover{animation:none;transform:rotate(12deg) scale(1.1);}
 .test-sticker-inner{width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#FFD93D,#FF6B6B);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1.25rem;box-shadow:3px 4px 0px rgba(0,0,0,0.15),0 8px 24px rgba(0,0,0,0.12);border:3px solid rgba(255,255,255,0.6);}
@@ -491,25 +416,10 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .test-sticker-kurse{position:absolute;top:50%;right:3rem;transform:translateY(-50%) rotate(12deg);animation:sticker-float-kurse 3.5s ease-in-out infinite;width:180px;height:180px;}
 .test-sticker-kurse:hover{animation:none;transform:translateY(-50%) rotate(12deg) scale(1.1);}
 @keyframes sticker-float-kurse{0%,100%{transform:translateY(-50%) rotate(12deg);}50%{transform:translateY(calc(-50% - 6px)) rotate(14deg);}}
-.services-hero{position:relative;}
 @keyframes sticker-float{0%,100%{transform:rotate(12deg) translateY(0);}50%{transform:rotate(14deg) translateY(-6px);}}
 @keyframes spin-slow{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
-
-.test-banner{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2rem;background:linear-gradient(90deg,var(--navy) 0%,var(--violet) 100%);color:white;padding:1.25rem 3rem;cursor:pointer;transition:opacity 0.2s;text-decoration:none;}
-.test-banner:hover{opacity:0.95;}
-.test-banner-left{display:flex;align-items:center;gap:1rem;}
-.test-banner-icon{font-size:1.6rem;animation:bounce 2.5s ease-in-out infinite;}
-.test-banner-texts{}
-.test-banner-label{font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:0.1rem;}
-.test-banner-text{font-size:1.05rem;font-weight:700;}
-.test-banner-right{}
-.test-banner-btn{position:relative;overflow:hidden;background:white;color:var(--navy);border:none;padding:0.75rem 1.75rem;border-radius:50px;font-size:0.98rem;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;white-space:nowrap;animation:pulse-btn 3s ease-in-out infinite;}
-.test-banner-btn::after{content:'';position:absolute;top:0;left:-75%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.6),transparent);animation:shimmer 3s ease-in-out infinite;}
-@keyframes pulse-btn{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,255,255,0.4);}50%{transform:scale(1.04);box-shadow:0 0 0 8px rgba(255,255,255,0);}}
+@keyframes pulse-btn{0%,100%{transform:scale(1);}50%{transform:scale(1.04);}}
 @keyframes shimmer{0%{left:-75%;}60%,100%{left:125%;}}
-@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-4px);}}
-
-/* ===== TEST INTRO BOX ===== */
 .test-intro-box{background:white;border:1px solid var(--light-border);border-radius:20px;padding:2rem 2.5rem;max-width:600px;margin:0 auto 2rem;text-align:left;box-shadow:0 4px 24px rgba(43,58,103,0.07);}
 .test-intro-box h3{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--navy);margin-bottom:0.75rem;}
 .test-intro-box p{color:var(--muted);font-size:1rem;line-height:1.75;}
@@ -573,8 +483,6 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
       </div>
     </div>
   </div>
-
-  <!-- ZIELGRUPPE -->
   <section style="background:var(--offwhite);">
     <div class="section-inner">
       <div class="section-header centered">
@@ -583,273 +491,136 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
       </div>
       <div class="zielgruppe-grid">
         <div class="zg-card">
-          <!-- BILD-PLATZHALTER: Junger Mensch, ca. 20–30, lernt am Laptop -->
-          <!-- Empfehlung: unsplash.com → Suche "young adult laptop studying smiling" -->
-          <div class="zg-img-wrap">
-            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&q=80" alt="Junge Person lernt" class="zg-img" onerror="this.style.display='none'">
-          </div>
-          <div class="zg-content">
-            <div class="zg-icon">🎓</div>
-            <h3>Jung und im Aufbau</h3>
-            <p>Du hast die Schule hinter dir und merkst: Da gibt es noch Lücken. Matura nachholen, Bewerbungen schreiben, im Beruf ankommen – mit sicherer Sprache gelingt alles besser.</p>
-          </div>
+          <div class="zg-img-wrap"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&q=80" alt="Junge Person lernt" class="zg-img" onerror="this.style.display='none'"></div>
+          <div class="zg-content"><div class="zg-icon">🎓</div><h3>Jung und im Aufbau</h3><p>Du hast die Schule hinter dir und merkst: Da gibt es noch Lücken. Matura nachholen, Bewerbungen schreiben, im Beruf ankommen – mit sicherer Sprache gelingt alles besser.</p></div>
         </div>
         <div class="zg-card">
-          <!-- BILD-PLATZHALTER: Ältere Person, 50+, lächelnd am Schreibtisch -->
-          <!-- Empfehlung: unsplash.com → Suche "senior woman confident desk smiling" -->
-          <div class="zg-img-wrap">
-            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=500&q=80" alt="Erfahrene Person lernt" class="zg-img" onerror="this.style.display='none'">
-          </div>
-          <div class="zg-content">
-            <div class="zg-icon">💼</div>
-            <h3>Erfahren und berufstätig</h3>
-            <p>Du trägst dieses Gefühl schon lange mit dir. Es ist nie zu spät. Mit <span class="brand">Orthion</span> holst du nach, was du brauchst – ganz für dich, ohne dass jemand davon wissen muss.</p>
-          </div>
+          <div class="zg-img-wrap"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=500&q=80" alt="Erfahrene Person lernt" class="zg-img" onerror="this.style.display='none'"></div>
+          <div class="zg-content"><div class="zg-icon">💼</div><h3>Erfahren und berufstätig</h3><p>Du trägst dieses Gefühl schon lange mit dir. Es ist nie zu spät. Mit <span class="brand">Orthion</span> holst du nach, was du brauchst – ganz für dich, ohne dass jemand davon wissen muss.</p></div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- WAS IST ORTHION -->
   <section class="was-ist-section">
     <div class="section-inner two-col-section">
       <div>
-        <!-- BILD-PLATZHALTER: Person schreibt selbstbewusst am Schreibtisch -->
-        <!-- Empfehlung: unsplash.com → Suche "adult writing desk confident" -->
-        <img
-          src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=640&q=80"
-          alt="Person lernt mit Orthion"
-          class="section-img"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-        >
-        <div class="img-fallback" style="display:none;">
-          <span>📝</span>
-          <small>Bild: Person beim Schreiben<br>Von unsplash.com einfügen</small>
-        </div>
+        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=640&q=80" alt="Person lernt mit Orthion" class="section-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="img-fallback" style="display:none;"><span>📝</span><small>Bild: Person beim Schreiben</small></div>
       </div>
       <div class="was-ist-text">
         <div class="section-eyebrow">Was ist Orthion?</div>
         <h2 class="section-title">Aus <em>Ortho</em>graphie und <em>Online</em> entstand <span class="brand">Orthion</span>.</h2>
-        <p>Sprache ist eine der stärksten Ressourcen, die du hast. Sie formt, wie du denkst, wie du wirkst und wie andere dich wahrnehmen. Ob SMS, E-Mail, Bewerbung oder Gespräch mit dem Chef – ohne Sprache kommst du nicht weit.</p>
-        <p>Viele versuchen heute, sprachliche Lücken mit KI zu überbrücken. Doch wer das tut, gibt Macht aus der Hand. <strong>„Wer nichts weiß, muss alles glauben."</strong> Die eigene Sprachkompetenz an eine Maschine abzugeben bedeutet, abhängig zu werden – und den eigenen Ausdruck zu verlieren.</p>
-        <p>Dazu kommt: Schriftliche Kompetenz wirkt sich direkt auf die mündliche aus. Der Eindruck, den du hinterlässt – bei Kollegen, Freunden, im Vorstellungsgespräch – hat viel mit deiner eigenen Sprache zu tun. Wer sicher schreibt, spricht auch sicherer.</p>
-        <p>Viele Menschen, die mit Deutsch aufgewachsen sind, tragen Lücken mit sich – aus der Schule mitgenommen, lange verdrängt. <strong><span class="brand">Orthion</span> gibt dir diese Kompetenz zurück.</strong> Hier lernst du deine eigene Muttersprache – ohne Blicke, ohne Bewertung, ganz in deinem Tempo.</p>
-        <div class="orthion-pills">
-          <span class="o-pill">🎯 Strukturiert</span>
-          <span class="o-pill">⏱️ Flexibel</span>
-          <span class="o-pill">💙 Wertschätzend</span>
-          <span class="o-pill">🔒 Privat und online</span>
-        </div>
+        <p>Sprache ist eine der stärksten Ressourcen, die du hast. Sie formt, wie du denkst, wie du wirkst und wie andere dich wahrnehmen.</p>
+        <p>Viele versuchen heute, sprachliche Lücken mit KI zu überbrücken. Doch wer das tut, gibt Macht aus der Hand. <strong>„Wer nichts weiß, muss alles glauben."</strong></p>
+        <p><strong><span class="brand">Orthion</span> gibt dir diese Kompetenz zurück.</strong> Hier lernst du deine eigene Muttersprache – ohne Blicke, ohne Bewertung, ganz in deinem Tempo.</p>
+        <div class="orthion-pills"><span class="o-pill">🎯 Strukturiert</span><span class="o-pill">⏱️ Flexibel</span><span class="o-pill">💙 Wertschätzend</span><span class="o-pill">🔒 Privat und online</span></div>
       </div>
     </div>
   </section>
-
-  <!-- WARUM ORTHION -->
   <section class="features-section">
     <div class="section-inner">
       <div class="section-header">
         <div class="section-eyebrow">Warum Orthion?</div>
         <h2 class="section-title">Didaktisch durchdacht.<br>Ohne Druck.</h2>
-        <p class="section-sub">Entwickelt von einer studierten Lehrerin – mit echtem Fachwissen und einem tiefen Verständnis dafür, wie Erwachsene lernen.</p>
+        <p class="section-sub">Entwickelt von einer studierten Lehrerin – mit echtem Fachwissen.</p>
       </div>
       <div class="features-grid">
-        <div class="feature-card"><div class="feat-icon violet">🎓</div><div class="feat-title">Von einer Expertin entwickelt</div><div class="feat-text">Alle Inhalte sind von einer studierten Lehrerin fachlich und didaktisch aufbereitet – echtes Wissen, keine KI-generierten Inhalte.</div></div>
+        <div class="feature-card"><div class="feat-icon violet">🎓</div><div class="feat-title">Von einer Expertin entwickelt</div><div class="feat-text">Alle Inhalte sind von einer studierten Lehrerin fachlich und didaktisch aufbereitet.</div></div>
         <div class="feature-card"><div class="feat-icon blue">🔒</div><div class="feat-title">Geschützter Mitgliederbereich</div><div class="feat-text">Du erhältst individuelle Zugangsdaten – deine Inhalte sind exklusiv und nur für dich zugänglich.</div></div>
-        <div class="feature-card"><div class="feat-icon violet">🧩</div><div class="feat-title">Modularer Kursaufbau</div><div class="feat-text">Lernen in klaren Schritten: Jedes Modul baut aufeinander auf – übersichtlich, strukturiert, ohne zu überfordern.</div></div>
-        <div class="feature-card"><div class="feat-icon blue">⏱️</div><div class="feat-title">Flexibles Lerntempo</div><div class="feat-text">Kein Druck, kein fixer Stundenplan – lerne wann und wo du willst, solange dein Zugang aktiv ist.</div></div>
-        <div class="feature-card"><div class="feat-icon violet">📊</div><div class="feat-title">Selbsttests und Abschlussprüfung</div><div class="feat-text">Nach jedem Modul ein Selbsttest, am Ende ein großer Abschlusstest – so siehst du genau, was du gelernt hast.</div></div>
-        <div class="feature-card"><div class="feat-icon blue">💙</div><div class="feat-title">Ohne Scham und Bewertungsdruck</div><div class="feat-text">Kein Klassenzimmer, keine Blicke. Du lernst ganz für dich – in einer Atmosphäre des Vertrauens und der Wertschätzung.</div></div>
+        <div class="feature-card"><div class="feat-icon violet">🧩</div><div class="feat-title">Modularer Kursaufbau</div><div class="feat-text">Lernen in klaren Schritten: Jedes Modul baut aufeinander auf – übersichtlich, strukturiert.</div></div>
+        <div class="feature-card"><div class="feat-icon blue">⏱️</div><div class="feat-title">Flexibles Lerntempo</div><div class="feat-text">Kein Druck, kein fixer Stundenplan – lerne wann und wo du willst.</div></div>
+        <div class="feature-card"><div class="feat-icon violet">📊</div><div class="feat-title">Selbsttests und Abschlussprüfung</div><div class="feat-text">Nach jedem Modul ein Selbsttest, am Ende ein großer Abschlusstest.</div></div>
+        <div class="feature-card"><div class="feat-icon blue">💙</div><div class="feat-title">Ohne Scham und Bewertungsdruck</div><div class="feat-text">Kein Klassenzimmer, keine Blicke. Du lernst ganz für dich.</div></div>
       </div>
     </div>
   </section>
-
-  <!-- KUNDENSTIMMEN -->
   <section>
     <div class="section-inner">
-      <div class="section-header centered">
-        <div class="section-eyebrow">Kundenstimmen</div>
-        <h2 class="section-title">Was Lernende sagen</h2>
-      </div>
+      <div class="section-header centered"><div class="section-eyebrow">Kundenstimmen</div><h2 class="section-title">Was Lernende sagen</h2></div>
       <div class="testi-grid">
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">„Ich bin 52 Jahre alt und habe mein ganzes Leben mit der Angst gelebt, dass jemand meine Rechtschreibung sieht. In der Schule war ich schlecht – das hat mich nie losgelassen. Mit <span class="brand">Orthion</span> habe ich Schritt für Schritt nachgeholt, was ich damals verpasst habe. Heute schreibe ich E-Mails ohne dieses Zittern."</p>
-          <div class="testi-author"><div class="testi-avatar av-navy">HM</div><div><div class="testi-name">Herbert M.</div><div class="testi-role">Handwerksmeister, 52 Jahre</div></div></div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">„Ich habe jahrelang Berichte und E-Mails von Kollegen Korrekturlesen lassen – heimlich. Die Scham war riesig. <span class="brand">Orthion</span> hat mir geholfen, das endlich selbst in den Griff zu bekommen. Ganz ohne dass jemand davon weiß."</p>
-          <div class="testi-author"><div class="testi-avatar av-violet">SR</div><div><div class="testi-name">Sandra R.</div><div class="testi-role">Bürokauffrau, 41 Jahre</div></div></div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">„Mit 67 dachte ich, das lerne ich nie mehr. Aber die Lektionen sind so klar erklärt – ich verstehe jetzt Dinge, die mir in der Schule nie jemand richtig beigebracht hat. Das Gefühl, endlich sicher zu schreiben, ist unbezahlbar."</p>
-          <div class="testi-author"><div class="testi-avatar av-blue">EK</div><div><div class="testi-name">Elisabeth K.</div><div class="testi-role">Pensionistin, 67 Jahre</div></div></div>
-        </div>
+        <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">„Ich bin 52 Jahre alt und habe mein ganzes Leben mit der Angst gelebt, dass jemand meine Rechtschreibung sieht. Mit <span class="brand">Orthion</span> habe ich Schritt für Schritt nachgeholt, was ich damals verpasst habe."</p><div class="testi-author"><div class="testi-avatar av-navy">HM</div><div><div class="testi-name">Herbert M.</div><div class="testi-role">Handwerksmeister, 52 Jahre</div></div></div></div>
+        <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">„Ich habe jahrelang Berichte von Kollegen Korrekturlesen lassen – heimlich. <span class="brand">Orthion</span> hat mir geholfen, das endlich selbst in den Griff zu bekommen."</p><div class="testi-author"><div class="testi-avatar av-violet">SR</div><div><div class="testi-name">Sandra R.</div><div class="testi-role">Bürokauffrau, 41 Jahre</div></div></div></div>
+        <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">„Mit 67 dachte ich, das lerne ich nie mehr. Aber die Lektionen sind so klar erklärt – ich verstehe jetzt Dinge, die mir in der Schule nie jemand richtig beigebracht hat."</p><div class="testi-author"><div class="testi-avatar av-blue">EK</div><div><div class="testi-name">Elisabeth K.</div><div class="testi-role">Pensionistin, 67 Jahre</div></div></div></div>
       </div>
     </div>
   </section>
-
-  <!-- CTA -->
   <div class="cta-section">
     <h2>Bereit, dein Deutsch auf das nächste Level zu bringen?</h2>
     <p>Wähle deinen Kurs, lerne in deinem Tempo – ganz für dich, ohne Druck.</p>
     <button class="btn-white" onclick="showPage('kurse')">Jetzt Kurs wählen</button>
     <button class="btn-white-outline" onclick="showPage('test')">🎯 Kostenloser Einstufungstest</button>
   </div>
-
   <footer>
     <div class="footer-grid">
-      <div class="footer-brand">
-        <div style="color:white;font-family:'Playfair Display',serif;font-size:1.456rem;font-weight:700;">ORTHION</div>
-        <p>Starke Sprache, starker Eindruck. Eine Online-Lernplattform für alle, die ihre Muttersprache gezielt stärken wollen – in eigenem Tempo, ohne Scham.</p>
-      </div>
+      <div class="footer-brand"><div style="color:white;font-family:'Playfair Display',serif;font-size:1.456rem;font-weight:700;">ORTHION</div><p>Starke Sprache, starker Eindruck.</p></div>
       <div class="footer-col"><h4>Kurse</h4><ul><li onclick="showPage('kurse')">Matura-Vorbereitung</li><li onclick="showPage('kurse')">Deutsch im Beruf</li><li onclick="showPage('kurse')">Rechtschreibung und Grammatik</li></ul></div>
       <div class="footer-col"><h4>Orthion</h4><ul><li onclick="showPage('about')">Über uns</li><li onclick="showPage('contact')">Kontakt</li><li onclick="showPage('login')">Mitgliederbereich</li></ul></div>
       <div class="footer-col"><h4>Rechtliches</h4><ul><li onclick="showPage('impressum')">Impressum</li><li onclick="showPage('datenschutz')">Datenschutz</li><li>AGB</li></ul></div>
     </div>
-    <div style="border-top:1px solid rgba(255,255,255,0.08);padding:1.75rem 0;max-width:1200px;margin:0 auto;">
-      <p style="font-size:0.806rem;color:rgba(255,255,255,0.3);line-height:1.8;text-align:center;">
-        <span style="color:rgba(255,255,255,0.45);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;font-size:0.762rem;display:block;margin-bottom:0.4rem;">Quellenangaben</span>
-        Rat für Deutsche Rechtschreibung (amtliches Regelwerk) &nbsp;·&nbsp;
-        Duden – Die deutsche Rechtschreibung &nbsp;·&nbsp;
-        Duden – Das große Wörterbuch der deutschen Sprache &nbsp;·&nbsp;
-        Steffi Staaden: <em>Rechtschreibung und Zeichensetzung endlich beherrschen</em>
-      </p>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2025 <span class="brand">Orthion</span>. Alle Rechte vorbehalten.</span>
-      <div class="footer-bottom-links">
-        <a onclick="showPage('impressum')">Impressum</a>
-        <a onclick="showPage('datenschutz')">Datenschutz</a>
-        <a onclick="showPage('contact')">Kontakt</a>
-      </div>
-    </div>
+    <div class="footer-bottom"><span>© 2025 <span class="brand">Orthion</span>. Alle Rechte vorbehalten.</span><div class="footer-bottom-links"><a onclick="showPage('impressum')">Impressum</a><a onclick="showPage('datenschutz')">Datenschutz</a><a onclick="showPage('contact')">Kontakt</a></div></div>
   </footer>
 </div>
 
 <!-- KURSE -->
 <div class="page" id="page-kurse">
   <div class="back-bar"><button class="back-btn" onclick="showPage('home')">← Zurück zur Startseite</button></div>
-  <div class="services-hero" style="position:relative;">
+  <div class="services-hero">
     <p class="section-eyebrow" style="margin-bottom:0.6rem;">Kursangebot</p>
     <h1>Alle <span class="brand">Orthion</span>-Kurse im Überblick</h1>
     <p>Strukturiert. Modular. Von einer Expertin entwickelt.</p>
     <div class="test-sticker test-sticker-kurse" onclick="showPage('test')">
-      <div class="test-sticker-inner">
-        <div class="test-sticker-emoji">🎯</div>
-        <div class="test-sticker-line1">Gratis testen:</div>
-        <div class="test-sticker-line2">Wie gut ist<br>dein Deutsch?</div>
-        <div class="test-sticker-cta">Jetzt starten →</div>
-      </div>
+      <div class="test-sticker-inner"><div class="test-sticker-emoji">🎯</div><div class="test-sticker-line1">Gratis testen:</div><div class="test-sticker-line2">Wie gut ist<br>dein Deutsch?</div><div class="test-sticker-cta">Jetzt starten →</div></div>
     </div>
   </div>
-  <section>
-    <div class="section-inner">
-      <div class="courses-grid">
-        <div class="course-card">
-          <div class="course-header"><div class="course-icon" style="background:#F0ECF8;">📚</div><div class="course-tag tag-matura">Matura-Vorbereitung</div><div class="course-name">Deutsch für die Matura</div><div class="course-desc">Kompakte Vorbereitung auf die schriftliche Deutschmatura – für Schüler:innen der Lehre mit Matura, Berufsreifeprüfung und Externistenmatura.</div></div>
-          <div class="course-topics"><span class="topic-chip">Textsorten</span><span class="topic-chip">Erörterung</span><span class="topic-chip">Zusammenfassung</span><span class="topic-chip">Kommentar</span></div>
-          <div class="course-meta"><div class="course-modules-info"><strong>Demnächst verfügbar</strong></div><button class="course-arrow-btn" onclick="showPage('login')">→</button></div>
-        </div>
-        <div class="course-card">
-          <div class="course-header"><div class="course-icon" style="background:#EBF0F8;">💼</div><div class="course-tag tag-berufsbegleitend">Beruflich und Begleitend</div><div class="course-name">Deutsch im Beruf</div><div class="course-desc">Für Berufstätige, die sicherer schreiben, kommunizieren und im Alltag professionell auftreten möchten – flexibel und effizient.</div></div>
-          <div class="course-topics"><span class="topic-chip">E-Mails schreiben</span><span class="topic-chip">Berichte</span><span class="topic-chip">Protokolle</span><span class="topic-chip">Rechtschreibung</span></div>
-          <div class="course-meta"><div class="course-modules-info"><strong>Demnächst verfügbar</strong></div><button class="course-arrow-btn" onclick="showPage('login')">→</button></div>
-        </div>
-        <div class="course-card">
-          <div class="course-header"><div class="course-icon" style="background:#E8F5EE;">✏️</div><div class="course-tag tag-erwachsene">Für Erwachsene</div><div class="course-name">Rechtschreibung und Grammatik</div><div class="course-desc">Für alle, die Lücken schließen möchten – ohne Schuldruck, in ruhigem Tempo, verständlich erklärt.</div></div>
-          <div class="course-topics"><span class="topic-chip">Groß/Kleinschreibung</span><span class="topic-chip">Kommaregeln</span><span class="topic-chip">Wortarten</span><span class="topic-chip">Satzbau</span></div>
-          <div class="course-meta"><div class="course-modules-info"><strong>Jetzt verfügbar</strong> · Modul 1 freigeschaltet</div><button class="course-arrow-btn" onclick="showPage('login')">→</button></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="cta-section" style="padding:4rem 3rem;">
-    <h2 style="font-size:2.24rem;">Noch unsicher, welcher Kurs passt?</h2>
-    <p>Mach den kostenlosen Einstufungstest und finde es in 5 Minuten heraus.</p>
-    <button class="btn-white" onclick="showPage('test')">🎯 Jetzt kostenlos testen</button>
-    <button class="btn-white-outline" onclick="showPage('contact')">Kontakt aufnehmen</button>
-  </div>
+  <section><div class="section-inner"><div class="courses-grid">
+    <div class="course-card"><div class="course-header"><div class="course-icon" style="background:#F0ECF8;">📚</div><div class="course-tag tag-matura">Matura-Vorbereitung</div><div class="course-name">Deutsch für die Matura</div><div class="course-desc">Kompakte Vorbereitung auf die schriftliche Deutschmatura.</div></div><div class="course-topics"><span class="topic-chip">Textsorten</span><span class="topic-chip">Erörterung</span><span class="topic-chip">Zusammenfassung</span></div><div class="course-meta"><div class="course-modules-info"><strong>Demnächst verfügbar</strong></div><button class="course-arrow-btn" onclick="showPage('login')">→</button></div></div>
+    <div class="course-card"><div class="course-header"><div class="course-icon" style="background:#EBF0F8;">💼</div><div class="course-tag tag-berufsbegleitend">Beruflich und Begleitend</div><div class="course-name">Deutsch im Beruf</div><div class="course-desc">Für Berufstätige, die sicherer schreiben und kommunizieren möchten.</div></div><div class="course-topics"><span class="topic-chip">E-Mails schreiben</span><span class="topic-chip">Berichte</span><span class="topic-chip">Rechtschreibung</span></div><div class="course-meta"><div class="course-modules-info"><strong>Demnächst verfügbar</strong></div><button class="course-arrow-btn" onclick="showPage('login')">→</button></div></div>
+    <div class="course-card"><div class="course-header"><div class="course-icon" style="background:#E8F5EE;">✏️</div><div class="course-tag tag-erwachsene">Für Erwachsene</div><div class="course-name">Rechtschreibung und Grammatik</div><div class="course-desc">Für alle, die Lücken schließen möchten – ohne Schuldruck.</div></div><div class="course-topics"><span class="topic-chip">Groß/Kleinschreibung</span><span class="topic-chip">Kommaregeln</span><span class="topic-chip">Satzbau</span></div><div class="course-meta"><div class="course-modules-info"><strong>Jetzt verfügbar</strong></div><button class="course-arrow-btn" onclick="showPage('login')">→</button></div></div>
+  </div></div></section>
+  <div class="cta-section" style="padding:4rem 3rem;"><h2 style="font-size:2.24rem;">Noch unsicher, welcher Kurs passt?</h2><p>Mach den kostenlosen Einstufungstest und finde es in 5 Minuten heraus.</p><button class="btn-white" onclick="showPage('test')">🎯 Jetzt kostenlos testen</button><button class="btn-white-outline" onclick="showPage('contact')">Kontakt aufnehmen</button></div>
 </div>
 
 <!-- EINSTUFUNGSTEST -->
 <div class="page" id="page-test">
   <div class="back-bar"><button class="back-btn" onclick="showPage('kurse')">← Zurück zu den Kursen</button></div>
-  <div class="test-hero">
+  <div class="test-hero" id="test-hero-section">
     <div class="section-eyebrow">Kostenlos und unverbindlich</div>
     <h1>Gratis: Wie gut ist dein Deutsch?</h1>
     <div class="test-intro-box">
       <h3>Weißt du, wo deine Lücken sind?</h3>
-      <p>Viele Menschen tragen Unsicherheiten mit sich – oft seit der Schulzeit. Unser kostenloser Einstufungstest zeigt dir in wenigen Minuten, auf welchem Niveau du stehst und welcher Kurs am besten zu dir passt.</p>
+      <p>Unser kostenloser Einstufungstest zeigt dir in wenigen Minuten, auf welchem Niveau du stehst und welcher Kurs am besten zu dir passt.</p>
       <div class="test-intro-facts">
-        <div class="test-intro-fact"><span>⏱️</span> Ca. 5 Minuten</div>
+        <div class="test-intro-fact"><span>⏱️</span> Ca. 10 Minuten</div>
         <div class="test-intro-fact"><span>🔒</span> Ohne Anmeldung</div>
         <div class="test-intro-fact"><span>💙</span> Ohne Druck</div>
         <div class="test-intro-fact"><span>🎯</span> Mit Kursempfehlung</div>
       </div>
     </div>
     <div class="test-levels">
-      <span class="test-level-chip">📝 Multiple Choice</span>
-      <span class="test-level-chip">🔍 Fehler finden</span>
+      <span class="test-level-chip">📝 Rechtschreibung</span>
+      <span class="test-level-chip">📖 Grammatik</span>
+      <span class="test-level-chip">🎧 Diktat</span>
       <span class="test-level-chip">✏️ Lückentext</span>
-      <span class="test-level-chip">⚖️ Richtige Version</span>
-      <span class="test-level-chip">📌 Komma setzen</span>
-      <span class="test-level-chip">🔠 Groß/Kleinschreibung</span>
+      <span class="test-level-chip">📌 Beistrich setzen</span>
     </div>
     <button class="test-start-btn" onclick="startTest()">Jetzt kostenlos starten →</button>
   </div>
   <div class="test-body" id="test-body" style="display:none;">
     <div class="test-progress-bar-wrap"><div class="test-progress-bar" id="test-progress-bar" style="width:0%"></div></div>
-    <div class="test-progress-label" id="test-progress-label">Frage 1 von 10</div>
+    <div class="test-progress-label" id="test-progress-label">Frage 1</div>
     <div id="test-question-area"></div>
-  </div>
-</div>
-
-<!-- DIENSTLEISTUNGEN -->
-<div class="page" id="page-services">
-  <div class="back-bar"><button class="back-btn" onclick="showPage('home')">← Zurück zur Startseite</button></div>
-  <div class="services-hero">
-    <p class="section-eyebrow" style="margin-bottom:0.6rem;">Dienstleistungen</p>
-    <h1>Das bietet <span class="brand">Orthion</span></h1>
-    <p>Transparente Kursoptionen für jeden Bedarf.</p>
-  </div>
-  <div class="pricing-grid">
-    <div class="pricing-card">
-      <div class="pricing-name">Einsteiger</div><div class="pricing-title">Einzelmodul</div>
-      <div class="pricing-price"><sup>€</sup>29<sub>/Modul</sub></div>
-      <ul class="pricing-features"><li>1 Lernmodul Ihrer Wahl</li><li>Alle Materialien</li><li>Selbsttest am Ende</li><li>Zugang für 4 Wochen</li></ul>
-      <button class="btn-pricing btn-pricing-outline" onclick="showPage('contact')">Jetzt anfragen</button>
-    </div>
-    <div class="pricing-card featured">
-      <div class="featured-badge">Beliebteste Wahl</div>
-      <div class="pricing-name">Vollständig</div><div class="pricing-title">Kompletter Kurs</div>
-      <div class="pricing-price"><sup>€</sup>149<sub>/Kurs</sub></div>
-      <ul class="pricing-features"><li>Alle Module des gewählten Kurses</li><li>Lektionen, Übungen und Tests</li><li>Selbsttests je Modul</li><li>Großer Abschlusstest</li><li>Zugang für 6 Monate</li><li>Persönliche Zugangsdaten</li></ul>
-      <button class="btn-pricing btn-pricing-fill" onclick="showPage('contact')">Jetzt buchen</button>
-    </div>
-    <div class="pricing-card">
-      <div class="pricing-name">Individuell</div><div class="pricing-title">Maßgeschneidert</div>
-      <div class="pricing-price" style="font-size:1.792rem;padding:1.2rem 0;">Auf Anfrage</div>
-      <ul class="pricing-features"><li>Individuelle Kursgestaltung</li><li>Für Firmen und Gruppen</li><li>Eigener Zeitrahmen</li><li>Persönliche Beratung inklusive</li><li>Flexibler Zugangszeitraum</li></ul>
-      <button class="btn-pricing btn-pricing-outline" onclick="showPage('contact')">Kontakt aufnehmen</button>
-    </div>
   </div>
 </div>
 
 <!-- ÜBER UNS -->
 <div class="page" id="page-about">
   <div class="back-bar"><button class="back-btn" onclick="showPage('home')">← Zurück zur Startseite</button></div>
-  <div class="about-hero">
-    <h1>Deutsch verstehen.<br>Deutsch beherrschen.</h1>
-    <p><span class="brand">Orthion</span> richtet sich an alle, deren Muttersprache Deutsch ist – und die ihre Sprachkompetenz gezielt, ohne Druck und in eigenem Tempo stärken möchten.</p>
-  </div>
+  <div class="about-hero"><h1>Deutsch verstehen.<br>Deutsch beherrschen.</h1><p><span class="brand">Orthion</span> richtet sich an alle, deren Muttersprache Deutsch ist.</p></div>
   <div class="about-content">
     <div class="about-img-placeholder"><span>👩‍🏫</span>Dein Foto kommt hier hin</div>
     <div class="about-text">
       <h2>Was ist <span class="brand">Orthion</span>?</h2>
       <p><span class="brand">Orthion</span> ist eine innovative Plattform, die sich gezielt an Menschen richtet, deren Muttersprache Deutsch ist.</p>
-      <p><span class="brand">Orthion</span> unterstützt dich dabei, deine Deutschkenntnisse zu verbessern – egal, ob du die Matura nachholen, deine Rechtschreibung perfektionieren oder einfach nur sicherer im Umgang mit der deutschen Sprache werden möchtest.</p>
       <p>Jeder hat einen unterschiedlichen Werdegang. <strong>Wichtig ist, dass du das Gefühl der Peinlichkeit überwindest und aktiv wirst.</strong></p>
       <div class="credentials">
         <div class="credential"><span class="cred-dot"></span><span class="cred-text">Studium Lehramt Deutsch (Universität)</span></div>
@@ -860,29 +631,22 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
     </div>
   </div>
   <div class="values-grid">
-    <div class="value-card"><div class="value-icon">🎯</div><div class="value-title">Zielorientiert</div><div class="value-text">Jedes Modul hat ein klares Lernziel. Du weißt immer, warum du etwas lernst und wohin es dich führt.</div></div>
-    <div class="value-card"><div class="value-icon">💙</div><div class="value-title">Wertschätzend</div><div class="value-text">Kein Blick von oben. Lernen gelingt besser in einer Atmosphäre des Vertrauens – ohne Bewertungsdruck.</div></div>
-    <div class="value-card"><div class="value-icon">🧠</div><div class="value-title">Didaktisch fundiert</div><div class="value-text">Inhalte sind so aufgebaut, dass sie sich gegenseitig stützen und im Gedächtnis verankern.</div></div>
-  </div>
-  <div class="cta-section" style="padding:4rem 3rem;">
-    <h2 style="font-size:2.24rem;">Bereit, den ersten Schritt zu machen?</h2>
-    <p>Schau dir die Kurse an – ganz unverbindlich.</p>
-    <button class="btn-white" onclick="showPage('kurse')">Kurse entdecken</button>
-    <button class="btn-white-outline" onclick="showPage('contact')">Persönliche Beratung</button>
+    <div class="value-card"><div class="value-icon">🎯</div><div class="value-title">Zielorientiert</div><div class="value-text">Jedes Modul hat ein klares Lernziel.</div></div>
+    <div class="value-card"><div class="value-icon">💙</div><div class="value-title">Wertschätzend</div><div class="value-text">Lernen gelingt besser in einer Atmosphäre des Vertrauens.</div></div>
+    <div class="value-card"><div class="value-icon">🧠</div><div class="value-title">Didaktisch fundiert</div><div class="value-text">Inhalte sind so aufgebaut, dass sie sich gegenseitig stützen.</div></div>
   </div>
 </div>
 
 <!-- KONTAKT -->
 <div class="page" id="page-contact">
   <div class="back-bar"><button class="back-btn" onclick="showPage('home')">← Zurück zur Startseite</button></div>
-  <div class="contact-hero"><h1>Kontakt</h1><p>Fragen, Wünsche oder eine persönliche Kursberatung? Ich freue mich auf deine Nachricht.</p></div>
+  <div class="contact-hero"><h1>Kontakt</h1><p>Fragen, Wünsche oder eine persönliche Kursberatung?</p></div>
   <div class="contact-body">
     <div class="contact-info">
       <h3>So erreichst du <span class="brand">Orthion</span></h3>
       <p>Ich beantworte Anfragen persönlich und in der Regel innerhalb von 1–2 Werktagen.</p>
       <div class="contact-detail"><div class="c-icon">✉️</div><div class="c-info"><strong>E-Mail</strong><span>office@orthion.at</span></div></div>
       <div class="contact-detail"><div class="c-icon">📍</div><div class="c-info"><strong>Standort</strong><span>Österreich</span></div></div>
-      <div class="contact-detail"><div class="c-icon">⏰</div><div class="c-info"><strong>Antwortzeit</strong><span>1–2 Werktage</span></div></div>
     </div>
     <div class="contact-form-card">
       <h3>Nachricht senden</h3>
@@ -890,13 +654,11 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
         <div class="form-group"><label>Vorname</label><input type="text" placeholder="Maria"></div>
         <div class="form-group"><label>Nachname</label><input type="text" placeholder="Mustermann"></div>
         <div class="form-group full"><label>E-Mail-Adresse</label><input type="email" placeholder="deine@email.at"></div>
-        <div class="form-group full"><label>Ich interessiere mich für</label>
-          <select><option>Matura-Vorbereitung</option><option>Deutsch im Beruf</option><option>Rechtschreibung und Grammatik</option><option>Maßgeschneidertes Angebot</option><option>Allgemeine Frage</option></select>
-        </div>
-        <div class="form-group full"><label>Nachricht</label><textarea placeholder="Schreib mir gerne deine Fragen, Wünsche oder deinen Lernbedarf ..."></textarea></div>
+        <div class="form-group full"><label>Ich interessiere mich für</label><select><option>Matura-Vorbereitung</option><option>Deutsch im Beruf</option><option>Rechtschreibung und Grammatik</option><option>Allgemeine Frage</option></select></div>
+        <div class="form-group full"><label>Nachricht</label><textarea placeholder="Schreib mir gerne deine Fragen ..."></textarea></div>
       </div>
       <button class="btn-primary" style="width:100%;margin-top:0.5rem;" onclick="document.querySelector('.form-success').style.display='block'">Nachricht absenden</button>
-      <div class="form-success">✅ Vielen Dank! Deine Nachricht wurde gesendet. Ich melde mich in Kürze bei dir.</div>
+      <div class="form-success">✅ Vielen Dank! Deine Nachricht wurde gesendet.</div>
     </div>
   </div>
 </div>
@@ -919,7 +681,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
         <button class="btn-login-full" style="margin-top:0.5rem;background:var(--violet);" onclick="register()">Neu registrieren</button>
         <p id="auth-message"></p>
       </div>
-      <div class="login-expire-note">🔒 Dein Zugang ist zeitlich begrenzt und läuft nach dem vereinbarten Zeitraum automatisch ab. Für Verlängerungen wende dich bitte an <a href="mailto:office@orthion.at">office@orthion.at</a>.</div>
+      <div class="login-expire-note">🔒 Dein Zugang ist zeitlich begrenzt. Für Verlängerungen: <a href="mailto:office@orthion.at">office@orthion.at</a>.</div>
       <div class="login-footer"><a onclick="forgotPassword()">Passwort vergessen?</a></div>
     </div>
   </div>
@@ -929,30 +691,17 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 <div class="page" id="page-dashboard">
   <div class="dashboard">
     <div class="sidebar">
-      <div class="sidebar-user">
-        <div class="user-avatar" id="dash-avatar">?</div>
-        <div class="user-name" id="dash-username">–</div>
-        <div class="user-access">Zugang aktiv</div>
-      </div>
+      <div class="sidebar-user"><div class="user-avatar" id="dash-avatar">?</div><div class="user-name" id="dash-username">–</div><div class="user-access">Zugang aktiv</div></div>
       <div class="sidebar-section-label">Navigation</div>
       <ul class="sidebar-nav">
         <li><a class="active"><span class="nav-icon">🏠</span>Mein Bereich</a></li>
         <li><a><span class="nav-icon">📚</span>Meine Kurse</a></li>
-        <li><a><span class="nav-icon">⚙️</span>Einstellungen</a></li>
         <li><a onclick="logout()"><span class="nav-icon">🚪</span>Abmelden</a></li>
       </ul>
     </div>
     <div class="dash-main">
-      <div class="dash-welcome">
-        <h2 id="dash-welcome-text">Willkommen zurück!</h2>
-        <p>Hier sind deine freigeschalteten Kursinhalte.</p>
-      </div>
-      <div id="dash-kurse-bereich">
-        <div class="loading-dash">
-          <div style="font-size:2rem;margin-bottom:0.5rem;">⏳</div>
-          <p>Kurse werden geladen …</p>
-        </div>
-      </div>
+      <div class="dash-welcome"><h2 id="dash-welcome-text">Willkommen zurück!</h2><p>Hier sind deine freigeschalteten Kursinhalte.</p></div>
+      <div id="dash-kurse-bereich"><div class="loading-dash"><div style="font-size:2rem;margin-bottom:0.5rem;">⏳</div><p>Kurse werden geladen …</p></div></div>
     </div>
   </div>
 </div>
@@ -961,11 +710,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 <div class="page" id="page-admin">
   <div class="dashboard">
     <div class="sidebar">
-      <div class="sidebar-user">
-        <div class="user-avatar" style="background:var(--violet);">AD</div>
-        <div class="user-name">Admin-Bereich</div>
-        <div class="user-access">Orthion Verwaltung</div>
-      </div>
+      <div class="sidebar-user"><div class="user-avatar" style="background:var(--violet);">AD</div><div class="user-name">Admin-Bereich</div><div class="user-access">Orthion Verwaltung</div></div>
       <div class="sidebar-section-label">Verwaltung</div>
       <ul class="sidebar-nav">
         <li><a id="admin-nav-users" onclick="adminShowTab('users')"><span class="nav-icon">👥</span>Alle Nutzer</a></li>
@@ -974,27 +719,18 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
         <li><a id="admin-nav-stats" onclick="adminShowTab('stats')"><span class="nav-icon">📊</span>Statistiken</a></li>
       </ul>
       <div class="sidebar-section-label">Navigation</div>
-      <ul class="sidebar-nav">
-        <li><a onclick="showPage('dashboard')"><span class="nav-icon">🏠</span>Mein Bereich</a></li>
-        <li><a onclick="logout()"><span class="nav-icon">🚪</span>Abmelden</a></li>
-      </ul>
+      <ul class="sidebar-nav"><li><a onclick="showPage('dashboard')"><span class="nav-icon">🏠</span>Mein Bereich</a></li><li><a onclick="logout()"><span class="nav-icon">🚪</span>Abmelden</a></li></ul>
     </div>
     <div class="dash-main">
       <div id="admin-tab-users">
         <div class="dash-welcome"><h2>Nutzerverwaltung</h2><p>Alle registrierten Nutzer im Überblick.</p></div>
         <div style="background:white;border:1px solid var(--light-border);border-radius:16px;overflow:hidden;">
-          <div style="padding:1rem 1.5rem;border-bottom:1px solid var(--light-border);display:flex;align-items:center;justify-content:space-between;">
-            <span style="font-weight:700;color:var(--navy);">Registrierte Nutzer</span>
-            <button onclick="loadAdminUsers()" style="background:var(--navy);color:white;border:none;padding:0.4rem 1rem;border-radius:50px;font-size:0.874rem;font-weight:600;cursor:pointer;font-family:'Nunito',sans-serif;">↻ Aktualisieren</button>
-          </div>
+          <div style="padding:1rem 1.5rem;border-bottom:1px solid var(--light-border);display:flex;align-items:center;justify-content:space-between;"><span style="font-weight:700;color:var(--navy);">Registrierte Nutzer</span><button onclick="loadAdminUsers()" style="background:var(--navy);color:white;border:none;padding:0.4rem 1rem;border-radius:50px;font-size:0.874rem;font-weight:600;cursor:pointer;font-family:'Nunito',sans-serif;">↻ Aktualisieren</button></div>
           <div id="admin-users-list" style="padding:1rem;"><p style="color:var(--muted);text-align:center;padding:2rem;">Lädt...</p></div>
         </div>
       </div>
       <div id="admin-tab-courses" style="display:none;">
-        <div class="dash-welcome"><h2>Kursverwaltung</h2><p>Kurse, Module und Lektionen freischalten oder verstecken.</p></div>
-        <div style="background:var(--blue-lighter);border-radius:12px;padding:0.85rem 1.1rem;margin-bottom:1.5rem;font-size:0.918rem;color:var(--navy-mid);">
-          💡 <strong>Tipp:</strong> Klicke auf einen Kurs um seine Module zu sehen. Klicke auf ein Modul um die Lektionen zu sehen.
-        </div>
+        <div class="dash-welcome"><h2>Kursverwaltung</h2><p>Kurse, Module und Lektionen freischalten.</p></div>
         <div id="admin-courses-list"><p style="color:var(--muted);text-align:center;padding:2rem;">Lädt...</p></div>
       </div>
       <div id="admin-tab-test" style="display:none;">
@@ -1009,7 +745,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
             <option value="fehler">Fehler markieren</option>
             <option value="version">Richtige Version wählen</option>
             <option value="korrektur">Text korrigieren</option>
-            <option value="komma">Komma setzen</option>
+            <option value="komma">Beistrich setzen</option>
             <option value="gross">Groß/Kleinschreibung</option>
           </select>
           <div class="aufgabe-dynamic-fields" id="aufgabe-dynamic-fields"></div>
@@ -1019,20 +755,11 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
         <div id="admin-aufgaben-list"><p style="color:var(--muted);text-align:center;padding:2rem;">Lädt Aufgaben...</p></div>
       </div>
       <div id="admin-tab-stats" style="display:none;">
-        <div class="dash-welcome"><h2>Statistiken</h2><p>Überblick über die Plattform.</p></div>
+        <div class="dash-welcome"><h2>Statistiken</h2></div>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
-          <div style="background:white;border:1px solid var(--light-border);border-radius:16px;padding:1.5rem;text-align:center;">
-            <div style="font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--navy);font-weight:700;" id="stat-total-users">–</div>
-            <div style="font-size:0.918rem;color:var(--muted);margin-top:0.25rem;">Registrierte Nutzer</div>
-          </div>
-          <div style="background:white;border:1px solid var(--light-border);border-radius:16px;padding:1.5rem;text-align:center;">
-            <div style="font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--violet);font-weight:700;" id="stat-admin-users">–</div>
-            <div style="font-size:0.918rem;color:var(--muted);margin-top:0.25rem;">Admins</div>
-          </div>
-          <div style="background:white;border:1px solid var(--light-border);border-radius:16px;padding:1.5rem;text-align:center;">
-            <div style="font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--success);font-weight:700;" id="stat-normal-users">–</div>
-            <div style="font-size:0.918rem;color:var(--muted);margin-top:0.25rem;">Normale Nutzer</div>
-          </div>
+          <div style="background:white;border:1px solid var(--light-border);border-radius:16px;padding:1.5rem;text-align:center;"><div style="font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--navy);font-weight:700;" id="stat-total-users">–</div><div style="font-size:0.918rem;color:var(--muted);">Registrierte Nutzer</div></div>
+          <div style="background:white;border:1px solid var(--light-border);border-radius:16px;padding:1.5rem;text-align:center;"><div style="font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--violet);font-weight:700;" id="stat-admin-users">–</div><div style="font-size:0.918rem;color:var(--muted);">Admins</div></div>
+          <div style="background:white;border:1px solid var(--light-border);border-radius:16px;padding:1.5rem;text-align:center;"><div style="font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--success);font-weight:700;" id="stat-normal-users">–</div><div style="font-size:0.918rem;color:var(--muted);">Normale Nutzer</div></div>
         </div>
       </div>
     </div>
@@ -1041,53 +768,24 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 
 <!-- PENDING -->
 <div class="page" id="page-pending">
-  <div class="member-gate">
-    <div class="login-card" style="text-align:center;">
-      <div style="font-size:3rem;margin-bottom:1rem;">⏳</div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:1.792rem;color:var(--navy);margin-bottom:0.75rem;">Zugang wird bearbeitet</h2>
-      <p style="font-size:1.008rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem;">Vielen Dank für deine Registrierung! Dein Zugang wird gerade von uns bearbeitet. Du erhältst eine E-Mail sobald er freigeschaltet wurde.</p>
-      <div style="background:var(--blue-pale);border-radius:12px;padding:1rem;font-size:0.918rem;color:var(--navy-mid);margin-bottom:1.5rem;">
-        📧 Bei Fragen: <a href="mailto:office@orthion.at" style="color:var(--violet);">office@orthion.at</a>
-      </div>
-      <button class="btn-login-full" onclick="logout()" style="background:var(--muted);">Abmelden</button>
-    </div>
-  </div>
+  <div class="member-gate"><div class="login-card" style="text-align:center;">
+    <div style="font-size:3rem;margin-bottom:1rem;">⏳</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:1.792rem;color:var(--navy);margin-bottom:0.75rem;">Zugang wird bearbeitet</h2>
+    <p style="font-size:1.008rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem;">Vielen Dank für deine Registrierung! Du erhältst eine E-Mail sobald dein Zugang freigeschaltet wurde.</p>
+    <button class="btn-login-full" onclick="logout()" style="background:var(--muted);">Abmelden</button>
+  </div></div>
 </div>
 
 <!-- IMPRESSUM -->
 <div class="page" id="page-impressum">
   <div class="back-bar"><button class="back-btn" onclick="showPage('home')">← Zurück zur Startseite</button></div>
-  <div class="legal-page">
-    <h1>Impressum</h1>
-    <h2>Angaben gemäß § 5 ECG</h2>
-    <p><strong>Unternehmensname:</strong> Orthion<br><strong>Inhaberin:</strong> [Ihr Name]<br><strong>Adresse:</strong> [Ihre Adresse], Österreich<br><strong>E-Mail:</strong> office@orthion.at</p>
-    <h2>Unternehmensgegenstand</h2>
-    <p>Online-Lernplattform für Muttersprachler – Rechtschreibung, Grammatik und Textproduktion.</p>
-    <h2>Haftungsausschluss</h2>
-    <p>Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.</p>
-    <h2>Urheberrecht</h2>
-    <p>Alle auf dieser Website veröffentlichten Inhalte sind urheberrechtlich geschützt und dürfen ohne ausdrückliche Genehmigung nicht vervielfältigt oder weiterverbreitet werden.</p>
-  </div>
+  <div class="legal-page"><h1>Impressum</h1><h2>Angaben gemäß § 5 ECG</h2><p><strong>Unternehmensname:</strong> Orthion<br><strong>E-Mail:</strong> office@orthion.at</p><h2>Unternehmensgegenstand</h2><p>Online-Lernplattform für Muttersprachler.</p></div>
 </div>
 
 <!-- DATENSCHUTZ -->
 <div class="page" id="page-datenschutz">
   <div class="back-bar"><button class="back-btn" onclick="showPage('home')">← Zurück zur Startseite</button></div>
-  <div class="legal-page">
-    <h1>Datenschutzerklärung</h1>
-    <h2>Verantwortliche Stelle</h2>
-    <p>Orthion, [Ihr Name], [Adresse], office@orthion.at</p>
-    <h2>Erhebung und Verarbeitung personenbezogener Daten</h2>
-    <p>Wir erheben und verarbeiten personenbezogene Daten ausschließlich zur Bereitstellung unserer Online-Kurse und zur Kommunikation mit dir. Deine Daten werden nicht an Dritte weitergegeben.</p>
-    <h2>Mitgliederbereich und Zugangsdaten</h2>
-    <p>Im Rahmen der Kursbuchung werden Zugangsdaten erstellt und gespeichert. Der Zugang ist zeitlich begrenzt und läuft nach dem vereinbarten Zeitraum automatisch ab.</p>
-    <h2>Cookies</h2>
-    <p>Diese Website verwendet ausschließlich technisch notwendige Cookies, die für den Betrieb der Plattform erforderlich sind.</p>
-    <h2>Deine Rechte</h2>
-    <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung deiner Daten. Wende dich dazu jederzeit an: office@orthion.at</p>
-    <h2>Rechtsgrundlage</h2>
-    <p>Die Verarbeitung deiner Daten erfolgt auf Basis von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).</p>
-  </div>
+  <div class="legal-page"><h1>Datenschutzerklärung</h1><h2>Verantwortliche Stelle</h2><p>Orthion, office@orthion.at</p><h2>Erhebung und Verarbeitung</h2><p>Wir erheben personenbezogene Daten ausschließlich zur Bereitstellung unserer Kurse.</p></div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -1108,6 +806,10 @@ function showPage(id) {
   if (navEl) navEl.classList.add('active');
   window.scrollTo(0, 0);
   if (id === 'dashboard') loadDashboardKurse();
+  if (id === 'test') {
+    document.getElementById('test-hero-section').style.display = 'block';
+    document.getElementById('test-body').style.display = 'none';
+  }
 }
 
 function updateNav(session) {
@@ -1120,7 +822,6 @@ function updateNav(session) {
     const email = session.user.email;
     document.getElementById('dash-avatar').textContent = email.substring(0,2).toUpperCase();
     document.getElementById('dash-username').textContent = email;
-    document.getElementById('dash-welcome-text').textContent = 'Willkommen zurück!';
     sb.from('profiles').select('role').eq('id', session.user.id).single().then(({ data }) => {
       if (data?.role === 'admin') {
         const adminBtn = document.createElement('button');
@@ -1168,7 +869,7 @@ async function register() {
   msg.style.color='var(--muted)'; msg.textContent='Registrierung läuft …';
   const { error } = await sb.auth.signUp({ email, password });
   if (error) { msg.style.color='#c0392b'; msg.textContent='Fehler: '+error.message; }
-  else { msg.style.color='#4A9E78'; msg.textContent='✅ Bestätigungs-E-Mail gesendet! Bitte E-Mail prüfen.'; }
+  else { msg.style.color='#4A9E78'; msg.textContent='✅ Bestätigungs-E-Mail gesendet!'; }
 }
 
 async function logout() {
@@ -1186,88 +887,28 @@ async function forgotPassword() {
   else { msg.style.color='#4A9E78'; msg.textContent='✅ Passwort-Reset-E-Mail wurde gesendet!'; }
 }
 
-/* ====================================================
-   DASHBOARD – ECHTE KURSDATEN AUS DATENBANK
-   ==================================================== */
 async function loadDashboardKurse() {
   const bereich = document.getElementById('dash-kurse-bereich');
   bereich.innerHTML = '<div class="loading-dash"><div style="font-size:2rem;margin-bottom:0.5rem;">⏳</div><p>Kurse werden geladen …</p></div>';
-
-  const { data: kurse, error } = await sb
-    .from('courses')
-    .select('id, title, description')
-    .eq('status', 'published')
-    .order('title');
-
+  const { data: kurse, error } = await sb.from('courses').select('id, title, description').eq('status', 'published').order('title');
   if (error || !kurse || kurse.length === 0) {
-    bereich.innerHTML = `
-      <div class="keine-kurse">
-        <div class="keine-kurse-icon">📚</div>
-        <p style="font-weight:600;color:var(--navy);margin-bottom:0.4rem;">Noch keine Kurse freigeschaltet</p>
-        <p style="font-size:0.93rem;">Sobald ein Kurs für Sie freigeschaltet wird, erscheint er hier.</p>
-      </div>`;
+    bereich.innerHTML = '<div class="keine-kurse"><div class="keine-kurse-icon">📚</div><p style="font-weight:600;color:var(--navy);">Noch keine Kurse freigeschaltet</p></div>';
     return;
   }
-
   let html = '<div class="kurs-uebersicht">';
-
   for (const kurs of kurse) {
-    const { data: module } = await sb
-      .from('modules')
-      .select('id, title, position')
-      .eq('course_id', kurs.id)
-      .eq('is_published', true)
-      .order('position');
-
+    const { data: module } = await sb.from('modules').select('id, title, position').eq('course_id', kurs.id).eq('is_published', true).order('position');
     let modulHtml = '';
     if (module && module.length > 0) {
       for (const modul of module) {
-        const { data: lektionen } = await sb
-          .from('lessons')
-          .select('id, title, position')
-          .eq('module_id', modul.id)
-          .eq('is_published', true)
-          .order('position');
-
+        const { data: lektionen } = await sb.from('lessons').select('id, title, position').eq('module_id', modul.id).eq('is_published', true).order('position');
         const anzahl = lektionen ? lektionen.length : 0;
-        let lektHtml = '';
-        if (lektionen && lektionen.length > 0) {
-          lektHtml = lektionen.map((l, i) => `
-            <div class="lektion-zeile">
-              <span class="lektion-icon">📄</span>
-              <span class="lektion-name-dash">${l.title}</span>
-              ${i === 0 ? '<span class="lektion-neu">Neu</span>' : ''}
-            </div>`).join('');
-        } else {
-          lektHtml = '<p style="font-size:0.84rem;color:var(--muted);padding:0.5rem 0;">Noch keine Lektionen freigeschaltet.</p>';
-        }
-
-        modulHtml += `
-          <div class="modul-accordion">
-            <div class="modul-header-dash" onclick="toggleModulDash(this)">
-              <div class="modul-header-dash-left">
-                <span class="modul-pfeil">▶</span>
-                <span class="modul-header-dash-name">${modul.title}</span>
-              </div>
-              <span class="modul-badge">${anzahl} Lektion${anzahl !== 1 ? 'en' : ''}</span>
-            </div>
-            <div class="lektionen-liste">${lektHtml}</div>
-          </div>`;
+        let lektHtml = lektionen && lektionen.length > 0 ? lektionen.map((l,i) => `<div class="lektion-zeile"><span class="lektion-icon">📄</span><span class="lektion-name-dash">${l.title}</span>${i===0?'<span class="lektion-neu">Neu</span>':''}</div>`).join('') : '<p style="font-size:0.84rem;color:var(--muted);">Noch keine Lektionen.</p>';
+        modulHtml += `<div class="modul-accordion"><div class="modul-header-dash" onclick="toggleModulDash(this)"><div class="modul-header-dash-left"><span class="modul-pfeil">▶</span><span class="modul-header-dash-name">${modul.title}</span></div><span class="modul-badge">${anzahl} Lektion${anzahl!==1?'en':''}</span></div><div class="lektionen-liste">${lektHtml}</div></div>`;
       }
-    } else {
-      modulHtml = '<p style="padding:1rem 1.5rem;font-size:0.93rem;color:var(--muted);">Module werden demnächst freigeschaltet.</p>';
-    }
-
-    html += `
-      <div class="kurs-block">
-        <div class="kurs-block-header">
-          <div class="kurs-block-titel">${kurs.title}</div>
-          ${kurs.description ? `<div class="kurs-block-sub">${kurs.description}</div>` : ''}
-        </div>
-        ${modulHtml}
-      </div>`;
+    } else { modulHtml = '<p style="padding:1rem 1.5rem;color:var(--muted);">Module werden freigeschaltet.</p>'; }
+    html += `<div class="kurs-block"><div class="kurs-block-header"><div class="kurs-block-titel">${kurs.title}</div>${kurs.description?`<div class="kurs-block-sub">${kurs.description}</div>`:''}</div>${modulHtml}</div>`;
   }
-
   html += '</div>';
   bereich.innerHTML = html;
 }
@@ -1278,9 +919,6 @@ function toggleModulDash(header) {
   if (liste) liste.style.display = header.classList.contains('offen') ? 'block' : 'none';
 }
 
-/* ====================================================
-   ADMIN
-   ==================================================== */
 function adminShowTab(tab) {
   ['users','courses','test','stats'].forEach(t => {
     document.getElementById('admin-tab-'+t).style.display = t===tab ? 'block' : 'none';
@@ -1297,22 +935,7 @@ async function loadAdminUsers() {
   list.innerHTML = '<p style="color:var(--muted);text-align:center;padding:2rem;">Lädt...</p>';
   const { data, error } = await sb.from('profiles').select('*').order('email');
   if (error || !data || data.length === 0) { list.innerHTML='<p style="color:var(--muted);text-align:center;padding:2rem;">Keine Nutzer gefunden.</p>'; return; }
-  list.innerHTML = data.map(u => `
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:0.85rem 0.5rem;border-bottom:1px solid var(--light-border);">
-      <div style="display:flex;align-items:center;gap:12px;">
-        <div style="width:38px;height:38px;border-radius:50%;background:${u.role==='admin'?'var(--violet)':'var(--navy)'};color:white;display:flex;align-items:center;justify-content:center;font-size:0.874rem;font-weight:700;">${u.email.substring(0,2).toUpperCase()}</div>
-        <div><div style="font-size:0.952rem;font-weight:600;color:var(--navy);">${u.email}</div></div>
-      </div>
-      <div style="display:flex;align-items:center;gap:0.75rem;">
-        <span style="font-size:0.784rem;font-weight:700;padding:0.25rem 0.75rem;border-radius:50px;background:${u.role==='admin'?'var(--violet-light)':u.role==='pending'?'#FFF3CD':'var(--blue-pale)'};color:${u.role==='admin'?'var(--violet)':u.role==='pending'?'#856404':'var(--navy-mid)'};">
-          ${u.role==='admin'?'👑 Admin':u.role==='pending'?'⏳ Ausstehend':'👤 Nutzer'}
-        </span>
-        <button onclick="toggleRole('${u.id}','${u.role}')" style="background:transparent;border:1.5px solid var(--light-border);color:var(--muted);padding:0.25rem 0.75rem;border-radius:50px;font-size:0.784rem;cursor:pointer;font-family:'Nunito',sans-serif;">
-          ${u.role==='pending'?'✅ Freischalten':u.role==='admin'?'→ Nutzer machen':'→ Admin machen'}
-        </button>
-      </div>
-    </div>
-  `).join('');
+  list.innerHTML = data.map(u => `<div style="display:flex;align-items:center;justify-content:space-between;padding:0.85rem 0.5rem;border-bottom:1px solid var(--light-border);"><div style="display:flex;align-items:center;gap:12px;"><div style="width:38px;height:38px;border-radius:50%;background:${u.role==='admin'?'var(--violet)':'var(--navy)'};color:white;display:flex;align-items:center;justify-content:center;font-size:0.874rem;font-weight:700;">${u.email.substring(0,2).toUpperCase()}</div><div><div style="font-size:0.952rem;font-weight:600;color:var(--navy);">${u.email}</div></div></div><div style="display:flex;align-items:center;gap:0.75rem;"><span style="font-size:0.784rem;font-weight:700;padding:0.25rem 0.75rem;border-radius:50px;background:${u.role==='admin'?'var(--violet-light)':u.role==='pending'?'#FFF3CD':'var(--blue-pale)'};color:${u.role==='admin'?'var(--violet)':u.role==='pending'?'#856404':'var(--navy-mid)'};">${u.role==='admin'?'👑 Admin':u.role==='pending'?'⏳ Ausstehend':'👤 Nutzer'}</span><button onclick="toggleRole('${u.id}','${u.role}')" style="background:transparent;border:1.5px solid var(--light-border);color:var(--muted);padding:0.25rem 0.75rem;border-radius:50px;font-size:0.784rem;cursor:pointer;font-family:'Nunito',sans-serif;">${u.role==='pending'?'✅ Freischalten':u.role==='admin'?'→ Nutzer machen':'→ Admin machen'}</button></div></div>`).join('');
 }
 
 async function toggleRole(userId, currentRole) {
@@ -1339,10 +962,7 @@ async function loadAdminCourses() {
   const container = document.getElementById('admin-courses-list');
   container.innerHTML = '<p style="color:var(--muted);text-align:center;padding:2rem;">Lädt...</p>';
   const { data: courses, error } = await sb.from('courses').select('*').order('title');
-  if (error || !courses || courses.length === 0) {
-    container.innerHTML = '<p style="color:var(--muted);text-align:center;padding:2rem;">Keine Kurse gefunden.</p>';
-    return;
-  }
+  if (error || !courses || courses.length === 0) { container.innerHTML = '<p style="color:var(--muted);text-align:center;padding:2rem;">Keine Kurse gefunden.</p>'; return; }
   container.innerHTML = courses.map(c => buildCourseCard(c)).join('');
 }
 
@@ -1353,28 +973,7 @@ function statusLabel(status) {
 }
 
 function buildCourseCard(course) {
-  return `
-    <div class="kurs-card" id="kurs-${course.id}">
-      <div class="kurs-card-header" onclick="toggleCourseExpand('${course.id}')">
-        <div class="kurs-title-row">
-          <span class="kurs-expand-icon">▶</span>
-          <span class="kurs-name">${course.title}</span>
-        </div>
-        <div class="kurs-actions" onclick="event.stopPropagation()">
-          ${statusLabel(course.status)}
-          <select class="status-select" onchange="updateCourseStatus('${course.id}', this.value)">
-            <option value="published" ${course.status==='published'?'selected':''}>🟢 Sichtbar</option>
-            <option value="coming_soon" ${course.status==='coming_soon'?'selected':''}>🟡 Demnächst</option>
-            <option value="draft" ${course.status==='draft'?'selected':''}>⚫ Versteckt</option>
-          </select>
-        </div>
-      </div>
-      <div class="kurs-body" id="kurs-body-${course.id}">
-        <div id="module-list-${course.id}" style="margin-top:0.5rem;">
-          <p style="color:var(--muted);font-size:0.874rem;padding:0.5rem 0;">Lädt Module...</p>
-        </div>
-      </div>
-    </div>`;
+  return `<div class="kurs-card" id="kurs-${course.id}"><div class="kurs-card-header" onclick="toggleCourseExpand('${course.id}')"><div class="kurs-title-row"><span class="kurs-expand-icon">▶</span><span class="kurs-name">${course.title}</span></div><div class="kurs-actions" onclick="event.stopPropagation()">${statusLabel(course.status)}<select class="status-select" onchange="updateCourseStatus('${course.id}', this.value)"><option value="published" ${course.status==='published'?'selected':''}>🟢 Sichtbar</option><option value="coming_soon" ${course.status==='coming_soon'?'selected':''}>🟡 Demnächst</option><option value="draft" ${course.status==='draft'?'selected':''}>⚫ Versteckt</option></select></div></div><div class="kurs-body" id="kurs-body-${course.id}"><div id="module-list-${course.id}" style="margin-top:0.5rem;"><p style="color:var(--muted);font-size:0.874rem;">Lädt Module...</p></div></div></div>`;
 }
 
 async function toggleCourseExpand(courseId) {
@@ -1386,28 +985,10 @@ async function toggleCourseExpand(courseId) {
 
 async function loadModules(courseId) {
   const container = document.getElementById('module-list-' + courseId);
-  container.innerHTML = '<p style="color:var(--muted);font-size:0.874rem;padding:0.5rem 0;">Lädt...</p>';
-  const { data: modules, error } = await sb.from('modules').select('*').eq('course_id', courseId).order('position');
-  if (error || !modules || modules.length === 0) {
-    container.innerHTML = '<p style="color:var(--muted);font-size:0.874rem;padding:0.5rem 0;">Keine Module gefunden.</p>';
-    return;
-  }
-  container.innerHTML = modules.map(m => `
-    <div>
-      <div class="modul-row" id="modul-${m.id}" onclick="toggleModulExpand('${m.id}')">
-        <div class="modul-title-row">
-          <span class="modul-expand-icon">▶</span>
-          <span class="modul-name">${m.title}</span>
-        </div>
-        <div class="modul-actions" onclick="event.stopPropagation()">
-          <span class="toggle-label">${m.is_published ? 'Sichtbar' : 'Versteckt'}</span>
-          <button class="toggle-btn ${m.is_published ? 'on' : 'off'}" id="modul-toggle-${m.id}"
-            onclick="toggleModulPublished('${m.id}', ${m.is_published})"></button>
-        </div>
-      </div>
-      <div class="lektionen-body" id="lektionen-${m.id}"></div>
-    </div>
-  `).join('');
+  container.innerHTML = '<p style="color:var(--muted);font-size:0.874rem;">Lädt...</p>';
+  const { data: modules } = await sb.from('modules').select('*').eq('course_id', courseId).order('position');
+  if (!modules || modules.length === 0) { container.innerHTML = '<p style="color:var(--muted);font-size:0.874rem;">Keine Module.</p>'; return; }
+  container.innerHTML = modules.map(m => `<div><div class="modul-row" id="modul-${m.id}" onclick="toggleModulExpand('${m.id}')"><div class="modul-title-row"><span class="modul-expand-icon">▶</span><span class="modul-name">${m.title}</span></div><div class="modul-actions" onclick="event.stopPropagation()"><span class="toggle-label">${m.is_published?'Sichtbar':'Versteckt'}</span><button class="toggle-btn ${m.is_published?'on':'off'}" id="modul-toggle-${m.id}" onclick="toggleModulPublished('${m.id}', ${m.is_published})"></button></div></div><div class="lektionen-body" id="lektionen-${m.id}"></div></div>`).join('');
 }
 
 async function toggleModulExpand(modulId) {
@@ -1421,142 +1002,194 @@ async function toggleModulExpand(modulId) {
 
 async function loadLektionen(modulId) {
   const container = document.getElementById('lektionen-' + modulId);
-  container.innerHTML = '<p style="color:var(--muted);font-size:0.784rem;padding:0.35rem 0;">Lädt...</p>';
-  const { data: lektionen, error } = await sb.from('lessons').select('*').eq('module_id', modulId).order('position');
-  if (error || !lektionen || lektionen.length === 0) {
-    container.innerHTML = '<p style="color:var(--muted);font-size:0.784rem;padding:0.35rem 0;">Keine Lektionen gefunden.</p>';
-    return;
-  }
-  container.innerHTML = lektionen.map(l => `
-    <div class="lektion-row">
-      <span class="lektion-name">${l.title}</span>
-      <div style="display:flex;align-items:center;gap:0.5rem;">
-        <span style="font-size:0.762rem;color:var(--muted);">${l.is_published ? 'Sichtbar' : 'Versteckt'}</span>
-        <button class="toggle-btn ${l.is_published ? 'on' : 'off'}" id="lektion-toggle-${l.id}"
-          onclick="toggleLektionPublished('${l.id}', ${l.is_published})"></button>
-        <span class="save-indicator" id="saved-${l.id}">✓ Gespeichert</span>
-      </div>
-    </div>
-  `).join('');
+  const { data: lektionen } = await sb.from('lessons').select('*').eq('module_id', modulId).order('position');
+  if (!lektionen || lektionen.length === 0) { container.innerHTML = '<p style="color:var(--muted);font-size:0.784rem;">Keine Lektionen.</p>'; return; }
+  container.innerHTML = lektionen.map(l => `<div class="lektion-row"><span class="lektion-name">${l.title}</span><div style="display:flex;align-items:center;gap:0.5rem;"><span style="font-size:0.762rem;color:var(--muted);">${l.is_published?'Sichtbar':'Versteckt'}</span><button class="toggle-btn ${l.is_published?'on':'off'}" id="lektion-toggle-${l.id}" onclick="toggleLektionPublished('${l.id}', ${l.is_published})"></button><span class="save-indicator" id="saved-${l.id}">✓</span></div></div>`).join('');
 }
 
 async function updateCourseStatus(courseId, newStatus) {
   const { error } = await sb.from('courses').update({ status: newStatus }).eq('id', courseId);
-  if (!error) {
-    const card = document.getElementById('kurs-' + courseId);
-    const badgeEl = card.querySelector('.status-badge');
-    if (badgeEl) badgeEl.outerHTML = statusLabel(newStatus);
-  }
+  if (!error) { const card = document.getElementById('kurs-' + courseId); const badgeEl = card.querySelector('.status-badge'); if (badgeEl) badgeEl.outerHTML = statusLabel(newStatus); }
 }
 
 async function toggleModulPublished(modulId, currentVal) {
   const newVal = !currentVal;
-  const { error } = await sb.from('modules').update({ is_published: newVal }).eq('id', modulId);
-  if (!error) {
-    const btn = document.getElementById('modul-toggle-' + modulId);
-    btn.classList.toggle('on', newVal); btn.classList.toggle('off', !newVal);
-    btn.setAttribute('onclick', `toggleModulPublished('${modulId}', ${newVal})`);
-    const label = btn.previousElementSibling;
-    if (label) label.textContent = newVal ? 'Sichtbar' : 'Versteckt';
-  }
+  await sb.from('modules').update({ is_published: newVal }).eq('id', modulId);
+  const btn = document.getElementById('modul-toggle-' + modulId);
+  btn.classList.toggle('on', newVal); btn.classList.toggle('off', !newVal);
+  btn.setAttribute('onclick', `toggleModulPublished('${modulId}', ${newVal})`);
+  const label = btn.previousElementSibling;
+  if (label) label.textContent = newVal ? 'Sichtbar' : 'Versteckt';
 }
 
 async function toggleLektionPublished(lektionId, currentVal) {
   const newVal = !currentVal;
-  const { error } = await sb.from('lessons').update({ is_published: newVal }).eq('id', lektionId);
-  if (!error) {
-    const btn = document.getElementById('lektion-toggle-' + lektionId);
-    btn.classList.toggle('on', newVal); btn.classList.toggle('off', !newVal);
-    btn.setAttribute('onclick', `toggleLektionPublished('${lektionId}', ${newVal})`);
-    const label = btn.previousElementSibling;
-    if (label) label.textContent = newVal ? 'Sichtbar' : 'Versteckt';
-    const saved = document.getElementById('saved-' + lektionId);
-    if (saved) { saved.style.display='inline'; setTimeout(()=>saved.style.display='none', 2000); }
-  }
+  await sb.from('lessons').update({ is_published: newVal }).eq('id', lektionId);
+  const btn = document.getElementById('lektion-toggle-' + lektionId);
+  btn.classList.toggle('on', newVal); btn.classList.toggle('off', !newVal);
+  btn.setAttribute('onclick', `toggleLektionPublished('${lektionId}', ${newVal})`);
+  const label = btn.previousElementSibling;
+  if (label) label.textContent = newVal ? 'Sichtbar' : 'Versteckt';
+  const saved = document.getElementById('saved-' + lektionId);
+  if (saved) { saved.style.display='inline'; setTimeout(()=>saved.style.display='none', 2000); }
 }
+</script>
 
+<script>
 // ===== EINSTUFUNGSTEST =====
-// Standardaufgaben (werden durch Admin-Aufgaben ergänzt/ersetzt)
-let testAufgaben = [
+
+// TEIL 1: RECHTSCHREIBUNG
+const testTeil1 = [
+  // F1: Beistrich setzen – Slot nach JEDEM Wort
   {
-    id:'demo1', typ:'mc',
+    id:'f1', typ:'komma_wort', teil:'Rechtschreibung',
+    frage:'Setze Beistriche an den richtigen Stellen.',
+    satz:'Obwohl es den ganzen Tag geregnet hatte gingen die Kinder trotzdem in den Park weil sie unbedingt spielen wollten.',
+    // Wörter: 0=Obwohl 1=es 2=den 3=ganzen 4=Tag 5=geregnet 6=hatte 7=gingen 8=die 9=Kinder 10=trotzdem 11=in 12=den 13=Park 14=weil 15=sie 16=unbedingt 17=spielen 18=wollten.
+    kommaNach:[6, 13],
+    erklaerung:'Nach „hatte" (Ende des Nebensatzes) und nach „Park" (vor dem nächsten Nebensatz mit „weil") gehört je ein Beistrich.'
+  },
+  // F2a: Wegen des Regens – Genitiv
+  {
+    id:'f2a', typ:'version', teil:'Rechtschreibung',
+    frage:'Welche Version ist rechtschreiblich korrekt?',
+    versionen:[
+      'Wegen dem Regen blieb er zuhause.',
+      'Wegen des Regens blieb er zuhause.'
+    ],
+    loesung:1,
+    erklaerung:'„wegen" verlangt den Genitiv: „wegen des Regens".'
+  },
+  // F2b: Folgeaufgabe – Fall bestimmen
+  {
+    id:'f2b', typ:'mc', teil:'Rechtschreibung',
+    frage:'In welchem Fall (Kasus) steht das Nomen nach der Präposition „wegen"?',
+    optionen:['Nominativ','Akkusativ','Dativ','Genitiv'],
+    loesung:3,
+    erklaerung:'„wegen" regiert den Genitiv. Also: „wegen des Regens", „wegen der Kälte", „wegen eines Fehlers".'
+  },
+  // F3: dass/das Lücken
+  {
+    id:'f3', typ:'dass_das', teil:'Rechtschreibung',
+    frage:'Fülle die Lücken mit „dass" oder „das" aus.',
+    satzTeile:[
+      'Der Lehrer erklärte, ',
+      ' das Buch, ',
+      ' er uns empfohlen hatte, so spannend war, ',
+      ' die Schüler nicht aufhören konnten zu lesen, und ',
+      ' das Ende so überraschend war, ',
+      ' es niemand vorhergesehen hatte, was dazu führte, ',
+      ' das Gespräch über das Buch noch lange nach dem Unterricht anhielt.'
+    ],
+    // Lösungen für die 6 Lücken (zwischen den Teilen):
+    loesungen:['dass','das','dass','dass','dass','dass'],
+    erklaerung:'„dass" = Konjunktion (leitet Nebensatz ein). „das" = Artikel oder Relativpronomen (bezieht sich auf ein Substantiv).'
+  },
+  // F4: T-Shirt eintippen
+  {
+    id:'f4', typ:'korrektur_wort', teil:'Rechtschreibung',
+    frage:'Er trug ein __________ mit dem Foto seiner Freundin. (TSHIRT) – Schreibe das Wort korrekt:',
+    loesung:'T-Shirt',
+    erklaerung:'„T-Shirt" wird mit Bindestrich und großem S geschrieben.'
+  },
+  // F5: dass/das Lücke (vereinfacht)
+  {
+    id:'f5', typ:'luecke', teil:'Rechtschreibung',
+    frage:'Ergänze mit „das" oder „dass":',
+    text:'Ich glaube, ___ er recht hat.',
+    optionen:['das','dass','daß'],
+    loesung:1,
+    erklaerung:'„dass" ist eine Konjunktion und leitet einen Nebensatz ein. „das" ist ein Artikel oder Pronomen.'
+  },
+  // F6: Diktat-Aufgabe
+  {
+    id:'f6', typ:'diktat', teil:'Rechtschreibung',
+    frage:'Höre den Text und tippe ihn genau ab – achte auf jeden Buchstaben, jedes Satzzeichen und jeden Bindestrich.',
+    audioText:'Frau Schneider, danke für Ihre Nachfrage zu Sophies Sammelleidenschaft! Ich denke, es geht bergauf. Ihre Eltern scheinen der Armen im Großen und Ganzen beizustehen. Sophies Mutter, die Gute, hilft immerzu, wo sie nur kann. Wohingegen ihr Vater Störungen initiiert, wo immer es möglich ist. Er, ein Fleisch- und Fischliebhaber, hat ihr erst Ostern wieder Meissener Porzellan, eine sächsische Spezialität, offeriert. Bedauerlicherweise war das Ganze dabei mit einem Sprung garniert. Na, sie wird darüber hinwegkommen. Fürs Erste mag dies genügen, alles Weitere dann per E-Mail, sofern es Ihnen recht ist.',
+    loesung:'Frau Schneider, danke für Ihre Nachfrage zu Sophies Sammelleidenschaft! Ich denke, es geht bergauf. Ihre Eltern scheinen der Armen im Großen und Ganzen beizustehen. Sophies Mutter, die Gute, hilft immerzu, wo sie nur kann. Wohingegen ihr Vater Störungen initiiert, wo immer es möglich ist. Er, ein Fleisch- und Fischliebhaber, hat ihr erst Ostern wieder Meissener Porzellan, eine sächsische Spezialität, offeriert. Bedauerlicherweise war das Ganze dabei mit einem Sprung garniert. Na, sie wird darüber hinwegkommen. Fürs Erste mag dies genügen, alles Weitere dann per E-Mail, sofern es Ihnen recht ist.',
+    erklaerung:'Achte besonders auf: Großschreibung von Substantiven (Armen, Gute, Großen, Ganzen, Fleisch, Fischliebhaber, Ersten, Weitere), Bindestriche (Fleisch- und Fischliebhaber, E-Mail), Satzzeichen.'
+  },
+  // F7: Beistrichsetzung (korrekte Version)
+  {
+    id:'f7', typ:'version', teil:'Rechtschreibung',
+    frage:'Welche Version ist in Bezug auf die Beistrichsetzung korrekt?',
+    versionen:[
+      'Ich habe ihn gestern getroffen als ich in der Stadt war.',
+      'Ich habe ihn gestern getroffen, als ich in der Stadt war.'
+    ],
+    loesung:1,
+    erklaerung:'Vor „als" steht ein Beistrich, da es einen Nebensatz einleitet.'
+  },
+  // F8: mc
+  {
+    id:'f8', typ:'mc', teil:'Rechtschreibung',
     frage:'Welche Schreibweise ist korrekt?',
     optionen:['das selbe','dasselbe','Das Selbe','das Selbe'],
     loesung:1,
     erklaerung:'„dasselbe" wird zusammengeschrieben – es bezeichnet etwas bereits Erwähntes.'
   },
+  // F9: Groß/Kleinschreibung
   {
-    id:'demo2', typ:'version',
-    frage:'Welche Version ist grammatikalisch korrekt?',
-    versionen:['Ich habe ihn gestern getroffen, als ich in der Stadt war.','Ich habe ihn gestern getroffen als ich in der Stadt war.'],
-    loesung:0,
-    erklaerung:'Vor „als" steht ein Komma, da es einen Nebensatz einleitet.'
-  },
-  {
-    id:'demo3', typ:'fehler',
-    frage:'Klicke auf alle Wörter, die einen Rechtschreibfehler enthalten.',
-    text:'Der Man ging langsam durch den Pahk und betrachtete die schöhnen Bluhmen.',
-    fehlerIndizes:[1,5,8,9],
-    erklaerung:'Fehler: „Man" → Mann, „Pahk" → Park, „schöhnen" → schönen, „Bluhmen" → Blumen'
-  },
-  {
-    id:'demo4', typ:'luecke',
-    frage:'Ergänze die Lücke mit dem richtigen Wort:',
-    text:'Er wollte wissen, ___ das Paket schon angekommen ist.',
-    optionen:['ob','das','dass','ober'],
-    loesung:0,
-    erklaerung:'„ob" leitet einen indirekten Fragesatz ein.'
-  },
-  {
-    id:'demo5', typ:'komma',
-    frage:'Klicke auf die Stellen, wo ein Komma gesetzt werden muss.',
-    teile:['Obwohl es regnete',' gingen sie spazieren',' weil sie frische Luft brauchten.'],
-    kommaPositionen:[0,1],
-    erklaerung:'Nach „regnete" und nach „spazieren" gehört je ein Komma (Nebensätze).'
-  },
-  {
-    id:'demo6', typ:'gross',
+    id:'f9', typ:'mc', teil:'Rechtschreibung',
     frage:'Welche Schreibweise ist korrekt?',
     optionen:['das Schreiben fällt mir schwer','Das Schreiben fällt mir schwer','das schreiben Fällt mir schwer','Das schreiben fällt mir schwer'],
     loesung:1,
-    erklaerung:'Am Satzanfang wird großgeschrieben. Substantivierte Verben wie „das Schreiben" werden ebenfalls großgeschrieben.'
+    erklaerung:'Satzanfang → Großschreibung. Substantivierte Verben wie „das Schreiben" werden ebenfalls großgeschrieben.'
   },
+  // F10: Richtige Version (mit Punkt am Ende)
   {
-    id:'demo7', typ:'korrektur',
-    frage:'Korrigiere den folgenden Satz:',
-    text:'Ich habe gestern meine Freundin angerufen, weil ich ihr eine Wichtige nachricht übermitteln wolte.',
-    loesung:'Ich habe gestern meine Freundin angerufen, weil ich ihr eine wichtige Nachricht übermitteln wollte.',
-    erklaerung:'Fehler: „Wichtige" → wichtige (kein Eigenname), „nachricht" → Nachricht (Substantiv → Großschreibung), „wolte" → wollte.'
-  },
-  {
-    id:'demo8', typ:'mc',
-    frage:'Was ist die korrekte Getrennt-/Zusammenschreibung?',
-    optionen:['kennenlernen','kennen lernen','Kennen lernen','KennenLernen'],
+    id:'f10', typ:'version', teil:'Rechtschreibung',
+    frage:'Welche Schreibweise ist korrekt?',
+    versionen:[
+      'Er hat das Buch gestern gelesen.',
+      'Er hat das Buch gestern gelesen'
+    ],
     loesung:0,
-    erklaerung:'„kennenlernen" wird zusammengeschrieben (neue Rechtschreibung).'
-  },
-  {
-    id:'demo9', typ:'version',
-    frage:'Welcher Satz ist korrekt?',
-    versionen:['Wegen dem Regen blieb er zuhause.','Wegen des Regens blieb er zuhause.'],
-    loesung:1,
-    erklaerung:'„wegen" verlangt den Genitiv: „wegen des Regens", nicht den Dativ.'
-  },
-  {
-    id:'demo10', typ:'luecke',
-    frage:'Ergänze mit „das" oder „dass":',
-    text:'Ich glaube, ___ er recht hat.',
-    optionen:['das','dass','daß','weil'],
-    loesung:1,
-    erklaerung:'„dass" ist eine Konjunktion (leitet einen Nebensatz ein). „das" ist ein Artikel oder Pronomen.'
+    erklaerung:'Am Ende eines Aussagesatzes steht immer ein Punkt.'
   }
 ];
 
-let testReihenfolge = [];
-let testAktuell = 0;
-let testPunkte = 0;
-let testAntworten = [];
-let editAufgabeId = null;
+// TEIL 2: GRAMMATIK
+// Getrennt-/Zusammenschreibung Diktat-Sätze (Zufallsauswahl von 5)
+const diktatSaetze = [
+  'Julian hat sein Objektiv bei Foto Meier bestellt.',
+  'Die Erdbeerernte war diesen Sommer sehr ergiebig.',
+  'Ein 12-Stunden-Arbeitstag ist in der Gastronomie leider keine Seltenheit.',
+  '„Warum kannst du mich nicht schlafen lassen?", fragte Lukas genervt.',
+  '„Du wirst ihn morgen kennenlernen", versprach seine Schwester.',
+  'Das erste Kennenlernen der neuen Nachbarn verlief äußerst herzlich.',
+  '„Man sollte das Sitzenbleiben endlich abschaffen!", rief der Klassensprecher.',
+  'Wegen des starken Schneesturms mussten sie unbedingt beieinanderbleiben.',
+  'Wir sollten die Ziegelsteine ordentlich aufeinanderstapeln.',
+  'Die gesamte Zeremonie soll ganz in Ruhe vonstattengehen.',
+  'Die alten Schulfreunde ließen leider viel zu lange nichts mehr voneinander hören.',
+  'Er hofft inständig, ein neues Rennrad geschenkt zu bekommen.',
+  'Das Schnellfahren in der Spielstraße ist strengstens untersagt!'
+];
+
+// Direkte Rede Sätze (Zufallsauswahl von 2 Absätzen)
+const direkteRedeSaetze = [
+  {
+    aufgabe: 'Lukas sagte Eigentlich mache ich nicht gerne Sport, aber das Klettern in der Halle hat mir richtig Spaß gemacht.',
+    loesung: 'Lukas sagte: „Eigentlich mache ich nicht gerne Sport, aber das Klettern in der Halle hat mir richtig Spaß gemacht."'
+  },
+  {
+    aufgabe: 'Ich muss das auch unbedingt einmal ausprobieren antwortete Sophie.',
+    loesung: '„Ich muss das auch unbedingt einmal ausprobieren", antwortete Sophie.'
+  },
+  {
+    aufgabe: 'Solche hohen Wände erwiderte Jonas die sind nichts für mich. Ich weiß nicht, wann ich das machen soll. Die Zeit habe ich nicht. Tagsüber bin ich in der Schule, abends habe ich Hausaufgaben und bin danach viel zu kaputt für das Training.',
+    loesung: '„Solche hohen Wände", erwiderte Jonas, „die sind nichts für mich. Ich weiß nicht, wann ich das machen soll. Die Zeit habe ich nicht. Tagsüber bin ich in der Schule, abends habe ich Hausaufgaben und bin danach viel zu kaputt für das Training."'
+  },
+  {
+    aufgabe: 'Wollt ihr am Wochenende mitkommen fragte Lukas ich zeige euch gerne die Ausrüstung. Die Routen sind wirklich abwechslungsreich und werden euch sicher fordern.',
+    loesung: '„Wollt ihr am Wochenende mitkommen?", fragte Lukas. „Ich zeige euch gerne die Ausrüstung. Die Routen sind wirklich abwechslungsreich und werden euch sicher fordern."'
+  },
+  {
+    aufgabe: 'Es gibt noch eine andere Möglichkeit lacht Sophie ich kann euch auch einfach von unten zuschauen.',
+    loesung: '„Es gibt noch eine andere Möglichkeit", lacht Sophie, „ich kann euch auch einfach von unten zuschauen."'
+  }
+];
 
 function shuffle(arr) {
   const a = [...arr];
@@ -1567,70 +1200,206 @@ function shuffle(arr) {
   return a;
 }
 
+let testReihenfolge = [];
+let testAktuell = 0;
+let testPunkte = 0;
+let testAntworten = [];
+let aktuellerTeil = 1;
+let gewaehlteOption = null;
+let gewaehlteVersion = null;
+let ttsUtterance = null;
+
 async function startTest() {
-  // Lade Aufgaben aus Supabase wenn verfügbar
+  // Lade Aufgaben aus Supabase wenn vorhanden
+  let dbAufgaben = [];
   try {
     const { data, error } = await sb.from('placement_questions').select('*');
     if (!error && data && data.length > 0) {
-      testAufgaben = data.map(d => ({...d, ...d.data}));
+      dbAufgaben = data.map(d => ({...d.data, id: d.id}));
     }
   } catch(e) {}
 
-  testReihenfolge = shuffle(testAufgaben);
+  // Zufällige Auswahl für F11 (5 von 13 Diktat-Sätzen)
+  const ausgewaehlteS = shuffle(diktatSaetze).slice(0, 5);
+  const f11 = {
+    id:'f11', typ:'diktat_getrennt', teil:'Grammatik',
+    frage:'Höre die Sätze und tippe sie genau ab.',
+    saetze: ausgewaehlteS,
+    erklaerung:'Achte besonders auf Getrennt- und Zusammenschreibung sowie auf Bindestriche und Anführungszeichen.'
+  };
+
+  // Zufällige Auswahl für F12 (2 von 5 Sätzen)
+  const ausgewaehlteR = shuffle(direkteRedeSaetze).slice(0, 2);
+  const f12 = {
+    id:'f12', typ:'direkte_rede', teil:'Grammatik',
+    frage:'Ergänze die Satzzeichen für die direkte Rede.',
+    saetze: ausgewaehlteR,
+    erklaerung:'Direkte Rede: Doppelpunkt und Anführungszeichen beim Einleiten, Beistrich vor dem Redebegleiterwort.'
+  };
+
+  // Zusammenstellung
+  const teil1 = dbAufgaben.filter(a => a.teil === 'Rechtschreibung').length > 0
+    ? dbAufgaben.filter(a => a.teil === 'Rechtschreibung')
+    : testTeil1;
+  const teil2Extra = dbAufgaben.filter(a => a.teil === 'Grammatik');
+
+  testReihenfolge = [
+    ...teil1,
+    { id:'trennseite', typ:'trennseite', label:'Grammatik' },
+    f11,
+    f12,
+    ...teil2Extra
+  ];
+
   testAktuell = 0;
   testPunkte = 0;
   testAntworten = [];
-  document.querySelector('.test-hero').style.display = 'none';
+  aktuellerTeil = 1;
+
+  document.getElementById('test-hero-section').style.display = 'none';
   document.getElementById('test-body').style.display = 'block';
   zeigeTestFrage();
 }
 
 function zeigeTestFrage() {
-  const total = testReihenfolge.length;
-  const pct = Math.round((testAktuell / total) * 100);
-  document.getElementById('test-progress-bar').style.width = pct + '%';
-  document.getElementById('test-progress-label').textContent = `Frage ${testAktuell + 1} von ${total}`;
-
   const aufgabe = testReihenfolge[testAktuell];
-  const area = document.getElementById('test-question-area');
+  const gesamtFragen = testReihenfolge.filter(a => a.typ !== 'trennseite').length;
+  const bisherFragen = testReihenfolge.slice(0, testAktuell).filter(a => a.typ !== 'trennseite').length;
+  const pct = Math.round((bisherFragen / gesamtFragen) * 100);
 
-  const typeLabels = {mc:'Multiple Choice',luecke:'Lückentext',fehler:'Fehler markieren',version:'Richtige Version',korrektur:'Korrektur',komma:'Komma setzen',gross:'Groß/Kleinschreibung'};
-  const typeBadge = `<span class="test-type-badge badge-${aufgabe.typ}">${typeLabels[aufgabe.typ]||aufgabe.typ}</span>`;
+  document.getElementById('test-progress-bar').style.width = pct + '%';
+
+  if (aufgabe.typ === 'trennseite') {
+    document.getElementById('test-progress-label').textContent = 'Teil 1 abgeschlossen!';
+    document.getElementById('test-question-area').innerHTML = `
+      <div class="test-part-divider">
+        <h2>📖 Teil 2: Grammatik</h2>
+        <p>Du hast den Rechtschreibungs-Teil erfolgreich abgeschlossen.<br>Jetzt folgt der Grammatik-Teil.</p>
+        <button class="test-part-divider-btn" onclick="naechsteFrage()">Weiter →</button>
+      </div>`;
+    return;
+  }
+
+  const frageNr = bisherFragen + 1;
+  document.getElementById('test-progress-label').textContent =
+    `${aufgabe.teil || 'Test'} – Frage ${frageNr} von ${gesamtFragen}`;
+
+  gewaehlteOption = null;
+  gewaehlteVersion = null;
+
+  const typeLabels = {
+    mc:'Multiple Choice', luecke:'Lückentext', fehler:'Fehler markieren',
+    version:'Beistrichsetzung / Version', korrektur:'Korrektur', komma:'Beistrich setzen',
+    komma_wort:'Beistrich setzen', gross:'Groß/Kleinschreibung', korrektur_wort:'Wortschreibung',
+    dass_das:'dass / das', diktat:'Diktat', diktat_getrennt:'Diktat – Getrenntschreibung',
+    direkte_rede:'Direkte Rede'
+  };
+  const typeBadgeClass = {
+    mc:'badge-mc', luecke:'badge-luecke', fehler:'badge-fehler', version:'badge-version',
+    korrektur:'badge-korrektur', komma:'badge-komma', komma_wort:'badge-komma',
+    gross:'badge-gross', korrektur_wort:'badge-korrektur', dass_das:'badge-luecke',
+    diktat:'badge-diktat', diktat_getrennt:'badge-getrennt', direkte_rede:'badge-direkte-rede'
+  };
+
+  const badgeClass = typeBadgeClass[aufgabe.typ] || 'badge-mc';
+  const badgeLabel = typeLabels[aufgabe.typ] || aufgabe.typ;
+  const typeBadge = `<span class="test-type-badge ${badgeClass}">${badgeLabel}</span>`;
 
   let inhalt = '';
+
   if (aufgabe.typ === 'mc' || aufgabe.typ === 'gross') {
     inhalt = `<div class="test-mc-options">${aufgabe.optionen.map((o,i)=>`<button class="test-mc-btn" onclick="waehleOption(this,${i})">${o}</button>`).join('')}</div>
     <button class="test-submit-btn" onclick="pruefeAntwort()">Antwort prüfen</button>`;
+
   } else if (aufgabe.typ === 'luecke') {
     const teile = aufgabe.text.split('___');
-    inhalt = `<p class="test-question" style="margin-bottom:0.5rem;">${teile[0]}<strong style="color:var(--violet);">___</strong>${teile[1]||''}</p>
+    inhalt = `<p style="font-size:1.05rem;color:var(--navy);margin-bottom:1rem;line-height:1.7;">${teile[0]}<strong style="color:var(--violet);">___</strong>${teile[1]||''}</p>
     <div class="test-mc-options">${aufgabe.optionen.map((o,i)=>`<button class="test-mc-btn" onclick="waehleOption(this,${i})">${o}</button>`).join('')}</div>
     <button class="test-submit-btn" onclick="pruefeAntwort()">Antwort prüfen</button>`;
+
   } else if (aufgabe.typ === 'version') {
     inhalt = `<div class="test-version-options">${aufgabe.versionen.map((v,i)=>`<button class="test-version-btn" onclick="waehleVersion(this,${i})"><strong>Version ${i+1}:</strong><br>${v}</button>`).join('')}</div>
     <button class="test-submit-btn" onclick="pruefeAntwort()">Antwort prüfen</button>`;
+
   } else if (aufgabe.typ === 'fehler') {
     const woerter = aufgabe.text.split(' ');
     inhalt = `<p style="font-size:0.9rem;color:var(--muted);margin-bottom:0.75rem;">Klicke auf alle fehlerhaften Wörter:</p>
     <div class="test-fehler-text">${woerter.map((w,i)=>`<span class="test-fehler-word" onclick="toggleFehlerWort(this,${i})" data-idx="${i}">${w}</span> `).join('')}</div>
     <button class="test-submit-btn" onclick="pruefeAntwort()">Antwort prüfen</button>`;
+
   } else if (aufgabe.typ === 'komma') {
     let html = '';
     aufgabe.teile.forEach((teil, i) => {
       html += `<span>${teil}</span>`;
       if (i < aufgabe.teile.length - 1) html += `<span class="test-komma-slot" data-idx="${i}" onclick="toggleKomma(this)"> </span>`;
     });
-    inhalt = `<p style="font-size:0.9rem;color:var(--muted);margin-bottom:0.75rem;">Klicke wo ein Komma hingehört:</p>
-    <div class="test-komma-text" style="font-size:1.05rem;line-height:2.5;">${html}</div>
+    inhalt = `<p style="font-size:0.9rem;color:var(--muted);margin-bottom:0.75rem;">Klicke wo ein Beistrich hingehört:</p>
+    <div style="font-size:1.05rem;line-height:2.5;">${html}</div>
     <button class="test-submit-btn" onclick="pruefeAntwort()">Antwort prüfen</button>`;
+
+  } else if (aufgabe.typ === 'komma_wort') {
+    // Beistrich nach jedem Wort möglich
+    const woerter = aufgabe.satz.split(' ');
+    let html = '';
+    woerter.forEach((wort, i) => {
+      html += `<span class="test-komma-word">${wort}</span>`;
+      if (i < woerter.length - 1) {
+        html += `<span class="test-komma-slot" data-idx="${i}" onclick="toggleKomma(this)" title="Beistrich hier setzen?"> </span>`;
+      }
+    });
+    inhalt = `<p style="font-size:0.9rem;color:var(--muted);margin-bottom:0.75rem;">Klicke nach jedem Wort, wo ein Beistrich hingehört:</p>
+    <div style="font-size:1.05rem;line-height:3;">${html}</div>
+    <button class="test-submit-btn" onclick="pruefeAntwort()">Antwort prüfen</button>`;
+
   } else if (aufgabe.typ === 'korrektur') {
     inhalt = `<div style="background:var(--blue-lighter);border-radius:10px;padding:1rem;margin-bottom:1rem;font-size:1.05rem;color:var(--navy);line-height:1.7;">${aufgabe.text}</div>
     <label style="font-size:0.84rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;">Deine korrigierte Version:</label>
     <textarea class="test-input" id="korrektur-input" rows="3" placeholder="Schreibe den korrigierten Satz hier..."></textarea>
     <button class="test-submit-btn" onclick="pruefeAntwort()">Antwort prüfen</button>`;
+
+  } else if (aufgabe.typ === 'korrektur_wort') {
+    inhalt = `<p style="font-size:1.05rem;color:var(--navy);margin-bottom:1rem;line-height:1.7;">${aufgabe.frage}</p>
+    <input class="test-input" id="korrektur-wort-input" type="text" placeholder="Schreibe das Wort hier...">
+    <button class="test-submit-btn" onclick="pruefeAntwort()" style="display:block;margin-top:0.75rem;">Antwort prüfen</button>`;
+
+  } else if (aufgabe.typ === 'dass_das') {
+    // Lücken für dass/das
+    let html = aufgabe.satzTeile[0];
+    for (let i = 0; i < aufgabe.loesungen.length; i++) {
+      html += `<input class="dass-luecke" id="dd-${i}" type="text" maxlength="4" placeholder="???">`;
+      html += aufgabe.satzTeile[i+1] || '';
+    }
+    inhalt = `<div style="font-size:1.05rem;color:var(--navy);line-height:2.5;margin-bottom:1rem;">${html}</div>
+    <button class="test-submit-btn" onclick="pruefeAntwort()">Antwort prüfen</button>`;
+
+  } else if (aufgabe.typ === 'diktat') {
+    inhalt = `<p style="font-size:0.9rem;color:var(--muted);margin-bottom:1rem;">Höre den Text so oft du möchtest, dann tippe ihn genau ab:</p>
+    <button class="audio-play-btn" id="audio-btn" onclick="spieleAudio()">🔊 Text vorlesen</button>
+    <textarea class="test-input" id="diktat-input" rows="8" placeholder="Tippe den Text hier genau ab ..."></textarea>
+    <button class="test-submit-btn" onclick="pruefeAntwort()">Antwort prüfen</button>`;
+
+  } else if (aufgabe.typ === 'diktat_getrennt') {
+    let saetzeHtml = aufgabe.saetze.map((s, i) => `
+      <div style="margin-bottom:1rem;">
+        <button class="audio-play-btn" onclick="spieleAudioText('satz-${i}', ${JSON.stringify(s).replace(/'/g,"\\'")})" id="audio-satz-${i}">🔊 Satz ${i+1} vorlesen</button>
+        <textarea class="test-input diktat-satz-input" id="satz-input-${i}" rows="2" placeholder="Satz ${i+1} hier abtippen..." data-loesung="${s.replace(/"/g,'&quot;')}"></textarea>
+      </div>`).join('');
+    inhalt = `<p style="font-size:0.9rem;color:var(--muted);margin-bottom:1rem;">Höre jeden Satz und tippe ihn genau ab:</p>
+    ${saetzeHtml}
+    <button class="test-submit-btn" onclick="pruefeAntwort()">Alle Sätze prüfen</button>`;
+
+  } else if (aufgabe.typ === 'direkte_rede') {
+    let saetzeHtml = aufgabe.saetze.map((s, i) => `
+      <div style="margin-bottom:1.5rem;">
+        <div style="background:var(--blue-lighter);border-radius:10px;padding:1rem;margin-bottom:0.5rem;font-size:1rem;color:var(--navy);line-height:1.7;">${s.aufgabe}</div>
+        <textarea class="test-input direkte-rede-input" id="rede-input-${i}" rows="3" placeholder="Korrigiere diesen Satz mit allen Satzzeichen..." data-loesung="${s.loesung.replace(/"/g,'&quot;')}"></textarea>
+      </div>`).join('');
+    inhalt = `<p style="font-size:0.9rem;color:var(--muted);margin-bottom:1rem;">Ergänze alle Satzzeichen für die direkte Rede (Anführungszeichen „", Doppelpunkte, Beistriche, Schlusszeichen):</p>
+    ${saetzeHtml}
+    <button class="test-submit-btn" onclick="pruefeAntwort()">Alle Sätze prüfen</button>`;
   }
 
-  area.innerHTML = `
+  document.getElementById('test-question-area').innerHTML = `
     <div class="test-card">
       ${typeBadge}
       <p class="test-question">${aufgabe.frage}</p>
@@ -1638,10 +1407,28 @@ function zeigeTestFrage() {
       <div class="test-feedback" id="test-feedback"></div>
       <button class="test-next-btn" id="test-next-btn" onclick="naechsteFrage()">${testAktuell < testReihenfolge.length - 1 ? 'Nächste Frage →' : 'Ergebnis anzeigen →'}</button>
     </div>`;
+
+  // Audio-Button Funktion für Diktat
+  if (aufgabe.typ === 'diktat') {
+    window._diktatText = aufgabe.audioText;
+  }
 }
 
-let gewaehlteOption = null;
-let gewaehlteVersion = null;
+function spieleAudio() {
+  if (!window._diktatText) return;
+  spieleAudioText('audio-btn', window._diktatText);
+}
+
+function spieleAudioText(btnId, text) {
+  if (ttsUtterance) { window.speechSynthesis.cancel(); }
+  const btn = document.getElementById(btnId);
+  ttsUtterance = new SpeechSynthesisUtterance(text);
+  ttsUtterance.lang = 'de-AT';
+  ttsUtterance.rate = 0.85;
+  ttsUtterance.onstart = () => { if (btn) btn.classList.add('playing'); if (btn) btn.textContent = '⏸ Wird vorgelesen …'; };
+  ttsUtterance.onend = () => { if (btn) btn.classList.remove('playing'); if (btn) btn.textContent = '🔊 Nochmals vorlesen'; };
+  window.speechSynthesis.speak(ttsUtterance);
+}
 
 function waehleOption(btn, idx) {
   document.querySelectorAll('.test-mc-btn').forEach(b => b.classList.remove('selected'));
@@ -1655,9 +1442,7 @@ function waehleVersion(btn, idx) {
   gewaehlteVersion = idx;
 }
 
-function toggleFehlerWort(el, idx) {
-  el.classList.toggle('marked');
-}
+function toggleFehlerWort(el) { el.classList.toggle('marked'); }
 
 function toggleKomma(el) {
   el.classList.toggle('has-komma');
@@ -1666,73 +1451,176 @@ function toggleKomma(el) {
 
 function pruefeAntwort() {
   const aufgabe = testReihenfolge[testAktuell];
+  if (aufgabe.typ === 'trennseite') { naechsteFrage(); return; }
+
   const feedback = document.getElementById('test-feedback');
   const nextBtn = document.getElementById('test-next-btn');
   let korrekt = false;
+  let feedbackText = '';
 
-  document.querySelector('.test-submit-btn').style.display = 'none';
+  const submitBtn = document.querySelector('.test-submit-btn');
+  if (submitBtn) submitBtn.style.display = 'none';
 
   if (aufgabe.typ === 'mc' || aufgabe.typ === 'gross') {
-    if (gewaehlteOption === null) { document.querySelector('.test-submit-btn').style.display='inline-block'; return; }
+    if (gewaehlteOption === null) { if (submitBtn) submitBtn.style.display='inline-block'; return; }
     korrekt = gewaehlteOption === aufgabe.loesung;
     document.querySelectorAll('.test-mc-btn').forEach((b,i) => {
       if (i === aufgabe.loesung) b.classList.add('correct');
       else if (i === gewaehlteOption && !korrekt) b.classList.add('wrong');
       b.disabled = true;
     });
-    gewaehlteOption = null;
+
   } else if (aufgabe.typ === 'luecke') {
-    if (gewaehlteOption === null) { document.querySelector('.test-submit-btn').style.display='inline-block'; return; }
+    if (gewaehlteOption === null) { if (submitBtn) submitBtn.style.display='inline-block'; return; }
     korrekt = gewaehlteOption === aufgabe.loesung;
     document.querySelectorAll('.test-mc-btn').forEach((b,i) => {
       if (i === aufgabe.loesung) b.classList.add('correct');
       else if (i === gewaehlteOption && !korrekt) b.classList.add('wrong');
       b.disabled = true;
     });
-    gewaehlteOption = null;
+
   } else if (aufgabe.typ === 'version') {
-    if (gewaehlteVersion === null) { document.querySelector('.test-submit-btn').style.display='inline-block'; return; }
+    if (gewaehlteVersion === null) { if (submitBtn) submitBtn.style.display='inline-block'; return; }
     korrekt = gewaehlteVersion === aufgabe.loesung;
     document.querySelectorAll('.test-version-btn').forEach((b,i) => {
       if (i === aufgabe.loesung) b.classList.add('correct');
       else if (i === gewaehlteVersion && !korrekt) b.classList.add('wrong');
       b.disabled = true;
     });
-    gewaehlteVersion = null;
+
   } else if (aufgabe.typ === 'fehler') {
     const markiert = [...document.querySelectorAll('.test-fehler-word.marked')].map(el => parseInt(el.dataset.idx));
     const richtig = aufgabe.fehlerIndizes || [];
-    korrekt = JSON.stringify([...markiert].sort()) === JSON.stringify([...richtig].sort());
+    korrekt = JSON.stringify([...markiert].sort((a,b)=>a-b)) === JSON.stringify([...richtig].sort((a,b)=>a-b));
     document.querySelectorAll('.test-fehler-word').forEach(el => {
       const idx = parseInt(el.dataset.idx);
       el.classList.remove('marked');
       if (richtig.includes(idx)) el.classList.add('correct-mark');
       else if (markiert.includes(idx)) el.classList.add('wrong-mark');
     });
+
   } else if (aufgabe.typ === 'komma') {
     const gesetzt = [...document.querySelectorAll('.test-komma-slot.has-komma')].map(el => parseInt(el.dataset.idx));
     const richtig = aufgabe.kommaPositionen || [];
-    korrekt = JSON.stringify([...gesetzt].sort()) === JSON.stringify([...richtig].sort());
+    korrekt = JSON.stringify([...gesetzt].sort((a,b)=>a-b)) === JSON.stringify([...richtig].sort((a,b)=>a-b));
     document.querySelectorAll('.test-komma-slot').forEach(el => {
       const idx = parseInt(el.dataset.idx);
       if (richtig.includes(idx)) { el.classList.add('correct-komma'); el.textContent = ','; }
       else if (gesetzt.includes(idx)) { el.classList.add('wrong-komma'); }
     });
+    // Zeige fehlende Beistriche
+    richtig.forEach(idx => {
+      const slots = document.querySelectorAll('.test-komma-slot');
+      slots.forEach(sl => { if (parseInt(sl.dataset.idx) === idx && !sl.classList.contains('correct-komma')) { sl.classList.add('missed-komma'); sl.textContent = ','; }});
+    });
+
+  } else if (aufgabe.typ === 'komma_wort') {
+    const gesetzt = [...document.querySelectorAll('.test-komma-slot.has-komma')].map(el => parseInt(el.dataset.idx));
+    const richtig = aufgabe.kommaNach || [];
+    korrekt = JSON.stringify([...gesetzt].sort((a,b)=>a-b)) === JSON.stringify([...richtig].sort((a,b)=>a-b));
+    document.querySelectorAll('.test-komma-slot').forEach(el => {
+      const idx = parseInt(el.dataset.idx);
+      el.onclick = null;
+      if (richtig.includes(idx)) { el.classList.remove('has-komma'); el.classList.add('correct-komma'); el.textContent = ','; }
+      else if (gesetzt.includes(idx)) { el.classList.add('wrong-komma'); }
+    });
+    richtig.forEach(idx => {
+      document.querySelectorAll('.test-komma-slot').forEach(sl => {
+        if (parseInt(sl.dataset.idx) === idx && !sl.classList.contains('correct-komma')) {
+          sl.classList.add('missed-komma'); sl.textContent = ',';
+        }
+      });
+    });
+
   } else if (aufgabe.typ === 'korrektur') {
-    const eingabe = document.getElementById('korrektur-input').value.trim().toLowerCase();
-    const loesung = aufgabe.loesung.trim().toLowerCase();
-    korrekt = eingabe === loesung;
+    const eingabe = document.getElementById('korrektur-input').value.trim();
+    korrekt = eingabe === aufgabe.loesung.trim();
     document.getElementById('korrektur-input').disabled = true;
     document.getElementById('korrektur-input').style.borderColor = korrekt ? 'var(--success)' : '#E53935';
+    if (!korrekt) feedbackText += `<br><strong>Lösung:</strong> ${aufgabe.loesung}`;
+
+  } else if (aufgabe.typ === 'korrektur_wort') {
+    const eingabe = document.getElementById('korrektur-wort-input').value.trim();
+    korrekt = eingabe === aufgabe.loesung.trim();
+    document.getElementById('korrektur-wort-input').disabled = true;
+    document.getElementById('korrektur-wort-input').style.borderColor = korrekt ? 'var(--success)' : '#E53935';
+    if (!korrekt) feedbackText += `<br><strong>Lösung:</strong> ${aufgabe.loesung}`;
+
+  } else if (aufgabe.typ === 'dass_das') {
+    let alleRichtig = true;
+    aufgabe.loesungen.forEach((l, i) => {
+      const inp = document.getElementById('dd-' + i);
+      if (!inp) return;
+      const val = inp.value.trim().toLowerCase();
+      const ok = val === l.toLowerCase();
+      if (!ok) alleRichtig = false;
+      inp.classList.add(ok ? 'correct' : 'wrong');
+      inp.disabled = true;
+      if (!ok) inp.value = l; // zeige Lösung
+    });
+    korrekt = alleRichtig;
+
+  } else if (aufgabe.typ === 'diktat') {
+    const eingabe = document.getElementById('diktat-input').value.trim();
+    korrekt = eingabe === aufgabe.loesung.trim();
+    document.getElementById('diktat-input').disabled = true;
+    document.getElementById('diktat-input').style.borderColor = korrekt ? 'var(--success)' : '#E53935';
+    if (!korrekt) {
+      // Zeige Unterschiede
+      feedbackText += `<br><details style="margin-top:0.75rem;"><summary style="cursor:pointer;color:var(--navy);">Lösung anzeigen</summary><div style="margin-top:0.5rem;background:var(--blue-lighter);border-radius:8px;padding:0.75rem;font-size:0.9rem;line-height:1.8;">${aufgabe.loesung}</div></details>`;
+    }
+
+  } else if (aufgabe.typ === 'diktat_getrennt') {
+    const inputs = document.querySelectorAll('.diktat-satz-input');
+    let richtige = 0;
+    inputs.forEach((inp, i) => {
+      const val = inp.value.trim();
+      const sol = inp.dataset.loesung;
+      const ok = val === sol;
+      if (ok) richtige++;
+      inp.disabled = true;
+      inp.style.borderColor = ok ? 'var(--success)' : '#E53935';
+      if (!ok) {
+        const lösDiv = document.createElement('div');
+        lösDiv.style.cssText = 'font-size:0.85rem;color:var(--navy);background:var(--blue-lighter);border-radius:6px;padding:0.5rem;margin-top:0.25rem;line-height:1.6;';
+        lösDiv.innerHTML = `<strong>Lösung:</strong> ${sol}`;
+        inp.parentNode.appendChild(lösDiv);
+      }
+    });
+    korrekt = richtige === inputs.length;
+    if (!korrekt) feedbackText += ` (${richtige} von ${inputs.length} Sätzen korrekt)`;
+
+  } else if (aufgabe.typ === 'direkte_rede') {
+    const inputs = document.querySelectorAll('.direkte-rede-input');
+    let richtige = 0;
+    inputs.forEach((inp, i) => {
+      const val = inp.value.trim();
+      const sol = inp.dataset.loesung;
+      const ok = val === sol;
+      if (ok) richtige++;
+      inp.disabled = true;
+      inp.style.borderColor = ok ? 'var(--success)' : '#E53935';
+      if (!ok) {
+        const lösDiv = document.createElement('div');
+        lösDiv.style.cssText = 'font-size:0.85rem;color:var(--navy);background:var(--blue-lighter);border-radius:6px;padding:0.5rem;margin-top:0.25rem;line-height:1.6;';
+        lösDiv.innerHTML = `<strong>Lösung:</strong> ${sol}`;
+        inp.parentNode.appendChild(lösDiv);
+      }
+    });
+    korrekt = richtige === inputs.length;
+    if (!korrekt) feedbackText += ` (${richtige} von ${inputs.length} Sätzen korrekt)`;
   }
 
   if (korrekt) testPunkte++;
-  testAntworten.push({aufgabe, korrekt});
+  testAntworten.push({ aufgabe, korrekt });
 
   feedback.style.display = 'block';
   feedback.className = `test-feedback ${korrekt ? 'correct' : 'wrong'}`;
-  feedback.innerHTML = (korrekt ? '✓ Richtig! ' : '✗ Leider falsch. ') + (aufgabe.erklaerung || '');
+  feedback.innerHTML = (korrekt ? '✓ Richtig! ' : '✗ Leider falsch. ') + (aufgabe.erklaerung || '') + feedbackText;
   nextBtn.style.display = 'inline-block';
+  nextBtn.textContent = testAktuell < testReihenfolge.length - 1 ? 'Nächste Frage →' : 'Ergebnis anzeigen →';
+
+  if (ttsUtterance) window.speechSynthesis.cancel();
 }
 
 function naechsteFrage() {
@@ -1745,8 +1633,8 @@ function naechsteFrage() {
 }
 
 function zeigeErgebnis() {
-  const total = testReihenfolge.length;
-  const pct = Math.round((testPunkte / total) * 100);
+  const gesamtFragen = testReihenfolge.filter(a => a.typ !== 'trennseite').length;
+  const pct = Math.round((testPunkte / gesamtFragen) * 100);
   document.getElementById('test-progress-bar').style.width = '100%';
   document.getElementById('test-progress-label').textContent = 'Test abgeschlossen!';
 
@@ -1757,7 +1645,7 @@ function zeigeErgebnis() {
     empfehlung = 'Kurs: Deutsch im Beruf – für die Feinheiten im professionellen Alltag.';
   } else if (pct >= 60) {
     level = 'Mittelstufe'; icon = '📈';
-    beschreibung = 'Gute Basis! Du kennst viele Regeln, aber es gibt noch einige Lücken, die wir gemeinsam schließen können.';
+    beschreibung = 'Gute Basis! Du kennst viele Regeln, aber es gibt noch Lücken, die wir gemeinsam schließen können.';
     empfehlung = 'Kurs: Rechtschreibung und Grammatik Komplett – ideal für dich!';
   } else {
     level = 'Einsteiger'; icon = '🌱';
@@ -1765,76 +1653,71 @@ function zeigeErgebnis() {
     empfehlung = 'Kurs: Rechtschreibung und Grammatik – von Grund auf, ohne Druck.';
   }
 
-  // Auswertung nach Typ
   const typStats = {};
   testAntworten.forEach(a => {
-    if (!typStats[a.aufgabe.typ]) typStats[a.aufgabe.typ] = {richtig:0,gesamt:0};
-    typStats[a.aufgabe.typ].gesamt++;
-    if (a.korrekt) typStats[a.aufgabe.typ].richtig++;
+    const typ = a.aufgabe.typ;
+    if (!typStats[typ]) typStats[typ] = {richtig:0, gesamt:0};
+    typStats[typ].gesamt++;
+    if (a.korrekt) typStats[typ].richtig++;
   });
-  const typeLabels = {mc:'Multiple Choice',luecke:'Lückentext',fehler:'Fehler finden',version:'Richtige Version',korrektur:'Korrektur',komma:'Komma setzen',gross:'Groß/Kleinschreibung'};
+  const typeLabels = {
+    mc:'Multiple Choice', luecke:'Lückentext', fehler:'Fehler finden', version:'Richtige Version',
+    korrektur:'Korrektur', komma:'Beistrich setzen', komma_wort:'Beistrich setzen', gross:'Groß/Kleinschreibung',
+    korrektur_wort:'Wortschreibung', dass_das:'dass / das', diktat:'Diktat', diktat_getrennt:'Getrenntschreibung',
+    direkte_rede:'Direkte Rede'
+  };
   const barsHtml = Object.entries(typStats).map(([typ, s]) => {
     const p = Math.round((s.richtig/s.gesamt)*100);
-    return `<div class="test-result-bar-row">
-      <span class="test-result-bar-label">${typeLabels[typ]||typ}</span>
-      <div class="test-result-bar-outer"><div class="test-result-bar-inner" style="width:${p}%"></div></div>
-      <span style="font-size:0.84rem;color:var(--muted);width:36px;text-align:right;">${p}%</span>
-    </div>`;
+    return `<div class="test-result-bar-row"><span class="test-result-bar-label">${typeLabels[typ]||typ}</span><div class="test-result-bar-outer"><div class="test-result-bar-inner" style="width:${p}%"></div></div><span style="font-size:0.84rem;color:var(--muted);width:36px;text-align:right;">${p}%</span></div>`;
   }).join('');
 
   document.getElementById('test-question-area').innerHTML = `
-    <div class="test-card test-result">
-      <div class="test-result-icon">${icon}</div>
-      <h2>Dein Ergebnis</h2>
-      <div class="test-score-big">${testPunkte} / ${total}</div>
-      <div class="test-result-level">Niveau: ${level}</div>
-      <p>${beschreibung}</p>
-      <p><strong>Empfehlung:</strong> ${empfehlung}</p>
-      <div class="test-result-bars">${barsHtml}</div>
+    <div class="test-card" style="text-align:center;padding:2rem 1rem;">
+      <div style="font-size:4rem;margin-bottom:1rem;">${icon}</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:2rem;color:var(--navy);margin-bottom:0.5rem;">Dein Ergebnis</h2>
+      <div style="font-family:'Playfair Display',serif;font-size:3.5rem;color:var(--navy);font-weight:700;margin:0.5rem 0;">${testPunkte} / ${gesamtFragen}</div>
+      <div style="display:inline-block;background:var(--violet-light);color:var(--violet);font-size:1.1rem;font-weight:700;padding:0.5rem 1.5rem;border-radius:50px;margin:1rem 0;">Niveau: ${level}</div>
+      <p style="color:var(--muted);max-width:480px;margin:0 auto 1rem;">${beschreibung}</p>
+      <p style="color:var(--muted);max-width:480px;margin:0 auto 1rem;"><strong>Empfehlung:</strong> ${empfehlung}</p>
+      <div style="display:flex;flex-direction:column;gap:0.6rem;margin:1.5rem auto;max-width:420px;text-align:left;">${barsHtml}</div>
       <div style="margin-top:1.5rem;">
-        <button class="test-cta-btn" onclick="showPage('kurse')">Jetzt Kurs wählen</button>
-        <button class="test-retry-btn" onclick="wiederholenTest()">Test wiederholen</button>
+        <button style="background:var(--navy);color:white;border:none;padding:0.9rem 2.2rem;border-radius:50px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;margin:0.4rem;" onclick="showPage('kurse')">Jetzt Kurs wählen</button>
+        <button style="background:transparent;color:var(--violet);border:2px solid var(--violet);padding:0.9rem 2.2rem;border-radius:50px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;margin:0.4rem;" onclick="wiederholenTest()">Test wiederholen</button>
       </div>
     </div>`;
 }
 
 function wiederholenTest() {
+  if (ttsUtterance) window.speechSynthesis.cancel();
   document.getElementById('test-question-area').innerHTML = '';
   document.getElementById('test-body').style.display = 'none';
-  document.querySelector('.test-hero').style.display = 'block';
+  document.getElementById('test-hero-section').style.display = 'block';
 }
 
 // ===== ADMIN: AUFGABENVERWALTUNG =====
+let testAufgaben = [];
+let editAufgabeId = null;
+
 function renderAufgabeFormFields() {
   const typ = document.getElementById('aufgabe-typ').value;
   const container = document.getElementById('aufgabe-dynamic-fields');
   if (!typ) { container.innerHTML = ''; return; }
-
   let html = `<label>Aufgabenstellung / Frage</label><input type="text" id="af-frage" placeholder="z.B. Welche Schreibweise ist korrekt?">`;
-
   if (typ === 'mc' || typ === 'gross') {
-    html += `<label>Optionen (eine pro Zeile)</label><textarea id="af-optionen" placeholder="Option A&#10;Option B&#10;Option C&#10;Option D"></textarea>
-    <label>Richtige Antwort (0 = erste Option)</label><input type="number" id="af-loesung" min="0" placeholder="z.B. 0">`;
+    html += `<label>Optionen (eine pro Zeile)</label><textarea id="af-optionen" placeholder="Option A&#10;Option B&#10;Option C&#10;Option D"></textarea><label>Richtige Antwort (0 = erste Option)</label><input type="number" id="af-loesung" min="0" placeholder="0">`;
   } else if (typ === 'luecke') {
-    html += `<label>Satz mit ___ für die Lücke</label><input type="text" id="af-text" placeholder="Er wollte wissen, ___ es stimmt.">
-    <label>Optionen (eine pro Zeile)</label><textarea id="af-optionen" placeholder="ob&#10;das&#10;dass&#10;weil"></textarea>
-    <label>Richtige Antwort (0 = erste Option)</label><input type="number" id="af-loesung" min="0" placeholder="z.B. 0">`;
+    html += `<label>Satz mit ___ für die Lücke</label><input type="text" id="af-text" placeholder="Er wollte wissen, ___ es stimmt."><label>Optionen (eine pro Zeile)</label><textarea id="af-optionen" placeholder="ob&#10;das&#10;dass"></textarea><label>Richtige Antwort (0 = erste)</label><input type="number" id="af-loesung" min="0" placeholder="0">`;
   } else if (typ === 'version') {
-    html += `<label>Version 1</label><input type="text" id="af-version1" placeholder="Erste Version des Satzes">
-    <label>Version 2</label><input type="text" id="af-version2" placeholder="Zweite Version des Satzes">
-    <label>Richtige Version (0 oder 1)</label><input type="number" id="af-loesung" min="0" max="1" placeholder="0 oder 1">`;
+    html += `<label>Version 1</label><input type="text" id="af-version1"><label>Version 2</label><input type="text" id="af-version2"><label>Richtige Version (0 oder 1)</label><input type="number" id="af-loesung" min="0" max="1" placeholder="0 oder 1">`;
   } else if (typ === 'fehler') {
-    html += `<label>Satz mit eingebauten Fehlern</label><textarea id="af-text" placeholder="Der Man ging durch den Pahk."></textarea>
-    <label>Indizes der fehlerhaften Wörter (kommagetrennt, 0 = erstes Wort)</label><input type="text" id="af-fehler" placeholder="z.B. 1,4">`;
+    html += `<label>Satz mit Fehlern</label><textarea id="af-text"></textarea><label>Indizes fehlerhafter Wörter (kommagetrennt, 0=erstes Wort)</label><input type="text" id="af-fehler" placeholder="1,4">`;
   } else if (typ === 'komma') {
-    html += `<label>Satzteile (durch | getrennt, Komma kommt ZWISCHEN die Teile)</label><textarea id="af-teile" placeholder="Obwohl es regnete| gingen sie spazieren| weil sie Luft brauchten."></textarea>
-    <label>Positionen wo Komma hingehört (0 = nach Teil 1, kommagetrennt)</label><input type="text" id="af-komma" placeholder="z.B. 0,1">`;
+    html += `<label>Satzteile (durch | getrennt)</label><textarea id="af-teile" placeholder="Obwohl es regnete| gingen sie spazieren| weil sie Luft brauchten."></textarea><label>Positionen wo Beistrich hingehört (0=nach Teil 1)</label><input type="text" id="af-komma" placeholder="0,1">`;
   } else if (typ === 'korrektur') {
-    html += `<label>Satz mit Fehlern</label><textarea id="af-text" placeholder="Der Satz mit fehler..."></textarea>
-    <label>Korrekte Lösung</label><textarea id="af-loesung-text" placeholder="Der korrekte Satz..."></textarea>`;
+    html += `<label>Satz mit Fehlern</label><textarea id="af-text"></textarea><label>Korrekte Lösung</label><textarea id="af-loesung-text"></textarea>`;
   }
-
-  html += `<label>Erklärung (wird nach der Antwort angezeigt)</label><textarea id="af-erklaerung" placeholder="Erklärung zur richtigen Antwort..."></textarea>`;
+  html += `<label>Erklärung</label><textarea id="af-erklaerung" placeholder="Erklärung zur richtigen Antwort..."></textarea>`;
+  html += `<label>Teil</label><select id="af-teil"><option value="Rechtschreibung">Rechtschreibung</option><option value="Grammatik">Grammatik</option></select>`;
   container.innerHTML = html;
 }
 
@@ -1844,9 +1727,8 @@ function saveAufgabe() {
   const frage = document.getElementById('af-frage')?.value.trim();
   if (!frage) { alert('Bitte eine Aufgabenstellung eingeben.'); return; }
   const erklaerung = document.getElementById('af-erklaerung')?.value.trim() || '';
-
-  let aufgabe = { typ, frage, erklaerung, id: editAufgabeId || 'a_' + Date.now() };
-
+  const teil = document.getElementById('af-teil')?.value || 'Rechtschreibung';
+  let aufgabe = { typ, frage, erklaerung, teil, id: editAufgabeId || 'a_' + Date.now() };
   if (typ === 'mc' || typ === 'gross') {
     aufgabe.optionen = document.getElementById('af-optionen').value.split('\n').map(s=>s.trim()).filter(Boolean);
     aufgabe.loesung = parseInt(document.getElementById('af-loesung').value) || 0;
@@ -1867,19 +1749,11 @@ function saveAufgabe() {
     aufgabe.text = document.getElementById('af-text').value.trim();
     aufgabe.loesung = document.getElementById('af-loesung-text').value.trim();
   }
-
   if (editAufgabeId) {
     const idx = testAufgaben.findIndex(a => a.id === editAufgabeId);
     if (idx > -1) testAufgaben[idx] = aufgabe;
-  } else {
-    testAufgaben.push(aufgabe);
-  }
-
-  // Speichere in Supabase
-  sb.from('placement_questions').upsert({ id: aufgabe.id, data: aufgabe }).then(({error}) => {
-    if (error) console.warn('Supabase speichern fehlgeschlagen – lokal gespeichert.', error);
-  });
-
+  } else { testAufgaben.push(aufgabe); }
+  sb.from('placement_questions').upsert({ id: aufgabe.id, data: aufgabe }).then(({error}) => { if (error) console.warn('Supabase Fehler', error); });
   editAufgabeId = null;
   cancelAufgabeForm();
   renderAdminAufgaben();
@@ -1902,27 +1776,7 @@ function editAufgabe(id) {
   setTimeout(() => {
     if (document.getElementById('af-frage')) document.getElementById('af-frage').value = aufgabe.frage || '';
     if (document.getElementById('af-erklaerung')) document.getElementById('af-erklaerung').value = aufgabe.erklaerung || '';
-    if (aufgabe.typ === 'mc' || aufgabe.typ === 'gross') {
-      if (document.getElementById('af-optionen')) document.getElementById('af-optionen').value = (aufgabe.optionen||[]).join('\n');
-      if (document.getElementById('af-loesung')) document.getElementById('af-loesung').value = aufgabe.loesung ?? 0;
-    } else if (aufgabe.typ === 'luecke') {
-      if (document.getElementById('af-text')) document.getElementById('af-text').value = aufgabe.text || '';
-      if (document.getElementById('af-optionen')) document.getElementById('af-optionen').value = (aufgabe.optionen||[]).join('\n');
-      if (document.getElementById('af-loesung')) document.getElementById('af-loesung').value = aufgabe.loesung ?? 0;
-    } else if (aufgabe.typ === 'version') {
-      if (document.getElementById('af-version1')) document.getElementById('af-version1').value = aufgabe.versionen?.[0] || '';
-      if (document.getElementById('af-version2')) document.getElementById('af-version2').value = aufgabe.versionen?.[1] || '';
-      if (document.getElementById('af-loesung')) document.getElementById('af-loesung').value = aufgabe.loesung ?? 0;
-    } else if (aufgabe.typ === 'fehler') {
-      if (document.getElementById('af-text')) document.getElementById('af-text').value = aufgabe.text || '';
-      if (document.getElementById('af-fehler')) document.getElementById('af-fehler').value = (aufgabe.fehlerIndizes||[]).join(',');
-    } else if (aufgabe.typ === 'komma') {
-      if (document.getElementById('af-teile')) document.getElementById('af-teile').value = (aufgabe.teile||[]).join('|');
-      if (document.getElementById('af-komma')) document.getElementById('af-komma').value = (aufgabe.kommaPositionen||[]).join(',');
-    } else if (aufgabe.typ === 'korrektur') {
-      if (document.getElementById('af-text')) document.getElementById('af-text').value = aufgabe.text || '';
-      if (document.getElementById('af-loesung-text')) document.getElementById('af-loesung-text').value = aufgabe.loesung || '';
-    }
+    if (document.getElementById('af-teil')) document.getElementById('af-teil').value = aufgabe.teil || 'Rechtschreibung';
   }, 50);
   document.getElementById('aufgabe-form').scrollIntoView({behavior:'smooth'});
 }
@@ -1937,32 +1791,16 @@ async function deleteAufgabe(id) {
 function renderAdminAufgaben() {
   const container = document.getElementById('admin-aufgaben-list');
   if (!container) return;
-  const typeLabels = {mc:'Multiple Choice',luecke:'Lückentext',fehler:'Fehler markieren',version:'Richtige Version',korrektur:'Korrektur',komma:'Komma setzen',gross:'Groß/Kleinschreibung'};
-  const typeColors = {mc:'var(--violet-light);color:var(--violet)',luecke:'var(--blue-pale);color:var(--navy-mid)',fehler:'#FFF3E0;color:#E65100',version:'#E8F5EE;color:#2E7D52',korrektur:'#FCE4EC;color:#C2185B',komma:'#EDE7F6;color:#512DA8',gross:'#E0F2F1;color:#00695C'};
-  if (testAufgaben.length === 0) {
-    container.innerHTML = '<p style="color:var(--muted);text-align:center;padding:2rem;">Noch keine Aufgaben vorhanden.</p>';
-    return;
-  }
-  container.innerHTML = `<p style="font-size:0.9rem;color:var(--muted);margin-bottom:1rem;">${testAufgaben.length} Aufgabe(n) gespeichert – erscheinen im Test in zufälliger Reihenfolge.</p>` +
-    testAufgaben.map((a, i) => `
-    <div class="aufgabe-card">
-      <div class="aufgabe-card-header">
-        <span class="aufgabe-type-tag" style="background:${typeColors[a.typ]||'var(--blue-pale);color:var(--navy)'}">${typeLabels[a.typ]||a.typ}</span>
-        <div class="aufgabe-actions">
-          <button class="aufgabe-edit-btn" onclick="editAufgabe('${a.id}')">✏️ Bearbeiten</button>
-          <button class="aufgabe-delete-btn" onclick="deleteAufgabe('${a.id}')">🗑️ Löschen</button>
-        </div>
-      </div>
-      <div class="aufgabe-preview"><strong>${i+1}.</strong> ${a.frage||'–'}</div>
-    </div>`).join('');
+  const typeLabels = {mc:'Multiple Choice',luecke:'Lückentext',fehler:'Fehler markieren',version:'Richtige Version',korrektur:'Korrektur',komma:'Beistrich setzen',gross:'Groß/Kleinschreibung'};
+  if (testAufgaben.length === 0) { container.innerHTML = '<p style="color:var(--muted);text-align:center;padding:2rem;">Noch keine Aufgaben.</p>'; return; }
+  container.innerHTML = `<p style="font-size:0.9rem;color:var(--muted);margin-bottom:1rem;">${testAufgaben.length} Aufgabe(n) gespeichert.</p>` +
+    testAufgaben.map((a, i) => `<div class="aufgabe-card"><div class="aufgabe-card-header"><span class="aufgabe-type-tag" style="background:var(--blue-pale);color:var(--navy)">${typeLabels[a.typ]||a.typ} · ${a.teil||'–'}</span><div class="aufgabe-actions"><button class="aufgabe-edit-btn" onclick="editAufgabe('${a.id}')">✏️</button><button class="aufgabe-delete-btn" onclick="deleteAufgabe('${a.id}')">🗑️</button></div></div><div class="aufgabe-preview"><strong>${i+1}.</strong> ${a.frage||'–'}</div></div>`).join('');
 }
 
 async function loadAdminTest() {
   try {
-    const { data, error } = await sb.from('placement_questions').select('*');
-    if (!error && data && data.length > 0) {
-      testAufgaben = data.map(d => ({...d.data, id: d.id}));
-    }
+    const { data } = await sb.from('placement_questions').select('*');
+    if (data && data.length > 0) testAufgaben = data.map(d => ({...d.data, id: d.id}));
   } catch(e) {}
   renderAdminAufgaben();
 }
