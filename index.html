@@ -1805,6 +1805,633 @@ async function loadAdminTest() {
   renderAdminAufgaben();
 }
 
+// ===== GRAMMATIK-FRAGEN =====
+
+// G1: Wie viele Zeiten?
+const g1 = {
+  id:'g1', typ:'mc', teil:'Grammatik',
+  frage:'Wie viele Zeiten hat die deutsche Sprache?',
+  optionen:['4','5','6','7'],
+  loesung:2,
+  erklaerung:'Die deutsche Sprache hat 6 Zeiten: Präsens, Präteritum, Perfekt, Plusquamperfekt, Futur I und Futur II.'
+};
+
+// G2: Wie heißen die Zeiten?
+const g2 = {
+  id:'g2', typ:'zeiten_namen', teil:'Grammatik',
+  frage:'Wie heißen die 6 Zeiten der deutschen Sprache? Trage die deutschen und lateinischen Bezeichnungen ein.',
+  loesungen:[
+    {deutsch:'Gegenwart', latein:'Präsens'},
+    {deutsch:'Mitvergangenheit', latein:'Präteritum'},
+    {deutsch:'Vergangenheit', latein:'Perfekt'},
+    {deutsch:'Vorvergangenheit', latein:'Plusquamperfekt'},
+    {deutsch:'Zukunft', latein:'Futur I'},
+    {deutsch:'Vorzukunft', latein:'Futur II'}
+  ],
+  erklaerung:'Die 6 Zeiten: Gegenwart/Präsens · Mitvergangenheit/Präteritum · Vergangenheit/Perfekt · Vorvergangenheit/Plusquamperfekt · Zukunft/Futur I · Vorzukunft/Futur II'
+};
+
+// G3: Verbformen Tabelle
+const g3 = {
+  id:'g3', typ:'verb_tabelle', teil:'Grammatik',
+  frage:'Bilde von „ich gehe" die jeweilige Verbform in allen Zeiten.',
+  zeilen:[
+    {zeitform:'Präsens',      loesung:'ich gehe'},
+    {zeitform:'Präteritum',   loesung:'ich ging'},
+    {zeitform:'Perfekt',      loesung:'ich bin gegangen'},
+    {zeitform:'Plusquamperfekt', loesung:'ich war gegangen'},
+    {zeitform:'Futur I',      loesung:'ich werde gehen'},
+    {zeitform:'Futur II',     loesung:'ich werde gegangen sein'}
+  ],
+  erklaerung:'Präsens: ich gehe · Präteritum: ich ging · Perfekt: ich bin gegangen · Plusquamperfekt: ich war gegangen · Futur I: ich werde gehen · Futur II: ich werde gegangen sein'
+};
+
+// G4: Wortarten – 5 Sätze, zufällig 1 pro Durchgang, 3 Durchgänge
+const wortartenSaetze = [
+  {
+    satz: 'Pfui, dieser vergammelte Apfel muss sofort in den Biomüll geworfen werden!',
+    woerter: [
+      {wort:'Pfui',        wortart:'Interjektion',  genau:'unflektierbar',          flektierbar:false},
+      {wort:'dieser',      wortart:'Pronomen',      genau:'Demonstrativpronomen',    flektierbar:true},
+      {wort:'vergammelte', wortart:'Adjektiv',      genau:'attributiv',              flektierbar:true},
+      {wort:'Apfel',       wortart:'Nomen',         genau:'Nomen',                   flektierbar:true},
+      {wort:'muss',        wortart:'Verb',          genau:'Modalverb',               flektierbar:true},
+      {wort:'sofort',      wortart:'Adverb',        genau:'Temporaladverb',          flektierbar:false},
+      {wort:'in',          wortart:'Präposition',   genau:'lokal',                   flektierbar:false},
+      {wort:'den',         wortart:'Artikel',       genau:'bestimmter Artikel',      flektierbar:true},
+      {wort:'Biomüll',     wortart:'Nomen',         genau:'Nomen',                   flektierbar:true},
+      {wort:'geworfen',    wortart:'Verb',          genau:'Vollverb (Partizip II)',   flektierbar:true},
+      {wort:'werden',      wortart:'Verb',          genau:'Hilfsverb',               flektierbar:true}
+    ]
+  },
+  {
+    satz: 'Obwohl es regnete, wollten einige der motivierten Wanderer trotzdem auf den Gipfel steigen.',
+    woerter: [
+      {wort:'Obwohl',      wortart:'Konjunktion',   genau:'Subjunktion (unterordnend)', flektierbar:false},
+      {wort:'es',          wortart:'Pronomen',      genau:'Personalpronomen',        flektierbar:true},
+      {wort:'regnete',     wortart:'Verb',          genau:'Vollverb',                flektierbar:true},
+      {wort:'wollten',     wortart:'Verb',          genau:'Modalverb',               flektierbar:true},
+      {wort:'einige',      wortart:'Pronomen',      genau:'Indefinitpronomen',       flektierbar:true},
+      {wort:'der',         wortart:'Artikel',       genau:'bestimmter Artikel',      flektierbar:true},
+      {wort:'motivierten', wortart:'Adjektiv',      genau:'attributiv',              flektierbar:true},
+      {wort:'Wanderer',    wortart:'Nomen',         genau:'Nomen',                   flektierbar:true},
+      {wort:'trotzdem',    wortart:'Adverb',        genau:'Konjunktionaladverb',     flektierbar:false},
+      {wort:'auf',         wortart:'Präposition',   genau:'lokal',                   flektierbar:false},
+      {wort:'den',         wortart:'Artikel',       genau:'bestimmter Artikel',      flektierbar:true},
+      {wort:'Gipfel',      wortart:'Nomen',         genau:'Nomen',                   flektierbar:true},
+      {wort:'steigen',     wortart:'Verb',          genau:'Vollverb (Infinitiv)',     flektierbar:true}
+    ]
+  },
+  {
+    satz: 'Welcher von euch hat sich gestern wegen des verlorenen Schlüssels beschwert?',
+    woerter: [
+      {wort:'Welcher',     wortart:'Pronomen',      genau:'Interrogativpronomen',    flektierbar:true},
+      {wort:'von',         wortart:'Präposition',   genau:'Präposition',             flektierbar:false},
+      {wort:'euch',        wortart:'Pronomen',      genau:'Personalpronomen',        flektierbar:true},
+      {wort:'hat',         wortart:'Verb',          genau:'Hilfsverb',               flektierbar:true},
+      {wort:'sich',        wortart:'Pronomen',      genau:'Reflexivpronomen',        flektierbar:true},
+      {wort:'gestern',     wortart:'Adverb',        genau:'Temporaladverb',          flektierbar:false},
+      {wort:'wegen',       wortart:'Präposition',   genau:'kausal (regiert Genitiv)',flektierbar:false},
+      {wort:'des',         wortart:'Artikel',       genau:'bestimmter Artikel',      flektierbar:true},
+      {wort:'verlorenen',  wortart:'Adjektiv',      genau:'Partizipialadjektiv',     flektierbar:true},
+      {wort:'Schlüssels',  wortart:'Nomen',         genau:'Nomen',                   flektierbar:true},
+      {wort:'beschwert',   wortart:'Verb',          genau:'Vollverb',                flektierbar:true}
+    ]
+  },
+  {
+    satz: 'Meine beiden Schwestern hatten sich während der Ferien intensiv auf jene Prüfung vorbereitet.',
+    woerter: [
+      {wort:'Meine',       wortart:'Pronomen',      genau:'Possessivpronomen',       flektierbar:true},
+      {wort:'beiden',      wortart:'Numerale',      genau:'unbestimmtes Zahlwort',   flektierbar:true},
+      {wort:'Schwestern',  wortart:'Nomen',         genau:'Nomen',                   flektierbar:true},
+      {wort:'hatten',      wortart:'Verb',          genau:'Hilfsverb',               flektierbar:true},
+      {wort:'sich',        wortart:'Pronomen',      genau:'Reflexivpronomen',        flektierbar:true},
+      {wort:'während',     wortart:'Präposition',   genau:'temporal (regiert Genitiv)',flektierbar:false},
+      {wort:'der',         wortart:'Artikel',       genau:'bestimmter Artikel',      flektierbar:true},
+      {wort:'Ferien',      wortart:'Nomen',         genau:'Nomen (Pluraletantum)',   flektierbar:true},
+      {wort:'intensiv',    wortart:'Adjektiv',      genau:'adverbial gebraucht',     flektierbar:true},
+      {wort:'auf',         wortart:'Präposition',   genau:'Präposition',             flektierbar:false},
+      {wort:'jene',        wortart:'Pronomen',      genau:'Demonstrativpronomen',    flektierbar:true},
+      {wort:'Prüfung',     wortart:'Nomen',         genau:'Nomen',                   flektierbar:true},
+      {wort:'vorbereitet', wortart:'Verb',          genau:'Vollverb',                flektierbar:true}
+    ]
+  },
+  {
+    satz: 'Dort drüben steht das Haus, dessen Dach beim letzten Sturm schwer beschädigt wurde.',
+    woerter: [
+      {wort:'Dort',        wortart:'Adverb',        genau:'Lokaladverb',             flektierbar:false},
+      {wort:'drüben',      wortart:'Adverb',        genau:'Lokaladverb',             flektierbar:false},
+      {wort:'steht',       wortart:'Verb',          genau:'Vollverb',                flektierbar:true},
+      {wort:'das',         wortart:'Artikel',       genau:'bestimmter Artikel',      flektierbar:true},
+      {wort:'Haus',        wortart:'Nomen',         genau:'Nomen',                   flektierbar:true},
+      {wort:'dessen',      wortart:'Pronomen',      genau:'Relativpronomen',         flektierbar:true},
+      {wort:'Dach',        wortart:'Nomen',         genau:'Nomen',                   flektierbar:true},
+      {wort:'beim',        wortart:'Präposition',   genau:'Verschmelzung (bei + dem)',flektierbar:false},
+      {wort:'letzten',     wortart:'Adjektiv',      genau:'attributiv',              flektierbar:true},
+      {wort:'Sturm',       wortart:'Nomen',         genau:'Nomen',                   flektierbar:true},
+      {wort:'schwer',      wortart:'Adjektiv',      genau:'adverbial gebraucht',     flektierbar:true},
+      {wort:'beschädigt',  wortart:'Verb',          genau:'Vollverb',                flektierbar:true},
+      {wort:'wurde',       wortart:'Verb',          genau:'Hilfsverb',               flektierbar:true}
+    ]
+  }
+];
+
+// G4-Wrapper: Wortarten-Aufgabe (3 Durchgänge)
+function erstelleG4(satzDaten, durchgang) {
+  // durchgang: 1=Wortart, 2=genauere Bestimmung, 3=flektierbar
+  const id = `g4_d${durchgang}`;
+  const typMap = {1:'wortart_basic', 2:'wortart_genau', 3:'wortart_flekt'};
+  const frageMap = {
+    1:'Bestimme die Wortart jedes markierten Wortes (z.B. Verb, Nomen, Adjektiv ...).',
+    2:'Sehr gut! Jetzt genauer: Welche Art von Wortart ist es? (z.B. Hilfsverb, Possessivpronomen, Temporaladverb ...)',
+    3:'Letzter Schritt: Ist das Wort flektierbar (veränderbar) oder nicht flektierbar?'
+  };
+  return {
+    id, typ: typMap[durchgang], teil:'Grammatik',
+    frage: frageMap[durchgang],
+    satzDaten,
+    durchgang,
+    erklaerung: durchgang===3 ? 'Flektierbar = das Wort kann in Form, Fall, Zeit oder Person verändert werden (Verben, Nomen, Adjektive, Pronomen, Artikel). Nicht flektierbar = unveränderlich (Adverbien, Präpositionen, Konjunktionen).' : ''
+  };
+}
+
+// G5: Konjunktiv – Teilaufgaben A, B, C (zufällig 2 von 3)
+const konjunktivA = {
+  id:'g5a', typ:'konjunktiv_tabelle', teil:'Grammatik',
+  frage:'Konjunktiv I und II: Ergänze die fehlenden Formen in der Tabelle.',
+  zeilen:[
+    {infinitiv:'schreiben', person:'er',       k1:'er schreibe',  k2:'er schriebe',   k1leer:false, k2leer:false},
+    {infinitiv:'wissen',    person:'sie (Sg.)', k1:'sie wisse',    k2:'sie wüsste',    k1leer:false, k2leer:true},
+    {infinitiv:'bleiben',   person:'du',        k1:'du bleibest',  k2:'du bliebest',   k1leer:true,  k2leer:false},
+    {infinitiv:'dürfen',    person:'es',        k1:'es dürfe',     k2:'es dürfte',     k1leer:false, k2leer:true},
+    {infinitiv:'finden',    person:'ihr',       k1:'ihr finde',    k2:'ihr fändet',    k1leer:false, k2leer:true},
+    {infinitiv:'mögen',     person:'ich',       k1:'ich möge',     k2:'ich möchte',    k1leer:true,  k2leer:false},
+    {infinitiv:'geben',     person:'er',        k1:'er gebe',      k2:'er gäbe',       k1leer:false, k2leer:true},
+    {infinitiv:'sehen',     person:'sie (Pl.)', k1:'sie sehen*',   k2:'sie sähen',     k1leer:false, k2leer:false}
+  ],
+  erklaerung:'Konjunktiv I: meist für indirekte Rede. Konjunktiv II: Wünsche, Irreales, höfliche Bitten.'
+};
+
+const konjunktivB = {
+  id:'g5b', typ:'konjunktiv_luecke', teil:'Grammatik',
+  frage:'Indirekte Rede (Konjunktiv I): Setze die Verben in den Konjunktiv I.',
+  saetze:[
+    {text:'Der Zeuge sagt, er _________ den Unfall genau.',    verb:'sehen',   loesung:'sehe'},
+    {text:'Die Wetterfee behauptet, es _________ morgen den ganzen Tag regnen.', verb:'werden', loesung:'werde'},
+    {text:'Der Arzt empfiehlt, der Patient _________ die Medizin nach dem Essen.', verb:'nehmen', loesung:'nehme'},
+    {text:'Wir haben gehört, ihr _________ ein neues Auto gekauft.', verb:'haben', loesung:'habet'},
+    {text:'Sie erzählt ihrem Freund, sie _________ im Sommer nach Japan.', verb:'fliegen', loesung:'fliege'}
+  ],
+  erklaerung:'Konjunktiv I wird gebildet: Verbstamm + Konjunktivendung (-e, -est, -e, -en, -et, -en).'
+};
+
+const konjunktivC = {
+  id:'g5c', typ:'konjunktiv_luecke', teil:'Grammatik',
+  frage:'Wünsche und Träume (Konjunktiv II): Ergänze die richtige Form.',
+  saetze:[
+    {text:'Ich habe kein Geld. Wenn ich doch bloß mehr Geld _________ !',           verb:'haben',   loesung:'hätte'},
+    {text:'Er kommt nicht zur Party. Es wäre schön, wenn er zur Party _________ .', verb:'kommen',  loesung:'käme'},
+    {text:'Du hilfst mir nicht. Ich wünschte, du _________ mir.',                   verb:'helfen',  loesung:'hülfest / helfen würdest'},
+    {text:'Wir können nicht fliegen. Wenn wir doch nur fliegen _________ !',        verb:'können',  loesung:'könnten'},
+    {text:'Das Projekt gelingt nicht. Wir hofften, dass das Projekt _________ .',   verb:'gelingen',loesung:'gelänge'}
+  ],
+  erklaerung:'Konjunktiv II drückt Wünsche, irreale Bedingungen oder Höflichkeit aus.'
+};
+
+// G6: Direkte → Indirekte Rede
+const g6 = {
+  id:'g6', typ:'rede_umformen', teil:'Grammatik',
+  frage:'Forme die direkte Rede in die indirekte Rede um.',
+  saetze:[
+    {direkt:'Sie sagt: „Ich lerne Spanisch."',                    loesung:'Sie sagt, sie lerne Spanisch.'},
+    {direkt:'Die Kollegen sagen: „Wir sind bereit."',             loesung:'Die Kollegen sagen, sie seien bereit.'},
+    {direkt:'Der Koch sagt: „Das Essen ist fertig."',             loesung:'Der Koch sagt, das Essen sei fertig.'},
+    {direkt:'Die Wanderer sagen: „Wir machen eine Pause."',       loesung:'Die Wanderer sagen, sie machten eine Pause.'},
+    {direkt:'Lukas behauptet: „Ich habe alles verstanden."',      loesung:'Lukas behauptet, er habe alles verstanden.'},
+    {direkt:'Die Lehrerin erklärt: „Der Test wird verschoben."',  loesung:'Die Lehrerin erklärt, der Test werde verschoben.'},
+    {direkt:'Sophie erzählt: „Ich fahre morgen nach Berlin."',    loesung:'Sophie erzählt, sie fahre morgen nach Berlin.'}
+  ],
+  erklaerung:'Indirekte Rede: Konjunktiv I wenn erkennbar, sonst Konjunktiv II (z.B. bei Gleichheit mit Indikativ).'
+};
+
+// ===== GRAMMATIK-TEST AUFBAU =====
+// Wird in startTest() integriert
+function erstelleGrammatikTeil() {
+  // Zufälliger Wortarten-Satz
+  const zufallsSatz = shuffle(wortartenSaetze)[0];
+
+  // Zufällig 2 von 3 Konjunktiv-Teilen (A ist immer Basis, dann B als Folge, C als Folge von B)
+  // Wir wählen zufällig Startpunkt: A+B oder B+C oder A+C
+  const konjAuswahl = shuffle([
+    [konjunktivA, konjunktivB],
+    [konjunktivB, konjunktivC],
+    [konjunktivA, konjunktivC]
+  ])[0];
+
+  // G4 hat 3 Durchgänge mit demselben Satz
+  const g4_1 = erstelleG4(zufallsSatz, 1);
+  const g4_2 = erstelleG4(zufallsSatz, 2);
+  const g4_3 = erstelleG4(zufallsSatz, 3);
+
+  return [
+    g1,
+    g2,
+    g3,
+    g4_1, g4_2, g4_3,
+    konjAuswahl[0], konjAuswahl[1],
+    g6
+  ];
+}
+
+// Erweitere startTest() um Grammatik-Teil
+const _startTestOrig = startTest;
+startTest = async function() {
+  // Lade Aufgaben aus Supabase wenn vorhanden
+  let dbAufgaben = [];
+  try {
+    const { data, error } = await sb.from('placement_questions').select('*');
+    if (!error && data && data.length > 0) dbAufgaben = data.map(d => ({...d.data, id: d.id}));
+  } catch(e) {}
+
+  // Zufällige Auswahl für F11
+  const ausgewaehlteS = shuffle(diktatSaetze).slice(0, 5);
+  const f11 = {
+    id:'f11', typ:'diktat_getrennt', teil:'Rechtschreibung',
+    frage:'Höre die Sätze und tippe sie genau ab.',
+    saetze: ausgewaehlteS,
+    erklaerung:'Achte besonders auf Getrennt- und Zusammenschreibung sowie Bindestriche und Anführungszeichen.'
+  };
+
+  // Zufällige Auswahl für F12
+  const ausgewaehlteR = shuffle(direkteRedeSaetze).slice(0, 2);
+  const f12 = {
+    id:'f12', typ:'direkte_rede', teil:'Rechtschreibung',
+    frage:'Ergänze die Satzzeichen für die direkte Rede.',
+    saetze: ausgewaehlteR,
+    erklaerung:'Direkte Rede: Doppelpunkt und Anführungszeichen beim Einleiten, Beistrich vor dem Redebegleiterwort.'
+  };
+
+  const teil1 = dbAufgaben.filter(a => a.teil === 'Rechtschreibung').length > 0
+    ? dbAufgaben.filter(a => a.teil === 'Rechtschreibung')
+    : testTeil1;
+
+  const grammatikFragen = erstelleGrammatikTeil();
+  const teil2Extra = dbAufgaben.filter(a => a.teil === 'Grammatik');
+
+  testReihenfolge = [
+    ...teil1,
+    { id:'trennseite1', typ:'trennseite', label:'Rechtschreibung abgeschlossen', naechster:'Grammatik' },
+    f11,
+    f12,
+    { id:'trennseite2', typ:'trennseite', label:'Weiter mit Grammatik', naechster:'Grammatik – Zeiten und Wortarten' },
+    ...grammatikFragen,
+    ...teil2Extra
+  ];
+
+  testAktuell = 0;
+  testPunkte = 0;
+  testAntworten = [];
+
+  document.getElementById('test-hero-section').style.display = 'none';
+  document.getElementById('test-body').style.display = 'block';
+  zeigeTestFrage();
+};
+
+// Erweitere zeigeTestFrage() um neue Typen
+const _zeigeTestFrageOrig = zeigeTestFrage;
+zeigeTestFrage = function() {
+  const aufgabe = testReihenfolge[testAktuell];
+
+  // Trennseite
+  if (aufgabe.typ === 'trennseite') {
+    const gesamtFragen = testReihenfolge.filter(a => a.typ !== 'trennseite').length;
+    const bisherFragen = testReihenfolge.slice(0, testAktuell).filter(a => a.typ !== 'trennseite').length;
+    document.getElementById('test-progress-bar').style.width = Math.round((bisherFragen/gesamtFragen)*100) + '%';
+    document.getElementById('test-progress-label').textContent = aufgabe.label || 'Weiter';
+    document.getElementById('test-question-area').innerHTML = `
+      <div class="test-part-divider">
+        <h2>📖 ${aufgabe.naechster || 'Nächster Teil'}</h2>
+        <p>Weiter geht's – du machst das großartig!</p>
+        <button class="test-part-divider-btn" onclick="naechsteFrage()">Weiter →</button>
+      </div>`;
+    return;
+  }
+
+  // Neue Grammatik-Typen abfangen
+  const grammatikTypen = ['zeiten_namen','verb_tabelle','wortart_basic','wortart_genau','wortart_flekt','konjunktiv_tabelle','konjunktiv_luecke','rede_umformen'];
+  if (grammatikTypen.includes(aufgabe.typ)) {
+    zeigeGrammatikFrage(aufgabe);
+    return;
+  }
+
+  // Original-Funktion für alle anderen Typen
+  _zeigeTestFrageOrig();
+};
+
+function zeigeGrammatikFrage(aufgabe) {
+  const gesamtFragen = testReihenfolge.filter(a => a.typ !== 'trennseite').length;
+  const bisherFragen = testReihenfolge.slice(0, testAktuell).filter(a => a.typ !== 'trennseite').length;
+  const pct = Math.round((bisherFragen / gesamtFragen) * 100);
+  document.getElementById('test-progress-bar').style.width = pct + '%';
+  document.getElementById('test-progress-label').textContent = `Grammatik – Frage ${bisherFragen+1} von ${gesamtFragen}`;
+
+  const badgeMap = {
+    zeiten_namen:'badge-luecke', verb_tabelle:'badge-luecke',
+    wortart_basic:'badge-gross', wortart_genau:'badge-gross', wortart_flekt:'badge-gross',
+    konjunktiv_tabelle:'badge-mc', konjunktiv_luecke:'badge-luecke', rede_umformen:'badge-direkte-rede'
+  };
+  const labelMap = {
+    zeiten_namen:'Zeitformen', verb_tabelle:'Verbformen',
+    wortart_basic:'Wortarten – Schritt 1', wortart_genau:'Wortarten – Schritt 2', wortart_flekt:'Wortarten – Schritt 3',
+    konjunktiv_tabelle:'Konjunktiv', konjunktiv_luecke:'Konjunktiv', rede_umformen:'Indirekte Rede'
+  };
+
+  const badge = `<span class="test-type-badge ${badgeMap[aufgabe.typ]||'badge-mc'}">${labelMap[aufgabe.typ]||aufgabe.typ}</span>`;
+
+  let inhalt = '';
+
+  if (aufgabe.typ === 'zeiten_namen') {
+    let rows = aufgabe.loesungen.map((z,i) => `
+      <tr>
+        <td style="padding:0.5rem;font-weight:600;color:var(--navy);">${i+1}.</td>
+        <td style="padding:0.5rem;"><input class="gramm-input" data-idx="${i}" data-field="deutsch" type="text" placeholder="Deutsche Bezeichnung" style="width:100%;padding:0.4rem 0.6rem;border:1.5px solid var(--light-border);border-radius:8px;font-family:'Nunito',sans-serif;font-size:0.95rem;"></td>
+        <td style="padding:0.5rem;"><input class="gramm-input" data-idx="${i}" data-field="latein" type="text" placeholder="Lateinische Bezeichnung" style="width:100%;padding:0.4rem 0.6rem;border:1.5px solid var(--light-border);border-radius:8px;font-family:'Nunito',sans-serif;font-size:0.95rem;"></td>
+      </tr>`).join('');
+    inhalt = `<div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;">
+      <thead><tr style="background:var(--blue-lighter);">
+        <th style="padding:0.5rem;text-align:left;font-size:0.84rem;color:var(--muted);">#</th>
+        <th style="padding:0.5rem;text-align:left;font-size:0.84rem;color:var(--muted);">Deutsche Bezeichnung</th>
+        <th style="padding:0.5rem;text-align:left;font-size:0.84rem;color:var(--muted);">Lateinische Bezeichnung</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table></div>
+    <button class="test-submit-btn" onclick="pruefeGrammatik()">Antwort prüfen</button>`;
+
+  } else if (aufgabe.typ === 'verb_tabelle') {
+    let rows = aufgabe.zeilen.map((z,i) => `
+      <tr style="border-bottom:1px solid var(--light-border);">
+        <td style="padding:0.6rem 0.75rem;font-weight:700;color:var(--navy);white-space:nowrap;">${z.zeitform}</td>
+        <td style="padding:0.6rem 0.75rem;"><input class="gramm-input" data-idx="${i}" type="text" placeholder="Verbform eingeben ..." style="width:100%;padding:0.4rem 0.6rem;border:1.5px solid var(--light-border);border-radius:8px;font-family:'Nunito',sans-serif;font-size:0.95rem;"></td>
+      </tr>`).join('');
+    inhalt = `<div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;background:white;border-radius:12px;overflow:hidden;border:1px solid var(--light-border);">
+      <thead><tr style="background:var(--blue-lighter);">
+        <th style="padding:0.6rem 0.75rem;text-align:left;font-size:0.84rem;color:var(--muted);">Zeitform</th>
+        <th style="padding:0.6rem 0.75rem;text-align:left;font-size:0.84rem;color:var(--muted);">Deine Antwort</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table></div>
+    <button class="test-submit-btn" onclick="pruefeGrammatik()">Antwort prüfen</button>`;
+
+  } else if (aufgabe.typ === 'wortart_basic' || aufgabe.typ === 'wortart_genau') {
+    const sd = aufgabe.satzDaten;
+    const field = aufgabe.typ === 'wortart_basic' ? 'wortart' : 'genau';
+    const placeholder = aufgabe.typ === 'wortart_basic' ? 'Wortart ...' : 'Genauere Bestimmung ...';
+    // Satz anzeigen mit Wörtern farbig markiert
+    const satzHtml = sd.woerter.map((w,i) =>
+      `<span style="background:var(--violet-light);color:var(--violet);border-radius:4px;padding:1px 4px;font-weight:700;cursor:default;" title="Wort ${i+1}">${w.wort}</span>`
+    ).join(' ');
+    let rows = sd.woerter.map((w,i) => `
+      <tr style="border-bottom:1px solid var(--light-border);">
+        <td style="padding:0.5rem 0.75rem;font-weight:700;color:var(--violet);white-space:nowrap;">${w.wort}</td>
+        <td style="padding:0.5rem 0.75rem;"><input class="gramm-input" data-idx="${i}" data-field="${field}" type="text" placeholder="${placeholder}" style="width:100%;padding:0.35rem 0.6rem;border:1.5px solid var(--light-border);border-radius:8px;font-family:'Nunito',sans-serif;font-size:0.9rem;"></td>
+      </tr>`).join('');
+    inhalt = `<div style="background:var(--blue-lighter);border-radius:10px;padding:1rem;margin-bottom:1rem;font-size:1.05rem;color:var(--navy);line-height:2;">${satzHtml}</div>
+    <div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;background:white;border-radius:12px;overflow:hidden;border:1px solid var(--light-border);">
+      <thead><tr style="background:var(--blue-lighter);"><th style="padding:0.5rem 0.75rem;text-align:left;font-size:0.84rem;color:var(--muted);">Wort</th><th style="padding:0.5rem 0.75rem;text-align:left;font-size:0.84rem;color:var(--muted);">Deine Antwort</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table></div>
+    <button class="test-submit-btn" onclick="pruefeGrammatik()">Antwort prüfen</button>`;
+
+  } else if (aufgabe.typ === 'wortart_flekt') {
+    const sd = aufgabe.satzDaten;
+    let rows = sd.woerter.map((w,i) => `
+      <tr style="border-bottom:1px solid var(--light-border);">
+        <td style="padding:0.5rem 0.75rem;font-weight:700;color:var(--violet);">${w.wort}</td>
+        <td style="padding:0.5rem 0.75rem;">
+          <label style="display:inline-flex;align-items:center;gap:6px;cursor:pointer;margin-right:1rem;font-size:0.95rem;">
+            <input type="radio" name="flekt-${i}" value="ja" style="accent-color:var(--violet);"> flektierbar
+          </label>
+          <label style="display:inline-flex;align-items:center;gap:6px;cursor:pointer;font-size:0.95rem;">
+            <input type="radio" name="flekt-${i}" value="nein"> nicht flektierbar
+          </label>
+        </td>
+      </tr>`).join('');
+    inhalt = `<div style="background:var(--blue-lighter);border-radius:10px;padding:1rem;margin-bottom:1rem;font-size:1.05rem;color:var(--navy);line-height:2;">
+      ${sd.woerter.map(w=>`<span style="background:var(--violet-light);color:var(--violet);border-radius:4px;padding:1px 4px;font-weight:700;">${w.wort}</span>`).join(' ')}
+    </div>
+    <div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;background:white;border-radius:12px;overflow:hidden;border:1px solid var(--light-border);">
+      <thead><tr style="background:var(--blue-lighter);"><th style="padding:0.5rem 0.75rem;text-align:left;font-size:0.84rem;color:var(--muted);">Wort</th><th style="padding:0.5rem 0.75rem;text-align:left;font-size:0.84rem;color:var(--muted);">Flektierbar?</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table></div>
+    <button class="test-submit-btn" onclick="pruefeGrammatik()">Antwort prüfen</button>`;
+
+  } else if (aufgabe.typ === 'konjunktiv_tabelle') {
+    let rows = aufgabe.zeilen.map((z,i) => {
+      const k1cell = z.k1leer
+        ? `<input class="gramm-input" data-row="${i}" data-col="k1" type="text" placeholder="Konjunktiv I ..." style="width:100%;padding:0.35rem 0.6rem;border:1.5px solid var(--light-border);border-radius:8px;font-family:'Nunito',sans-serif;font-size:0.9rem;">`
+        : `<span style="color:var(--muted);font-style:italic;">${z.k1}</span>`;
+      const k2cell = z.k2leer
+        ? `<input class="gramm-input" data-row="${i}" data-col="k2" type="text" placeholder="Konjunktiv II ..." style="width:100%;padding:0.35rem 0.6rem;border:1.5px solid var(--light-border);border-radius:8px;font-family:'Nunito',sans-serif;font-size:0.9rem;">`
+        : `<span style="color:var(--muted);font-style:italic;">${z.k2}</span>`;
+      return `<tr style="border-bottom:1px solid var(--light-border);">
+        <td style="padding:0.5rem 0.75rem;font-weight:600;color:var(--navy);">${z.infinitiv}</td>
+        <td style="padding:0.5rem 0.75rem;color:var(--muted);">${z.person}</td>
+        <td style="padding:0.5rem 0.75rem;">${k1cell}</td>
+        <td style="padding:0.5rem 0.75rem;">${k2cell}</td>
+      </tr>`;
+    }).join('');
+    inhalt = `<div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;background:white;border-radius:12px;overflow:hidden;border:1px solid var(--light-border);">
+      <thead><tr style="background:var(--blue-lighter);">
+        <th style="padding:0.5rem 0.75rem;text-align:left;font-size:0.84rem;color:var(--muted);">Infinitiv</th>
+        <th style="padding:0.5rem 0.75rem;text-align:left;font-size:0.84rem;color:var(--muted);">Person</th>
+        <th style="padding:0.5rem 0.75rem;text-align:left;font-size:0.84rem;color:var(--muted);">Konjunktiv I</th>
+        <th style="padding:0.5rem 0.75rem;text-align:left;font-size:0.84rem;color:var(--muted);">Konjunktiv II</th>
+      </tr></thead>
+      <tbody>${rows}</tbody>
+    </table></div>
+    <p style="font-size:0.84rem;color:var(--muted);margin-top:0.5rem;">* Wenn Konjunktiv I und Indikativ gleich lauten, weicht man auf Konjunktiv II aus.</p>
+    <button class="test-submit-btn" onclick="pruefeGrammatik()">Antwort prüfen</button>`;
+
+  } else if (aufgabe.typ === 'konjunktiv_luecke') {
+    let rows = aufgabe.saetze.map((s,i) => `
+      <div style="margin-bottom:1rem;background:var(--offwhite);border-radius:10px;padding:0.85rem 1rem;">
+        <div style="font-size:1rem;color:var(--navy);margin-bottom:0.4rem;line-height:1.7;">${s.text.replace('_________', `<input class="gramm-input" id="konj-${i}" data-idx="${i}" type="text" placeholder="${s.verb} → ?" style="min-width:130px;padding:0.25rem 0.5rem;border:1.5px solid var(--violet);border-radius:6px;font-family:'Nunito',sans-serif;font-size:0.95rem;text-align:center;">`)}</div>
+        <div style="font-size:0.8rem;color:var(--muted);">Infinitiv: <strong>${s.verb}</strong></div>
+      </div>`).join('');
+    inhalt = `${rows}<button class="test-submit-btn" onclick="pruefeGrammatik()">Antwort prüfen</button>`;
+
+  } else if (aufgabe.typ === 'rede_umformen') {
+    let rows = aufgabe.saetze.map((s,i) => `
+      <div style="margin-bottom:1.25rem;">
+        <div style="background:var(--blue-lighter);border-radius:8px;padding:0.75rem 1rem;font-size:1rem;color:var(--navy);margin-bottom:0.4rem;">${s.direkt}</div>
+        <input class="gramm-input" data-idx="${i}" type="text" placeholder="Indirekte Rede ..." style="width:100%;padding:0.5rem 0.75rem;border:1.5px solid var(--light-border);border-radius:8px;font-family:'Nunito',sans-serif;font-size:0.95rem;">
+      </div>`).join('');
+    inhalt = `${rows}<button class="test-submit-btn" onclick="pruefeGrammatik()">Antwort prüfen</button>`;
+  }
+
+  document.getElementById('test-question-area').innerHTML = `
+    <div class="test-card">
+      ${badge}
+      <p class="test-question">${aufgabe.frage}</p>
+      <div id="test-aufgabe-inhalt">${inhalt}</div>
+      <div class="test-feedback" id="test-feedback"></div>
+      <button class="test-next-btn" id="test-next-btn" onclick="naechsteFrage()">${testAktuell < testReihenfolge.length - 1 ? 'Nächste Frage →' : 'Ergebnis anzeigen →'}</button>
+    </div>`;
+}
+
+function pruefeGrammatik() {
+  const aufgabe = testReihenfolge[testAktuell];
+  const feedback = document.getElementById('test-feedback');
+  const nextBtn = document.getElementById('test-next-btn');
+  const submitBtn = document.querySelector('.test-submit-btn');
+  if (submitBtn) submitBtn.style.display = 'none';
+
+  let korrekt = false;
+  let feedbackExtra = '';
+  let richtige = 0, gesamt = 0;
+
+  if (aufgabe.typ === 'zeiten_namen') {
+    aufgabe.loesungen.forEach((z, i) => {
+      const dEl = document.querySelector(`.gramm-input[data-idx="${i}"][data-field="deutsch"]`);
+      const lEl = document.querySelector(`.gramm-input[data-idx="${i}"][data-field="latein"]`);
+      const dOk = dEl && dEl.value.trim().toLowerCase() === z.deutsch.toLowerCase();
+      const lOk = lEl && lEl.value.trim().toLowerCase() === z.latein.toLowerCase();
+      gesamt += 2;
+      if (dOk) richtige++; else if (dEl) { dEl.style.borderColor='#E53935'; dEl.value = z.deutsch; }
+      if (lOk) richtige++; else if (lEl) { lEl.style.borderColor='#E53935'; lEl.value = z.latein; }
+      if (dEl) { dEl.style.borderColor = dOk ? 'var(--success)' : '#E53935'; dEl.disabled = true; }
+      if (lEl) { lEl.style.borderColor = lOk ? 'var(--success)' : '#E53935'; lEl.disabled = true; }
+    });
+    korrekt = richtige === gesamt;
+    if (!korrekt) feedbackExtra = ` (${richtige} von ${gesamt} Feldern korrekt)`;
+
+  } else if (aufgabe.typ === 'verb_tabelle') {
+    aufgabe.zeilen.forEach((z, i) => {
+      const inp = document.querySelector(`.gramm-input[data-idx="${i}"]`);
+      if (!inp) return;
+      gesamt++;
+      const ok = inp.value.trim().toLowerCase() === z.loesung.toLowerCase();
+      if (ok) richtige++;
+      inp.style.borderColor = ok ? 'var(--success)' : '#E53935';
+      inp.disabled = true;
+      if (!ok) inp.value = z.loesung;
+    });
+    korrekt = richtige === gesamt;
+    if (!korrekt) feedbackExtra = ` (${richtige} von ${gesamt} Feldern korrekt – Lösungen werden angezeigt)`;
+
+  } else if (aufgabe.typ === 'wortart_basic') {
+    const sd = aufgabe.satzDaten;
+    sd.woerter.forEach((w, i) => {
+      const inp = document.querySelector(`.gramm-input[data-idx="${i}"]`);
+      if (!inp) return;
+      gesamt++;
+      const ok = inp.value.trim().toLowerCase() === w.wortart.toLowerCase();
+      if (ok) richtige++;
+      inp.style.borderColor = ok ? 'var(--success)' : '#E53935';
+      inp.disabled = true;
+      if (!ok) inp.placeholder = w.wortart;
+    });
+    korrekt = richtige >= Math.ceil(gesamt * 0.7);
+    feedbackExtra = ` (${richtige} von ${gesamt} korrekt)`;
+
+  } else if (aufgabe.typ === 'wortart_genau') {
+    const sd = aufgabe.satzDaten;
+    sd.woerter.forEach((w, i) => {
+      const inp = document.querySelector(`.gramm-input[data-idx="${i}"]`);
+      if (!inp) return;
+      gesamt++;
+      const ok = inp.value.trim().toLowerCase().includes(w.genau.toLowerCase().split('(')[0].trim().toLowerCase());
+      if (ok) richtige++;
+      inp.style.borderColor = ok ? 'var(--success)' : '#E53935';
+      inp.disabled = true;
+      if (!ok) inp.placeholder = w.genau;
+    });
+    korrekt = richtige >= Math.ceil(gesamt * 0.6);
+    feedbackExtra = ` (${richtige} von ${gesamt} korrekt)`;
+
+  } else if (aufgabe.typ === 'wortart_flekt') {
+    const sd = aufgabe.satzDaten;
+    sd.woerter.forEach((w, i) => {
+      const radios = document.querySelectorAll(`input[name="flekt-${i}"]`);
+      let gewaehlt = null;
+      radios.forEach(r => { if (r.checked) gewaehlt = r.value; r.disabled = true; });
+      gesamt++;
+      const ok = (gewaehlt === 'ja') === w.flektierbar;
+      if (ok) richtige++;
+      // Zeige richtiges mit Farbe
+      radios.forEach(r => {
+        const sollJa = w.flektierbar && r.value === 'ja';
+        const sollNein = !w.flektierbar && r.value === 'nein';
+        if (sollJa || sollNein) r.parentElement.style.color = 'var(--success)';
+        if (r.checked && !ok) r.parentElement.style.color = '#E53935';
+      });
+    });
+    korrekt = richtige >= Math.ceil(gesamt * 0.7);
+    feedbackExtra = ` (${richtige} von ${gesamt} korrekt)`;
+
+  } else if (aufgabe.typ === 'konjunktiv_tabelle') {
+    aufgabe.zeilen.forEach((z, i) => {
+      ['k1','k2'].forEach(col => {
+        const inp = document.querySelector(`.gramm-input[data-row="${i}"][data-col="${col}"]`);
+        if (!inp) return;
+        gesamt++;
+        const sol = col === 'k1' ? z.k1 : z.k2;
+        const ok = inp.value.trim().toLowerCase() === sol.toLowerCase();
+        if (ok) richtige++;
+        inp.style.borderColor = ok ? 'var(--success)' : '#E53935';
+        inp.disabled = true;
+        if (!ok) inp.value = sol;
+      });
+    });
+    korrekt = richtige === gesamt;
+    if (!korrekt) feedbackExtra = ` (${richtige} von ${gesamt} Feldern korrekt)`;
+
+  } else if (aufgabe.typ === 'konjunktiv_luecke') {
+    aufgabe.saetze.forEach((s, i) => {
+      const inp = document.getElementById('konj-' + i) || document.querySelector(`.gramm-input[data-idx="${i}"]`);
+      if (!inp) return;
+      gesamt++;
+      // Mehrere Lösungen erlaubt (durch /)
+      const loesungen = s.loesung.split('/').map(l => l.trim().toLowerCase());
+      const ok = loesungen.some(l => inp.value.trim().toLowerCase() === l);
+      if (ok) richtige++;
+      inp.style.borderColor = ok ? 'var(--success)' : '#E53935';
+      inp.disabled = true;
+      if (!ok) inp.value = s.loesung;
+    });
+    korrekt = richtige === gesamt;
+    if (!korrekt) feedbackExtra = ` (${richtige} von ${gesamt} korrekt)`;
+
+  } else if (aufgabe.typ === 'rede_umformen') {
+    aufgabe.saetze.forEach((s, i) => {
+      const inp = document.querySelector(`.gramm-input[data-idx="${i}"]`);
+      if (!inp) return;
+      gesamt++;
+      const ok = inp.value.trim() === s.loesung.trim();
+      if (ok) richtige++;
+      inp.style.borderColor = ok ? 'var(--success)' : '#E53935';
+      inp.disabled = true;
+      if (!ok) {
+        const lösDiv = document.createElement('div');
+        lösDiv.style.cssText = 'font-size:0.84rem;color:var(--navy);background:var(--blue-lighter);border-radius:6px;padding:0.4rem 0.6rem;margin-top:0.25rem;';
+        lösDiv.innerHTML = `<strong>Lösung:</strong> ${s.loesung}`;
+        inp.parentNode.appendChild(lösDiv);
+      }
+    });
+    korrekt = richtige === gesamt;
+    if (!korrekt) feedbackExtra = ` (${richtige} von ${gesamt} korrekt)`;
+  }
+
+  if (korrekt) testPunkte++;
+  testAntworten.push({ aufgabe, korrekt });
+
+  feedback.style.display = 'block';
+  feedback.className = `test-feedback ${korrekt ? 'correct' : 'wrong'}`;
+  feedback.innerHTML = (korrekt ? '✓ Richtig! ' : '✗ Leider nicht ganz. ') + (aufgabe.erklaerung || '') + feedbackExtra;
+  nextBtn.style.display = 'inline-block';
+  nextBtn.textContent = testAktuell < testReihenfolge.length - 1 ? 'Nächste Frage →' : 'Ergebnis anzeigen →';
+}
+
 checkSession();
 </script>
 </body>
