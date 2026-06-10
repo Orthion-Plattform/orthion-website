@@ -1049,33 +1049,17 @@ const testTeil1 = [
     kommaNach:[6, 13],
     erklaerung:'Nach „hatte" (Ende des Nebensatzes) und nach „Park" (vor dem nächsten Nebensatz mit „weil") gehört je ein Beistrich.'
   },
-  // F2: Richtige Version – zufällig aus Pool
-  (()=>{
-    const f2Pool = [
-      { versionen:['Wegen dem Regen blieb er zuhause.','Wegen des Regens blieb er zuhause.'], loesung:1 },
-      { versionen:['Sie hat sich das Buch ausgeliehen.','Sie hat sich das Buch ausgeliehn.'], loesung:0 },
-      { versionen:['Er ist mit dem Fahrrad nach Hause gefahren.','Er ist mit dem Fahrrad nach Hause gefahrt.'], loesung:0 },
-      { versionen:['Das Foto ist sehr schön geworden.','Das Foto ist sehr schön gewordet.'], loesung:0 },
-      { versionen:['Er hat trotzdem nicht nachgegeben.','Er hat trotzdem nicht nach gegeben.'], loesung:0 },
-      { versionen:['Das Mädchen lachte laut und fröhlich.','Das Mädchen lachte laut und Fröhlich.'], loesung:0 },
-      { versionen:['Bitte tragen Sie Ihre aktuelle Adresse in das Formular ein.','Bitte tragen Sie Ihre aktuelle Addresse in das Formular ein.'], loesung:0 },
-      { versionen:['Am Wochenende spielen wir eine Runde Billard im Club.','Am Wochenende spielen wir eine Runde Billiard im Club.'], loesung:0 },
-      { versionen:['Des Weiteren möchten wir darauf hinweisen, dass der Eintritt frei ist.','Desweiteren möchten wir darauf hinweisen, dass der Eintritt frei ist.'], loesung:0 },
-      { versionen:['In unserer Firma duzen sich alle Mitarbeiter von Anfang an.','In unserer Firma dutzen sich alle Mitarbeiter von Anfang an.'], loesung:0 },
-      { versionen:['Wir sollten erst einmal tief durchatmen und in Ruhe nachdenken.','Wir sollten ersteinmal tief durchatmen und in Ruhe nachdenken.'], loesung:0 },
-      { versionen:['Kannst du mir bitte rechtzeitig Bescheid geben, wann du ankommst?','Kannst du mir bitte rechtzeitig bescheid geben, wann du ankommst?'], loesung:0 },
-      { versionen:['Die Verhandlungen waren ein schmaler Grat zwischen Erfolg und Scheitern.','Die Verhandlungen waren ein schmaler Grad zwischen Erfolg und Scheitern.'], loesung:0 },
-      { versionen:['Ich habe dir gestern eine wichtige E-Mail geschickt.','Ich habe dir gestern eine wichtige Email geschickt.'], loesung:0 }
-    ];
-    const f2Pick = f2Pool[Math.floor(Math.random()*f2Pool.length)];
-    return {
-      id:'f2a', typ:'version', teil:'Rechtschreibung',
-      frage:'Welche Version ist korrekt geschrieben?',
-      versionen: f2Pick.versionen,
-      loesung: f2Pick.loesung,
-      erklaerung:''
-    };
-  })(),
+  // F2a: Wegen des Regens – Genitiv
+  {
+    id:'f2a', typ:'version', teil:'Rechtschreibung',
+    frage:'Welche Version ist rechtschreiblich korrekt?',
+    versionen:[
+      'Wegen dem Regen blieb er zuhause.',
+      'Wegen des Regens blieb er zuhause.'
+    ],
+    loesung:1,
+    erklaerung:'„wegen" verlangt den Genitiv: „wegen des Regens".'
+  },
   // F2b: Folgeaufgabe – Fall bestimmen
   {
     id:'f2b', typ:'mc', teil:'Rechtschreibung',
@@ -2030,6 +2014,34 @@ const g6 = {
   erklaerung:'Indirekte Rede: Konjunktiv I wenn erkennbar, sonst Konjunktiv II (z.B. bei Gleichheit mit Indikativ).'
 };
 
+// G7a: Grammatikalisch korrekt?
+const g7a = {
+  id:'g7a', typ:'mc', teil:'Grammatik',
+  frage:'Welcher Satz ist grammatikalisch korrekt?',
+  optionen:[
+    '1. Wegen dem Regen konnten wir nicht ins Schwimmbad gehen.',
+    '2. Wegen des Regens konnten wir nicht ins Schwimmbad gehen.',
+    'Beide Sätze sind richtig.'
+  ],
+  loesung:1,
+  erklaerung:'Satz 2 ist korrekt. Die Präposition „wegen" verlangt den Genitiv: „wegen des Regens".'
+};
+
+// G7b: Welcher Fall?
+const g7b = {
+  id:'g7b', typ:'mc', teil:'Grammatik',
+  frage:'In welchem Fall (Kasus) steht „Wegen des Regens"?',
+  optionen:[
+    '1. Nominativ (1. Fall)',
+    '2. Genitiv (2. Fall)',
+    '3. Dativ (3. Fall)',
+    '4. Akkusativ (4. Fall)',
+    '5. Ich weiß es nicht.'
+  ],
+  loesung:1,
+  erklaerung:'„wegen" regiert den Genitiv (2. Fall). Merkhilfe: „wegen des, der, eines, einer …"'
+};
+
 // ===== GRAMMATIK-TEST AUFBAU =====
 // Wird in startTest() integriert
 function erstelleGrammatikTeil() {
@@ -2055,7 +2067,9 @@ function erstelleGrammatikTeil() {
     g3,
     g4_1, g4_2, g4_3,
     konjAuswahl[0], konjAuswahl[1],
-    g6
+    g6,
+    g7a,
+    g7b
   ];
 }
 
