@@ -295,6 +295,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
 .zg-icon{font-size:2rem;margin-bottom:0.75rem;}
 .zg-content h3{font-family:'Playfair Display',serif;font-size:1.232rem;color:var(--navy);margin-bottom:0.6rem;}
 .zg-content p{font-size:0.952rem;color:var(--muted);line-height:1.7;}
+.zg-pain{font-size:1rem!important;color:var(--navy)!important;font-weight:600;font-style:italic;border-left:3px solid var(--violet);padding-left:0.75rem;margin-bottom:0.85rem!important;line-height:1.6!important;}
 .back-bar{padding:1rem 3rem;border-bottom:1px solid var(--light-border);display:flex;align-items:center;gap:8px;}
 .back-btn{background:none;border:none;font-size:0.952rem;color:var(--blue-soft);cursor:pointer;font-family:'Nunito',sans-serif;display:flex;align-items:center;gap:6px;}
 .back-btn:hover{color:var(--navy);}
@@ -492,11 +493,11 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
       <div class="zielgruppe-grid">
         <div class="zg-card">
           <div class="zg-img-wrap"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&q=80" alt="Junge Person lernt" class="zg-img" onerror="this.style.display='none'"></div>
-          <div class="zg-content"><div class="zg-icon">🎓</div><h3>Jung und im Aufbau</h3><p>Du hast die Schule hinter dir und merkst: Da gibt es noch Lücken. Matura nachholen, Bewerbungen schreiben, im Beruf ankommen – mit sicherer Sprache gelingt alles besser.</p></div>
+          <div class="zg-content"><div class="zg-icon">🎓</div><h3>Ich trage das schon lange mit mir herum.</h3><p class="zg-pain">Manches aus dem Deutschunterricht ist einfach nicht hängengeblieben – und jetzt fühlst du dich manchmal unsicher deswegen?</p><p>Du hast die Schule hinter dir und merkst: Da gibt es noch Lücken. Matura nachholen, Bewerbungen schreiben, im Beruf ankommen – mit sicherer Sprache gelingt alles besser.</p></div>
         </div>
         <div class="zg-card">
           <div class="zg-img-wrap"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=500&q=80" alt="Erfahrene Person lernt" class="zg-img" onerror="this.style.display='none'"></div>
-          <div class="zg-content"><div class="zg-icon">💼</div><h3>Erfahren und berufstätig</h3><p>Du trägst dieses Gefühl schon lange mit dir. Es ist nie zu spät. Mit <span class="brand">Orthion</span> holst du nach, was du brauchst – ganz für dich, ohne dass jemand davon wissen muss.</p></div>
+          <div class="zg-content"><div class="zg-icon">💼</div><h3>Ich merke, dass es mich bremst.</h3><p class="zg-pain">Ist dir deine Rechtschreibung manchmal peinlich oder fühlst du dich anderen Menschen dadurch unterlegen?</p><p>Du trägst dieses Gefühl schon lange mit dir. Es ist nie zu spät. Mit <span class="brand">Orthion</span> holst du nach, was du brauchst – ganz für dich, ohne dass jemand davon wissen muss.</p></div>
         </div>
       </div>
     </div>
@@ -512,7 +513,7 @@ footer{background:var(--navy-deep);padding:4rem 3rem 0;}
         <h2 class="section-title">Aus <em>Ortho</em>graphie und <em>Online</em> entstand <span class="brand">Orthion</span>.</h2>
         <p>Sprache ist eine der stärksten Ressourcen, die du hast. Sie formt, wie du denkst, wie du wirkst und wie andere dich wahrnehmen.</p>
         <p>Viele versuchen heute, sprachliche Lücken mit KI zu überbrücken. Doch wer das tut, gibt Macht aus der Hand. <strong>„Wer nichts weiß, muss alles glauben."</strong></p>
-        <p><strong><span class="brand">Orthion</span> gibt dir diese Kompetenz zurück.</strong> Hier lernst du deine eigene Muttersprache – ohne Blicke, ohne Bewertung, ganz in deinem Tempo.</p>
+        <p><strong><span class="brand">Orthion</span> gibt dir diese Kompetenz zurück.</strong> Hier lernst du deine eigene Muttersprache – ohne Blicke, ohne Bewertung, ganz in deinem Tempo. Und plötzlich merkst du: Du trittst sicherer auf, schreibst klarer, wirkst selbstbewusster. Starke Sprache. Starker Eindruck. Das bist du.</p>
         <div class="orthion-pills"><span class="o-pill">🎯 Strukturiert</span><span class="o-pill">⏱️ Flexibel</span><span class="o-pill">💙 Wertschätzend</span><span class="o-pill">🔒 Privat und online</span></div>
       </div>
     </div>
@@ -2014,34 +2015,6 @@ const g6 = {
   erklaerung:'Indirekte Rede: Konjunktiv I wenn erkennbar, sonst Konjunktiv II (z.B. bei Gleichheit mit Indikativ).'
 };
 
-// G7a: Grammatikalisch korrekt?
-const g7a = {
-  id:'g7a', typ:'mc', teil:'Grammatik',
-  frage:'Welcher Satz ist grammatikalisch korrekt?',
-  optionen:[
-    '1. Wegen dem Regen konnten wir nicht ins Schwimmbad gehen.',
-    '2. Wegen des Regens konnten wir nicht ins Schwimmbad gehen.',
-    'Beide Sätze sind richtig.'
-  ],
-  loesung:1,
-  erklaerung:'Satz 2 ist korrekt. Die Präposition „wegen" verlangt den Genitiv: „wegen des Regens".'
-};
-
-// G7b: Welcher Fall?
-const g7b = {
-  id:'g7b', typ:'mc', teil:'Grammatik',
-  frage:'In welchem Fall (Kasus) steht „Wegen des Regens"?',
-  optionen:[
-    '1. Nominativ (1. Fall)',
-    '2. Genitiv (2. Fall)',
-    '3. Dativ (3. Fall)',
-    '4. Akkusativ (4. Fall)',
-    '5. Ich weiß es nicht.'
-  ],
-  loesung:1,
-  erklaerung:'„wegen" regiert den Genitiv (2. Fall). Merkhilfe: „wegen des, der, eines, einer …"'
-};
-
 // ===== GRAMMATIK-TEST AUFBAU =====
 // Wird in startTest() integriert
 function erstelleGrammatikTeil() {
@@ -2067,9 +2040,7 @@ function erstelleGrammatikTeil() {
     g3,
     g4_1, g4_2, g4_3,
     konjAuswahl[0], konjAuswahl[1],
-    g6,
-    g7a,
-    g7b
+    g6
   ];
 }
 
